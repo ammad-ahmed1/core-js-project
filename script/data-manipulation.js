@@ -1,7 +1,5 @@
 import { customers, invoices, orders, tasks } from "../data/data.js";
 
-console.log(customers);
-console.log(invoices);
 function getUseableInvoices(invoices) {
   let isArr = Array.isArray(invoices);
   if (!isArr) {
@@ -35,10 +33,13 @@ const getInvoicesByStatus = (invoices, status) => {
 };
 
 const getInvoiceById = (id, invoices) => {
-  const invoice = invoices.get((inv) => inv.id === id);
+  const invoice = invoices.find((inv) => inv.id === id);
   return invoice || null;
 };
-
+const getInvoiceByCustName = (name, invoices) => {
+  const invoice = invoices.find((inv) => inv.customerName === name);
+  return invoice || null;
+};
 const hasExpensiveItems = (orders, minPrice) => {
   if (!Array.isArray(orders)) {
     return false;
@@ -201,15 +202,23 @@ const totalPaidRevenue = paidRevenue(invoices);
 const totalRevenue = nestedFinancialReport(orders);
 const methodChainedRevenue = methodChainingFinancialReport(invoices);
 
-console.log("useable invoices: ", useableInvoices);
-console.log("searched invoices: ", searchedInvoices);
-console.log("invoice by ID: ", invoiceById);
-console.log("expensive items: ", expensiveItems);
-console.log("have items: ", allOrdersHaveItems);
-console.log("invoice summaries: ", invoiceSummaries);
-console.log("sorted invoices: ", sortedInvoices);
-console.log("updated invoices: ", updatedInvoices);
-console.log("perpared invoice preview: ", perparedInvoicePreview);
-console.log("total paid revenue: ", totalPaidRevenue);
-console.log("total nested revenue: ", totalRevenue);
-console.log("method chained revenue: ", methodChainedRevenue);
+// console.log("useable invoices: ", useableInvoices);
+// console.log("searched invoices: ", searchedInvoices);
+// console.log("invoice by ID: ", invoiceById);
+// console.log("expensive items: ", expensiveItems);
+// console.log("have items: ", allOrdersHaveItems);
+// console.log("invoice summaries: ", invoiceSummaries);
+// console.log("sorted invoices: ", sortedInvoices);
+// console.log("updated invoices: ", updatedInvoices);
+// console.log("perpared invoice preview: ", perparedInvoicePreview);
+// console.log("total paid revenue: ", totalPaidRevenue);
+// console.log("total nested revenue: ", totalRevenue);
+// console.log("method chained revenue: ", methodChainedRevenue);
+
+export {
+  getUseableInvoices,
+  getInvoiceById,
+  getInvoiceByCustName,
+  getInvoicesByStatus,
+  paidRevenue,
+};

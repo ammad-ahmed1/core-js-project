@@ -5,10 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Operations dashboard" />
     <title>Operations Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body>
-    <main id="app"></main>
+    <section class="header">
+      <div class="header-body">
+        <div class="header-left">
+          <h3>Overview</h3>
+        </div>
+        <div class="header-right">
+          <div class="header-icon"><h4>Profile</h4></div>
+          <div class="header-icon"><h4>Notifications</h4></div>
+        </div>
+      </div>
+    </section>
+    <section class="sider-content">
+      <section class="sider">
+        <div class="btns-list">
+          <div>
+            <button
+              class="sider-btn"
+              id="sider-overview-btn"
+              data-section="overview"
+              data-status="active"
+            >
+              Overview
+            </button>
+          </div>
+          <div>
+            <button
+              class="sider-btn"
+              id="sider-invoices-btn"
+              data-section="invoices"
+              data-status="active"
+            >
+              Invoices
+            </button>
+          </div>
+          <div>
+            <button
+              class="sider-btn"
+              id="sider-orders-btn"
+              data-section="orders"
+              data-status="active"
+            >
+              Orders
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="content">
+        <section class="section" id="overview" data-status="active">
+          <div class="main-heading" id="page-title">
+            <h1>Overview</h1>
+          </div>
+          <section class="invoice-summary flex">
+            <div class="card">
+              <h3>Usable Invoices</h3>
+              <p id="usable-invoice-count">0</p>
+            </div>
+
+            <div class="card">
+              <h3>Paid</h3>
+              <p id="paid-invoice-count">0</p>
+            </div>
+
+            <div class="card">
+              <h3>Unpaid</h3>
+              <p id="unpaid-invoice-count">0</p>
+            </div>
+
+            <div class="card">
+              <h3>Failed</h3>
+              <p id="failed-invoice-count">0</p>
+            </div>
+
+            <div class="card">
+              <h3>Paid Revenue</h3>
+              <p id="paid-revenue">0</p>
+            </div>
+          </section>
+
+          <section class="invoices-table">
+            <h2>Invoices</h2>
+            <div class="filters-section flex">
+              <div class="search-field left">
+                <input id="search" />
+              </div>
+              <div class="right">
+                <div class="form-group">
+                  <!-- <label for="status">Status</label> -->
+                  <div class="select-wrapper">
+                    <select name="docs-status" id="status">
+                      <option value="" disabled selected hidden>
+                        Select status...
+                      </option>
+                      <option value="all">All</option>
+                      <option value="paid">Paid</option>
+                      <option value="unpaid">Unpaid</option>
+                      <option value="failed">Failed</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th class="sortable" data-sort="id">
+                    Invoice ID <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+
+                  <th class="sortable" data-sort="customer">
+                    Customer <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+
+                  <th class="sortable" data-sort="status">
+                    Status <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+
+                  <th class="sortable" data-sort="amount">
+                    Amount <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="invoice-table-body"></tbody>
+            </table>
+          </section>
+        </section>
+        <section class="section" id="invoices" data-status="inactive">
+          <div class="main-heading" id="page-title">
+            <h1>Invoices</h1>
+          </div>
+        </section>
+        <section class="section" id="orders" data-status="inactive">
+          <div class="main-heading" id="page-title">
+            <h1>Orders</h1>
+          </div>
+        </section>
+      </section>
+    </section>
 
     <script type="module" src="../script/data-manipulation.js"></script>
+    <script
+      type="module"
+      src="../script/dashboard/operational-dashoard.js"
+    ></script>
   </body>
 </html>
