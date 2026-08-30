@@ -76,9 +76,50 @@ const useableInvoiceSummary = (invoices) => {
   return summaries;
 };
 
-const sortInvoices = (invoices) => {
+const sortInvoices = (invoices, by, order = "desc") => {
   if (!Array.isArray(invoices)) return [];
-  return [...invoices]?.sort((a, b) => b.amount - a.amount);
+
+  // Normalize inputs
+  const dir = order.toLowerCase() === "desc" ? -1 : 1;
+  const orderLabel = dir === 1 ? "ascending" : "descending";
+
+  // Validate sorting property
+  const validProperties = ["amount", "customerName", "issueDate", "dueDate"];
+  if (!validProperties.includes(by)) {
+    console.warn(
+      `[Sort] Invalid sort property: "${by}". Returning original list.`,
+    );
+    return [...invoices];
+  }
+
+  // Console output stating what is being sorted and in what direction
+  console.log(`[Sort] Sorting invoices by "${by}" in ${orderLabel} order.`);
+
+  return [...invoices].sort((a, b) => {
+    switch (by) {
+      case "amount":
+        // Numerical comparison
+        return (a.amount - b.amount) * dir;
+
+      case "customerName":
+        // Alphabetical comparison (case-insensitive)
+        return (
+          a.customerName.localeCompare(b.customerName, undefined, {
+            sensitivity: "base",
+          }) * dir
+        );
+
+      case "issueDate":
+      case "dueDate":
+        // Date timestamp comparison
+        const dateA = new Date(a[by]).getTime();
+        const dateB = new Date(b[by]).getTime();
+        return (dateA - dateB) * dir;
+
+      default:
+        return 0;
+    }
+  });
 };
 
 const updateLineItemQuantity = (
@@ -221,4 +262,5 @@ export {
   getInvoiceByCustName,
   getInvoicesByStatus,
   paidRevenue,
+  sortInvoices,
 };
