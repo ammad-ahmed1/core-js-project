@@ -7,6 +7,7 @@ import {
   creator,
   updator,
   getById,
+  deleter,
 } from "../helpers.js";
 import {
   getUseableInvoices,
@@ -94,6 +95,8 @@ const handleFormSubmit = (e) => {
 };
 const handleDeleteInv = (id) => {
   console.log("delete: ", id);
+  let newInvoices = deleter(id, invoices);
+  insertInvoicesDataInTable(newInvoices);
 };
 const handleFilter = (e) => {
   console.log(e.target.value);
