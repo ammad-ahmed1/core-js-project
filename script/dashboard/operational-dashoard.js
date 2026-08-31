@@ -10,17 +10,18 @@ import {
   deleter,
 } from "../helpers.js";
 import {
+  paginateItems,
   getUseableInvoices,
-  getInvoiceById,
-  getInvoiceByCustName,
   getInvoicesByStatus,
   paidRevenue,
   sortInvoices,
 } from "../data-manipulation.js";
 
 // -----------------------------
+let invoiceState = [...invoices];
+let currentPage = 1;
+const itemsPerPage = 5;
 const ovwBtn = document.querySelector("#sider-overview-btn");
-let currentInvoices = invoices;
 const invBtn = document.querySelector("#sider-invoices-btn");
 const ordBtn = document.querySelector("#sider-orders-btn");
 const ovwSection = document.querySelector("#overview");
@@ -37,17 +38,12 @@ let invoiceForm = document.querySelector("#invoice-form");
 const closeModalBtn = document.querySelector("#close-modal-btn");
 //event delegation for invoice update and delete
 const tableBody = document.getElementById("invoice-table-body");
-// 1. Process invoice metrics
-const useableInvoices = getUseableInvoices(invoices);
-const paidInvoices = getInvoicesByStatus(useableInvoices, "paid");
-const unPaidInvoices = getInvoicesByStatus(useableInvoices, "unpaid");
-const failedInvoices = getInvoicesByStatus(useableInvoices, "failed");
-const paidRevenueAmount = paidRevenue(useableInvoices);
 
 const currentSort = {
   customerName: "asc",
   amount: "asc",
 };
+let activeSortBy = null;
 
 const toggleModal = (show = null) => {
   if (show === true) {
@@ -58,15 +54,10 @@ const toggleModal = (show = null) => {
     modal.classList.toggle("inactive");
   }
 };
-const handleAddInvoice = (e) => {
-  let newInvoices = creator(e.target, invoices);
-  insertInvoicesDataInTable(newInvoices);
-  e.target.reset();
-  toggleModal(false);
-};
-const handleUpdateInv = (id) => {
+
+const invFormFieldSetter = (id) => {
   console.log("update: ", id);
-  let updatingInv = getById(id, invoices);
+  let updatingInv = getById(id, invoiceState);
   console.log(updatingInv);
   invoiceForm.elements["id"].value = updatingInv.id;
   invoiceForm.elements["customerName"].value = updatingInv.customerName || "";
@@ -74,58 +65,45 @@ const handleUpdateInv = (id) => {
   invoiceForm.elements["status"].value = updatingInv.status || "unpaid";
   invoiceForm.elements["issueDate"].value = updatingInv.issueDate || "";
   invoiceForm.elements["dueDate"].value = updatingInv.dueDate || "";
-  // let newInvoices = updator()
 };
 const handleFormSubmit = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const existingId = formData.get("id");
-  let newInvoices = null;
+  const parsedData = Object.fromEntries(formData.entries());
+
+  if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
+
   if (existingId) {
-    const parsedData = Object.fromEntries(formData.entries());
-    if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
-    newInvoices = updator(parsedData, existingId, invoices);
+    invoiceState = updator(parsedData, existingId, invoiceState);
   } else {
-    newInvoices = creator(e.target, invoices);
+    invoiceState = creator(parsedData, invoiceState, "INV");
   }
-  insertInvoicesDataInTable(newInvoices);
+  updateTableAndPagination();
   e.target.reset();
   invoiceForm.elements["id"].value = ""; // Clear hidden ID
   toggleModal(false);
 };
 const handleDeleteInv = (id) => {
   console.log("delete: ", id);
-  let newInvoices = deleter(id, invoices);
-  insertInvoicesDataInTable(newInvoices);
+  invoiceState = deleter(id, invoiceState);
+  updateTableAndPagination();
 };
-const handleFilter = (e) => {
-  console.log(e.target.value);
-  const filtered = e.target.value;
-  let res =
-    filtered === "all" ? invoices : getInvoicesByStatus(invoices, filtered);
-  console.log(res);
-  currentInvoices = res;
-  insertInvoicesDataInTable(res);
+const handleFilter = () => {
+  currentPage = 1;
+  updateTableAndPagination();
 };
 
-const handleSearch = debounce((event) => {
-  const searchedValue = event.target.value;
-  console.log(searchedValue);
-  if (searchedValue === "" || searchedValue === null) {
-    insertInvoicesDataInTable(invoices);
-  } else {
-    let res = null;
-    res =
-      getInvoiceById(searchedValue, invoices) ||
-      getInvoiceByCustName(searchedValue, invoices);
-    insertInvoicesDataInTable([res]);
-  }
-}, 2000);
+const handleSearch = debounce(() => {
+  currentPage = 1;
+  updateTableAndPagination();
+}, 300);
 
-const handleSort = (invoices, by) => {
+const handleSort = (by) => {
   currentSort[by] = currentSort[by] === "asc" ? "desc" : "asc";
-  const res = sortInvoices(invoices, by, currentSort[by]);
-  insertInvoicesDataInTable(res);
+  activeSortBy = by;
+  currentPage = 1;
+  updateTableAndPagination();
 };
 function sectionNavigation(forSection) {
   if (forSection === "overview") {
@@ -156,12 +134,57 @@ function sectionNavigation(forSection) {
     console.log("page not found!");
   }
 }
+
+function getVisibleInvoices() {
+  const selectedStatusValue = selectedStatus.value;
+  const searchTerm = invSearchInput.value.trim().toLowerCase();
+
+  let visibleInvoices =
+    selectedStatusValue && selectedStatusValue !== "all"
+      ? getInvoicesByStatus(invoiceState, selectedStatusValue)
+      : [...invoiceState];
+
+  if (searchTerm) {
+    visibleInvoices = visibleInvoices.filter((invoice) => {
+      const invoiceId = String(invoice.id ?? "").toLowerCase();
+      const customerName = String(invoice.customerName ?? "").toLowerCase();
+
+      return invoiceId.includes(searchTerm) || customerName.includes(searchTerm);
+    });
+  }
+
+  if (activeSortBy) {
+    visibleInvoices = sortInvoices(
+      visibleInvoices,
+      activeSortBy,
+      currentSort[activeSortBy],
+    );
+  }
+
+  return visibleInvoices;
+}
+
+function updateTableAndPagination() {
+  const visibleInvoices = getVisibleInvoices();
+  const totalPages = Math.max(
+    1,
+    Math.ceil(visibleInvoices.length / itemsPerPage),
+  );
+
+  currentPage = Math.min(Math.max(currentPage, 1), totalPages);
+
+  const paginatedData = visibleInvoices.length
+    ? paginateItems(visibleInvoices, itemsPerPage, currentPage)
+    : [];
+
+  insertInvoicesDataInTable(paginatedData);
+  renderPagination(visibleInvoices.length);
+  updateInvoiceDashboard(invoiceState);
+}
 function insertInvoicesDataInTable(currentInvoices) {
-  const tableBody = document.getElementById("invoice-table-body");
   tableBody.innerHTML = "";
   currentInvoices.forEach((invoice) => {
     const row = document.createElement("tr");
-
     const invIdCell = document.createElement("td");
     invIdCell.textContent = invoice.id;
     const custCell = document.createElement("td");
@@ -176,13 +199,11 @@ function insertInvoicesDataInTable(currentInvoices) {
     editBtn.className = "btn-action btn-edit";
     editBtn.dataset.id = invoice.id;
     editBtn.dataset.action = "edit";
-    editBtn.dataset.id = invoice.id;
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.className = "btn-action btn-delete";
     deleteBtn.dataset.id = invoice.id;
     deleteBtn.dataset.action = "delete";
-    deleteBtn.dataset.id = invoice.id;
 
     actionCell.appendChild(editBtn);
     actionCell.appendChild(deleteBtn);
@@ -196,6 +217,35 @@ function insertInvoicesDataInTable(currentInvoices) {
     tableBody.appendChild(row);
   });
 }
+function renderPagination(totalItems) {
+  const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+  const pageNumbersContainer = document.getElementById("page-numbers");
+  const pageStart = document.getElementById("page-start");
+  const pageEnd = document.getElementById("page-end");
+  const totalCount = document.getElementById("total-count");
+
+  const start = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
+  const end = Math.min(currentPage * itemsPerPage, totalItems);
+
+  if (pageStart) pageStart.textContent = start;
+  if (pageEnd) pageEnd.textContent = end;
+  if (totalCount) totalCount.textContent = totalItems;
+
+  pageNumbersContainer.innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.dataset.page = i;
+    btn.className = i === currentPage ? "btn-page-num active" : "btn-page-num";
+    pageNumbersContainer.appendChild(btn);
+  }
+
+  document.getElementById("prev-page-btn").disabled = currentPage === 1;
+  document.getElementById("next-page-btn").disabled =
+    currentPage >= totalPages;
+}
+
 ovwBtn.addEventListener("click", () =>
   sectionNavigation(ovwBtn.dataset.section),
 );
@@ -205,14 +255,10 @@ invBtn.addEventListener("click", () =>
 ordBtn.addEventListener("click", () =>
   sectionNavigation(ordBtn.dataset.section),
 );
-tbCustHead.addEventListener("click", () =>
-  handleSort(invoices, "customerName", "asc"),
-);
-tbAmountHead.addEventListener("click", () =>
-  handleSort(invoices, "amount", "asc"),
-);
+tbCustHead.addEventListener("click", () => handleSort("customerName"));
+tbAmountHead.addEventListener("click", () => handleSort("amount"));
 selectedStatus.addEventListener("change", handleFilter);
-invSearchInput.addEventListener("keydown", handleSearch);
+invSearchInput.addEventListener("input", handleSearch);
 addInvoiceBtn.addEventListener("click", () => {
   invoiceForm.reset();
   document.getElementById("modal-title").textContent = "Add Invoice";
@@ -238,13 +284,39 @@ tableBody.addEventListener("click", (e) => {
 
   if (action === "edit") {
     toggleModal(true);
-    handleUpdateInv(id);
+    invFormFieldSetter(id);
   } else if (action === "delete") {
     handleDeleteInv(id);
   }
 });
+document.getElementById("page-numbers").addEventListener("click", (e) => {
+  if (e.target.classList.contains("btn-page-num")) {
+    currentPage = Number(e.target.dataset.page);
+    updateTableAndPagination();
+  }
+});
+
+document.getElementById("prev-page-btn").addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    updateTableAndPagination();
+  }
+});
+
+document.getElementById("next-page-btn").addEventListener("click", () => {
+  const totalPages = Math.ceil(getVisibleInvoices().length / itemsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    updateTableAndPagination();
+  }
+});
 function updateInvoiceDashboard(invoices) {
-  // 2. Render counts to UI
+  const useableInvoices = getUseableInvoices(invoices);
+  const paidInvoices = getInvoicesByStatus(useableInvoices, "paid");
+  const unPaidInvoices = getInvoicesByStatus(useableInvoices, "unpaid");
+  const failedInvoices = getInvoicesByStatus(useableInvoices, "failed");
+  const paidRevenueAmount = paidRevenue(useableInvoices);
+
   renderInUI("#usable-invoice-count", useableInvoices.length);
   renderInUI("#paid-invoice-count", paidInvoices.length);
   renderInUI("#unpaid-invoice-count", unPaidInvoices.length);
@@ -253,8 +325,7 @@ function updateInvoiceDashboard(invoices) {
 }
 
 // Usage:
-updateInvoiceDashboard(invoices);
-insertInvoicesDataInTable(invoices);
+updateTableAndPagination();
 
 // -----------------------------
 // const title = document.getElementById("page-title");

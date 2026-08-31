@@ -1,5 +1,24 @@
 import { customers, invoices, orders, tasks } from "../data/data.js";
 
+function paginateItems(items, pageSize, pageNumber) {
+  if (!Array.isArray(items)) return [];
+  if (!Number.isInteger(pageSize) || pageSize <= 0) {
+    throw new Error("page size must be a positive integer");
+  }
+  if (!Number.isInteger(pageNumber) || pageNumber < 1) {
+    throw new Error("page number must be a positive integer");
+  }
+  if (items.length === 0) return [];
+
+  const totalPages = Math.ceil(items.length / pageSize);
+  if (pageNumber > totalPages) {
+    throw new Error(`max page no can be: ${totalPages}`);
+  }
+  const stPtr = (pageNumber - 1) * pageSize;
+  const endPtr = stPtr + pageSize;
+  return items.slice(stPtr, endPtr);
+}
+
 function getUseableInvoices(invoices) {
   let isArr = Array.isArray(invoices);
   if (!isArr) {
@@ -257,6 +276,7 @@ const methodChainedRevenue = methodChainingFinancialReport(invoices);
 // console.log("method chained revenue: ", methodChainedRevenue);
 
 export {
+  paginateItems,
   getUseableInvoices,
   getInvoiceById,
   getInvoiceByCustName,

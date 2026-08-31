@@ -134,14 +134,31 @@
                   <th class="sortable" id="amount-head" data-sort="amount">
                     Amount <i class="fa-solid fa-sort sort-icon"></i>
                   </th>
-                   <th class="" id="action-head" >
-                    Action 
-                  </th>
+                  <th class="" id="action-head">Action</th>
                 </tr>
               </thead>
               <tbody id="invoice-table-body"></tbody>
             </table>
           </section>
+          <div class="pagination-container">
+            <div class="pagination-info">
+              Showing <span id="page-start">0</span> to
+              <span id="page-end">0</span> of
+              <span id="total-count">0</span> invoices
+            </div>
+
+            <div class="pagination-controls">
+              <button class="btn-page" id="prev-page-btn" disabled>
+                &laquo; Prev
+              </button>
+
+              <div class="page-numbers" id="page-numbers">
+                <!-- Dynamic page buttons will render here -->
+              </div>
+
+              <button class="btn-page" id="next-page-btn">Next &raquo;</button>
+            </div>
+          </div>
           <div class="modal-overlay inactive" id="invoice-modal">
             <div class="modal-container">
               <div class="modal-header">

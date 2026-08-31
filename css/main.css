@@ -406,3 +406,80 @@ th.sortable:hover {
 .btn-primary:hover {
   opacity: 0.9;
 }
+/* Container Layout */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  font-family: inherit;
+  font-size: 14px;
+  color: #374151;
+}
+
+.pagination-info {
+  font-weight: 500;
+}
+
+.pagination-info span {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Controls Wrapper */
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 4px;
+}
+
+/* Buttons */
+.btn-page,
+.btn-page-num {
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-page:hover:not(:disabled),
+.btn-page-num:hover:not(.active) {
+  background-color: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+/* Active State */
+.btn-page-num.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  cursor: default;
+}
+
+/* Disabled State */
+.btn-page:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f9fafb;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 640px) {
+  .pagination-container {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+}

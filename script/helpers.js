@@ -1,27 +1,23 @@
-import { getInvoiceById } from "./data-manipulation.js";
-
 const generateId = (prefix, arr) => {
-  const nextNum = arr.length + 1;
+  const highestId = arr.reduce((highest, item) => {
+    const [itemPrefix, numericPart] = String(item?.id ?? "").split("-");
+    const numericId = Number(numericPart);
+
+    if (itemPrefix !== prefix || !Number.isInteger(numericId)) return highest;
+
+    return Math.max(highest, numericId);
+  }, 0);
+  const nextNum = highestId + 1;
+
   return `${prefix}-${String(nextNum).padStart(3, "0")}`;
 };
 
-function creator(data, arr) {
-  const newInvoiceId = generateId("INV", arr);
-
-  const formData = new FormData(data);
-  formData.set("id", newInvoiceId);
-
-  const parsedData = Object.fromEntries(formData.entries());
-  if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
-
-  return [...arr, parsedData];
-}
-function getter(arr) {
-  return arr;
+function creator(data, arr, prefix) {
+  const id = generateId(prefix, arr);
+  return [...arr, { ...data, id }];
 }
 function getById(id, arr) {
-  const res = getInvoiceById(id, arr);
-  return res;
+  return arr.find((item) => item.id === id) ?? null;
 }
 function updator(data, id, arr) {
   const updatedArr = arr.map((item) =>
@@ -60,7 +56,6 @@ export {
   removeClass,
   debounce,
   creator,
-  getter,
   getById,
   updator,
   deleter,
