@@ -8882,4 +8882,257 @@ let tasks = [
   },
 ];
 
-export { customers, invoices, orders, tasks };
+let activities = [
+  {
+    id: 1,
+    text: "Invoice INV-101 was created",
+    createdAt: "2026-09-09T18:10:00Z",
+  },
+  {
+    id: 2,
+    text: "Invoice INV-083 was updated",
+    createdAt: "2026-09-09T17:45:00Z",
+  },
+  {
+    id: 3,
+    text: "Invoice INV-098 was marked as paid",
+    createdAt: "2026-09-09T17:20:00Z",
+  },
+  {
+    id: 4,
+    text: "Invoice INV-076 was deleted",
+    createdAt: "2026-09-09T16:55:00Z",
+  },
+  {
+    id: 5,
+    text: "Invoice INV-095 was created",
+    createdAt: "2026-09-09T16:30:00Z",
+  },
+  {
+    id: 6,
+    text: "Invoice INV-089 was updated",
+    createdAt: "2026-09-09T16:05:00Z",
+  },
+  {
+    id: 7,
+    text: "Invoice INV-072 was marked as overdue",
+    createdAt: "2026-09-09T15:40:00Z",
+  },
+  {
+    id: 8,
+    text: "Invoice INV-093 was sent to the customer",
+    createdAt: "2026-09-09T15:15:00Z",
+  },
+  {
+    id: 9,
+    text: "Invoice INV-067 was marked as paid",
+    createdAt: "2026-09-09T14:50:00Z",
+  },
+  {
+    id: 10,
+    text: "Invoice INV-090 was created",
+    createdAt: "2026-09-09T14:25:00Z",
+  },
+  {
+    id: 11,
+    text: "Invoice INV-086 was updated",
+    createdAt: "2026-09-09T14:00:00Z",
+  },
+  {
+    id: 12,
+    text: "Invoice INV-064 was deleted",
+    createdAt: "2026-09-09T13:35:00Z",
+  },
+  {
+    id: 13,
+    text: "Invoice INV-088 was marked as paid",
+    createdAt: "2026-09-09T13:10:00Z",
+  },
+  {
+    id: 14,
+    text: "Invoice INV-081 was sent to the customer",
+    createdAt: "2026-09-09T12:45:00Z",
+  },
+  {
+    id: 15,
+    text: "Invoice INV-059 was marked as overdue",
+    createdAt: "2026-09-09T12:20:00Z",
+  },
+  {
+    id: 16,
+    text: "Invoice INV-084 was created",
+    createdAt: "2026-09-09T11:55:00Z",
+  },
+  {
+    id: 17,
+    text: "Invoice INV-079 was updated",
+    createdAt: "2026-09-09T11:30:00Z",
+  },
+  {
+    id: 18,
+    text: "Invoice INV-055 was marked as paid",
+    createdAt: "2026-09-09T11:05:00Z",
+  },
+  {
+    id: 19,
+    text: "Invoice INV-077 was sent to the customer",
+    createdAt: "2026-09-09T10:40:00Z",
+  },
+  {
+    id: 20,
+    text: "Invoice INV-051 was deleted",
+    createdAt: "2026-09-09T10:15:00Z",
+  },
+  {
+    id: 21,
+    text: "Invoice INV-074 was created",
+    createdAt: "2026-09-08T18:30:00Z",
+  },
+  {
+    id: 22,
+    text: "Invoice INV-069 was updated",
+    createdAt: "2026-09-08T18:00:00Z",
+  },
+  {
+    id: 23,
+    text: "Invoice INV-047 was marked as overdue",
+    createdAt: "2026-09-08T17:30:00Z",
+  },
+  {
+    id: 24,
+    text: "Invoice INV-071 was marked as paid",
+    createdAt: "2026-09-08T17:00:00Z",
+  },
+  {
+    id: 25,
+    text: "Invoice INV-066 was sent to the customer",
+    createdAt: "2026-09-08T16:30:00Z",
+  },
+  {
+    id: 26,
+    text: "Invoice INV-043 was deleted",
+    createdAt: "2026-09-08T16:00:00Z",
+  },
+  {
+    id: 27,
+    text: "Invoice INV-068 was created",
+    createdAt: "2026-09-08T15:30:00Z",
+  },
+  {
+    id: 28,
+    text: "Invoice INV-063 was updated",
+    createdAt: "2026-09-08T15:00:00Z",
+  },
+  {
+    id: 29,
+    text: "Invoice INV-039 was marked as paid",
+    createdAt: "2026-09-08T14:30:00Z",
+  },
+  {
+    id: 30,
+    text: "Invoice INV-061 was sent to the customer",
+    createdAt: "2026-09-08T14:00:00Z",
+  },
+  {
+    id: 31,
+    text: "Invoice INV-036 was marked as overdue",
+    createdAt: "2026-09-08T13:30:00Z",
+  },
+  {
+    id: 32,
+    text: "Invoice INV-058 was created",
+    createdAt: "2026-09-08T13:00:00Z",
+  },
+  {
+    id: 33,
+    text: "Invoice INV-053 was updated",
+    createdAt: "2026-09-08T12:30:00Z",
+  },
+  {
+    id: 34,
+    text: "Invoice INV-032 was deleted",
+    createdAt: "2026-09-08T12:00:00Z",
+  },
+  {
+    id: 35,
+    text: "Invoice INV-056 was marked as paid",
+    createdAt: "2026-09-08T11:30:00Z",
+  },
+  {
+    id: 36,
+    text: "Invoice INV-049 was sent to the customer",
+    createdAt: "2026-09-08T11:00:00Z",
+  },
+  {
+    id: 37,
+    text: "Invoice INV-029 was marked as overdue",
+    createdAt: "2026-09-08T10:30:00Z",
+  },
+  {
+    id: 38,
+    text: "Invoice INV-052 was created",
+    createdAt: "2026-09-08T10:00:00Z",
+  },
+  {
+    id: 39,
+    text: "Invoice INV-046 was updated",
+    createdAt: "2026-09-07T18:15:00Z",
+  },
+  {
+    id: 40,
+    text: "Invoice INV-025 was marked as paid",
+    createdAt: "2026-09-07T17:45:00Z",
+  },
+  {
+    id: 41,
+    text: "Invoice INV-048 was sent to the customer",
+    createdAt: "2026-09-07T17:15:00Z",
+  },
+  {
+    id: 42,
+    text: "Invoice INV-021 was deleted",
+    createdAt: "2026-09-07T16:45:00Z",
+  },
+  {
+    id: 43,
+    text: "Invoice INV-044 was created",
+    createdAt: "2026-09-07T16:15:00Z",
+  },
+  {
+    id: 44,
+    text: "Invoice INV-038 was updated",
+    createdAt: "2026-09-07T15:45:00Z",
+  },
+  {
+    id: 45,
+    text: "Invoice INV-018 was marked as overdue",
+    createdAt: "2026-09-07T15:15:00Z",
+  },
+  {
+    id: 46,
+    text: "Invoice INV-041 was marked as paid",
+    createdAt: "2026-09-07T14:45:00Z",
+  },
+  {
+    id: 47,
+    text: "Invoice INV-034 was sent to the customer",
+    createdAt: "2026-09-07T14:15:00Z",
+  },
+  {
+    id: 48,
+    text: "Invoice INV-014 was deleted",
+    createdAt: "2026-09-07T13:45:00Z",
+  },
+  {
+    id: 49,
+    text: "Invoice INV-037 was created",
+    createdAt: "2026-09-07T13:15:00Z",
+  },
+  {
+    id: 50,
+    text: "Invoice INV-031 was updated",
+    createdAt: "2026-09-07T12:45:00Z",
+  },
+];
+
+export { customers, invoices, orders, tasks, activities };

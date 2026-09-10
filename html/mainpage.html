@@ -59,6 +59,8 @@
         </div>
       </section>
       <section class="content">
+        <!-- toast -->
+        <div id="notification" class="notification" role="status"></div>
         <section class="section" id="overview" data-status="active">
           <div class="main-heading" id="page-title">
             <h1>Overview</h1>
@@ -89,7 +91,19 @@
               <p id="paid-revenue">0</p>
             </div>
           </section>
+          <div class="summary-card summary-card--overdue">
+            <h3>Overdue Invoices</h3>
+            <p id="overdue-invoice-count">0</p>
+          </div>
+          <!-- <section class="activity-section">
+  <h2>Recent Activities</h2>
 
+  <div id="activity-list"></div>
+
+  <div id="activity-sentinel">
+    Loading more activities...
+  </div>
+</section> -->
           <section class="invoices-table">
             <h2>Invoices</h2>
             <div class="filters-section flex">
@@ -120,6 +134,27 @@
                 </div>
               </div>
             </div>
+            <div class="date-filters">
+              <label>
+                Date Type
+                <select id="date-field-filter">
+                  <option value="dueDate">Due Date</option>
+                  <option value="issueDate">Issue Date</option>
+                </select>
+              </label>
+
+              <label>
+                From
+                <input type="date" id="start-date-filter" />
+              </label>
+
+              <label>
+                To
+                <input type="date" id="end-date-filter" />
+              </label>
+
+              <button type="button" id="clear-date-filters">Clear Dates</button>
+            </div>
             <table>
               <thead>
                 <tr>
@@ -133,6 +168,19 @@
 
                   <th class="sortable" id="amount-head" data-sort="amount">
                     Amount <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+                  <th
+                    class="sortable"
+                    id="issue-date-head"
+                    data-sort="issueDate"
+                  >
+                    Issue Date <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+                  <th class="sortable" id="due-date-head" data-sort="dueDate">
+                    Due Date <i class="fa-solid fa-sort sort-icon"></i>
+                  </th>
+                  <th class="sortable" id="due-status-head" data-sort="dueStatus">
+                    Due Status </i>
                   </th>
                   <th class="" id="action-head">Action</th>
                 </tr>
@@ -281,6 +329,10 @@
     <script
       type="module"
       src="../script/dashboard/operational-dashoard.js"
+    ></script>
+    <script
+      type="module"
+      src="../script/helpers.js"
     ></script>
   </body>
 </html>
