@@ -1,4 +1,5 @@
 import { customers, invoices, orders, tasks } from "../data/data.js";
+import { toValidDate } from "./helpers.js";
 
 function paginateItems(items, pageSize, pageNumber) {
   if (!Array.isArray(items)) return [];
@@ -58,6 +59,126 @@ const getInvoiceById = (id, invoices) => {
 const getInvoiceByCustName = (name, invoices) => {
   const invoice = invoices.find((inv) => inv.customerName === name);
   return invoice || null;
+};
+const getInvoicesByDateRange = (invoices, dateField, startDate, endDate) => {
+  if (!startDate && !endDate) {
+    return [...invoices];
+  }
+  let invStartDate = toValidDate(startDate);
+  let invEndDate = toValidDate(endDate);
+  if (dateField !== "issueDate" && dateField !== "dueDate") {
+    throw new Error("dateField must be either 'issueDate' or 'dueDate'");
+  }
+  if (
+    dateField === "issueDate" &&
+    (invStartDate === null || invEndDate === null)
+  ) {
+    throw new Error("Invalid date values for issueDate");
+  }
+  if (
+    dateField === "dueDate" &&
+    (invStartDate === null || invEndDate === null)
+  ) {
+    throw new Error("Invalid date values for dueDate");
+  }
+  if (dateField === "issueDate") {
+    const filteredInvoices = invoices.filter((inv) => {
+      return (
+        toValidDate(inv.issueDate) >= invStartDate &&
+        toValidDate(inv.issueDate) <= invEndDate
+      );
+    });
+    return filteredInvoices;
+  }
+  if (dateField === "dueDate") {
+    const filteredInvoices = invoices.filter((inv) => {
+      return (
+        toValidDate(inv.dueDate) >= invStartDate &&
+        toValidDate(inv.dueDate) <= invEndDate
+      );
+    });
+    return filteredInvoices;
+  }
+};
+const getDueDatePassedInv = (invoices) => {
+  const currTime = toValidDate(Date.now());
+
+  const dueDatePassedInvoices = invoices?.filter((inv) => {
+    let invDueDate = toValidDate(inv.dueDate);
+    return (
+      inv.status === "unpaid" && invDueDate !== null && invDueDate < currTime
+    );
+  });
+  return dueDatePassedInvoices;
+};
+const getDaysPassedSinceDueDate = (invoices) => {
+  const currTime = toValidDate(Date.now());
+  const invoicesDaysPassed = invoices.map((inv) => {
+    const dueTime = toValidDate(inv.dueDate);
+
+    if (dueTime === null) {
+      return {
+        ...inv,
+        daysPassed: null,
+      };
+    }
+    const days = Math.floor((currTime - dueTime) / (24 * 60 * 60 * 1000));
+    return {
+      ...inv,
+      daysPassed: days >= 0 ? days : 0,
+    };
+  });
+  return invoicesDaysPassed;
+};
+
+const getInvoiceDueStatus = (invoice) => {
+  const currTime = toValidDate(Date.now());
+  const invoiceDueDate = toValidDate(invoice?.dueDate);
+  if (!invoice) {
+    return {
+      state: "invalid",
+      days: null,
+      label: "—",
+    };
+  }
+  if (invoice?.status === "paid") {
+    return { state: "paid", days: null, label: "Paid" };
+  }
+  if (invoice?.status === "unpaid") {
+    if (currTime === null || invoiceDueDate === null) {
+      return {
+        state: "invalid",
+        days: null,
+        label: "—",
+      };
+    }
+    if (currTime > invoiceDueDate)
+      return {
+        state: "overdue",
+        days: Math.floor((currTime - invoiceDueDate) / (24 * 60 * 60 * 1000)),
+        label: "Overdue",
+      };
+    if (invoiceDueDate > currTime)
+      return {
+        state: "upcoming",
+        days: Math.floor((invoiceDueDate - currTime) / (24 * 60 * 60 * 1000)),
+        label: "Upcoming",
+      };
+    if (invoiceDueDate === currTime)
+      return {
+        state: "today",
+        days: 0,
+        label: "Today",
+      };
+  }
+};
+
+const recentActivities = (invoices) => {
+  return invoices.slice(0, 10).map((invoice) => ({
+    id: `activity-${invoice.id}`,
+    text: `${invoice.id} belongs to ${invoice.customerName}`,
+    date: invoice.issueDate,
+  }));
 };
 const hasExpensiveItems = (orders, minPrice) => {
   if (!Array.isArray(orders)) {
@@ -283,4 +404,9 @@ export {
   getInvoicesByStatus,
   paidRevenue,
   sortInvoices,
+  getDueDatePassedInv,
+  getDaysPassedSinceDueDate,
+  getInvoicesByDateRange,
+  getInvoiceDueStatus,
+  recentActivities,
 };

@@ -1,4 +1,4 @@
-import { invoices } from "../../data/data.js";
+import { invoices, activities } from "../../data/data.js";
 import {
   renderInUI,
   addClass,
@@ -8,6 +8,8 @@ import {
   updator,
   getById,
   deleter,
+  formatDate,
+  formatCurrency,
 } from "../helpers.js";
 import {
   paginateItems,
@@ -15,12 +17,18 @@ import {
   getInvoicesByStatus,
   paidRevenue,
   sortInvoices,
+  getInvoiceDueStatus,
+  getDueDatePassedInv,
+  getDaysPassedSinceDueDate,
+  getInvoicesByDateRange,
+  recentActivities,
 } from "../data-manipulation.js";
 
 // -----------------------------
 let invoiceState = [...invoices];
 let currentPage = 1;
-const itemsPerPage = 5;
+const itemsPerPage = 25;
+let recentActivitiesArr = recentActivities(invoiceState);
 const ovwBtn = document.querySelector("#sider-overview-btn");
 const invBtn = document.querySelector("#sider-invoices-btn");
 const ordBtn = document.querySelector("#sider-orders-btn");
@@ -31,7 +39,15 @@ const invSearchInput = document.querySelector("#search");
 const selectedStatus = document.querySelector("#status");
 const tbCustHead = document.querySelector("#customer-head");
 const tbAmountHead = document.querySelector("#amount-head");
-//invocie crud modal
+const tbIssueDateHead = document.querySelector("#issue-date-head");
+const tbDueDateHead = document.querySelector("#due-date-head");
+const invDateFilterType = document.getElementById("date-field-filter");
+const invStartDateInput = document.querySelector("#start-date-filter");
+const invEndDateInput = document.querySelector("#end-date-filter");
+const clearDatesBtn = document.querySelector("#clear-date-filters");
+const notificationToaster = document.querySelector("#notification");
+console.log(recentActivitiesArr, ".........RA");
+//invoice crud modal
 const modal = document.getElementById("invoice-modal");
 const addInvoiceBtn = document.getElementById("add-invoice-btn");
 let invoiceForm = document.querySelector("#invoice-form");
@@ -75,9 +91,20 @@ const handleFormSubmit = (e) => {
   if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
 
   if (existingId) {
-    invoiceState = updator(parsedData, existingId, invoiceState);
+    invoiceState = updator(
+      parsedData,
+      existingId,
+      invoiceState,
+      "INV",
+      notificationToaster,
+    );
   } else {
-    invoiceState = creator(parsedData, invoiceState, "INV");
+    invoiceState = creator(
+      parsedData,
+      invoiceState,
+      "INV",
+      notificationToaster,
+    );
   }
   updateTableAndPagination();
   e.target.reset();
@@ -86,24 +113,29 @@ const handleFormSubmit = (e) => {
 };
 const handleDeleteInv = (id) => {
   console.log("delete: ", id);
-  invoiceState = deleter(id, invoiceState);
+  invoiceState = deleter(id, invoiceState, "INV", notificationToaster);
   updateTableAndPagination();
 };
-const handleFilter = () => {
+
+const refreshInvoicesFromFirstPage = () => {
   currentPage = 1;
   updateTableAndPagination();
 };
 
-const handleSearch = debounce(() => {
-  currentPage = 1;
-  updateTableAndPagination();
-}, 300);
+const handleSearch = debounce(refreshInvoicesFromFirstPage, 300);
 
 const handleSort = (by) => {
   currentSort[by] = currentSort[by] === "asc" ? "desc" : "asc";
   activeSortBy = by;
-  currentPage = 1;
-  updateTableAndPagination();
+  refreshInvoicesFromFirstPage();
+};
+
+const handleClearDateFilters = () => {
+  invDateFilterType.value = "dueDate";
+  invStartDateInput.value = "";
+  invEndDateInput.value = "";
+
+  refreshInvoicesFromFirstPage();
 };
 function sectionNavigation(forSection) {
   if (forSection === "overview") {
@@ -138,19 +170,35 @@ function sectionNavigation(forSection) {
 function getVisibleInvoices() {
   const selectedStatusValue = selectedStatus.value;
   const searchTerm = invSearchInput.value.trim().toLowerCase();
+  const dateType = invDateFilterType.value;
+  const startDate = invStartDateInput.value;
+  const endDate = invEndDateInput.value;
+
+  const invoicesWithDaysPassed = getDaysPassedSinceDueDate(invoiceState);
 
   let visibleInvoices =
     selectedStatusValue && selectedStatusValue !== "all"
       ? getInvoicesByStatus(invoiceState, selectedStatusValue)
-      : [...invoiceState];
+      : [...invoicesWithDaysPassed];
 
   if (searchTerm) {
     visibleInvoices = visibleInvoices.filter((invoice) => {
       const invoiceId = String(invoice.id ?? "").toLowerCase();
       const customerName = String(invoice.customerName ?? "").toLowerCase();
 
-      return invoiceId.includes(searchTerm) || customerName.includes(searchTerm);
+      return (
+        invoiceId.includes(searchTerm) || customerName.includes(searchTerm)
+      );
     });
+  }
+
+  if (startDate && endDate) {
+    visibleInvoices = getInvoicesByDateRange(
+      visibleInvoices,
+      dateType,
+      startDate,
+      endDate,
+    );
   }
 
   if (activeSortBy) {
@@ -192,9 +240,39 @@ function insertInvoicesDataInTable(currentInvoices) {
     const statusCell = document.createElement("td");
     statusCell.textContent = invoice.status;
     const amountCell = document.createElement("td");
-    amountCell.textContent = invoice.amount;
+    amountCell.textContent = formatCurrency(invoice.amount, "USD");
+    const issueDateCell = document.createElement("td");
+    issueDateCell.textContent = formatDate(invoice.issueDate);
+    const dueDateCell = document.createElement("td");
+    dueDateCell.textContent = formatDate(invoice.dueDate);
     const actionCell = document.createElement("td");
     const editBtn = document.createElement("button");
+
+    const dueStatusCell = document.createElement("td");
+    const dueStatusBadge = document.createElement("span");
+
+    const dueStatus = getInvoiceDueStatus(invoice);
+
+    const dueStatusText = {
+      overdue: `Overdue ${dueStatus?.days} ${
+        dueStatus?.days === 1 ? "day" : "days"
+      }`,
+
+      upcoming: `Due in ${dueStatus?.days} ${
+        dueStatus?.days === 1 ? "day" : "days"
+      }`,
+
+      today: "Due today",
+      paid: "Paid",
+      cancelled: "Cancelled",
+      invalid: "—",
+    };
+
+    dueStatusBadge.textContent = dueStatusText[dueStatus?.state] ?? "—";
+
+    dueStatusBadge.className = `due-status due-status--${dueStatus?.state ?? "invalid"}`;
+    dueStatusCell.appendChild(dueStatusBadge);
+
     editBtn.textContent = "Edit";
     editBtn.className = "btn-action btn-edit";
     editBtn.dataset.id = invoice.id;
@@ -212,6 +290,9 @@ function insertInvoicesDataInTable(currentInvoices) {
     row.appendChild(custCell);
     row.appendChild(statusCell);
     row.appendChild(amountCell);
+    row.appendChild(issueDateCell);
+    row.appendChild(dueDateCell);
+    row.appendChild(dueStatusCell);
     row.appendChild(actionCell);
 
     tableBody.appendChild(row);
@@ -242,8 +323,7 @@ function renderPagination(totalItems) {
   }
 
   document.getElementById("prev-page-btn").disabled = currentPage === 1;
-  document.getElementById("next-page-btn").disabled =
-    currentPage >= totalPages;
+  document.getElementById("next-page-btn").disabled = currentPage >= totalPages;
 }
 
 ovwBtn.addEventListener("click", () =>
@@ -257,9 +337,16 @@ ordBtn.addEventListener("click", () =>
 );
 tbCustHead.addEventListener("click", () => handleSort("customerName"));
 tbAmountHead.addEventListener("click", () => handleSort("amount"));
-selectedStatus.addEventListener("change", handleFilter);
+tbIssueDateHead.addEventListener("click", () => handleSort("issueDate"));
+tbDueDateHead.addEventListener("click", () => handleSort("dueDate"));
 invSearchInput.addEventListener("input", handleSearch);
+selectedStatus.addEventListener("change", refreshInvoicesFromFirstPage);
+invDateFilterType.addEventListener("change", refreshInvoicesFromFirstPage);
+invStartDateInput.addEventListener("change", refreshInvoicesFromFirstPage);
+invEndDateInput.addEventListener("change", refreshInvoicesFromFirstPage);
+clearDatesBtn.addEventListener("click", handleClearDateFilters);
 addInvoiceBtn.addEventListener("click", () => {
+  ``;
   invoiceForm.reset();
   document.getElementById("modal-title").textContent = "Add Invoice";
   toggleModal(true);
@@ -316,12 +403,14 @@ function updateInvoiceDashboard(invoices) {
   const unPaidInvoices = getInvoicesByStatus(useableInvoices, "unpaid");
   const failedInvoices = getInvoicesByStatus(useableInvoices, "failed");
   const paidRevenueAmount = paidRevenue(useableInvoices);
+  const dueDatePassedInvs = getDueDatePassedInv(invoiceState);
 
   renderInUI("#usable-invoice-count", useableInvoices.length);
   renderInUI("#paid-invoice-count", paidInvoices.length);
   renderInUI("#unpaid-invoice-count", unPaidInvoices.length);
   renderInUI("#failed-invoice-count", failedInvoices.length);
   renderInUI("#paid-revenue", paidRevenueAmount);
+  renderInUI("#overdue-invoice-count", dueDatePassedInvs.length);
 }
 
 // Usage:
@@ -339,3 +428,6 @@ updateTableAndPagination();
 // console.log(headingText.textContent);
 // headingText.textContent = "Operations Management Dashboard";
 // console.log(headingText.textContent);
+
+// const invoicesDaysPassed = getDaysPassedSinceDueDate(invoiceState);
+// console.log(invoicesDaysPassed);
