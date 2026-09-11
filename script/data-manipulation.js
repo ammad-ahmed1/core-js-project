@@ -216,15 +216,21 @@ const useableInvoiceSummary = (invoices) => {
   return summaries;
 };
 
-const sortInvoices = (invoices, by, order = "desc") => {
-  if (!Array.isArray(invoices)) return [];
+const sortInvoices = (data, by, order = "desc", validProperties = []) => {
+  if (!Array.isArray(data)) return [];
 
   // Normalize inputs
   const dir = order.toLowerCase() === "desc" ? -1 : 1;
   const orderLabel = dir === 1 ? "ascending" : "descending";
 
   // Validate sorting property
-  const validProperties = ["amount", "customerName", "issueDate", "dueDate"];
+  // const validProperties = [
+  //   "amount",
+  //   "customerName",
+  //   "issueDate",
+  //   "dueDate",
+  //   "daysPassed",
+  // ];
   if (!validProperties.includes(by)) {
     console.warn(
       `[Sort] Invalid sort property: "${by}". Returning original list.`,
@@ -235,7 +241,7 @@ const sortInvoices = (invoices, by, order = "desc") => {
   // Console output stating what is being sorted and in what direction
   console.log(`[Sort] Sorting invoices by "${by}" in ${orderLabel} order.`);
 
-  return [...invoices].sort((a, b) => {
+  return [...data].sort((a, b) => {
     switch (by) {
       case "amount":
         // Numerical comparison
@@ -255,7 +261,8 @@ const sortInvoices = (invoices, by, order = "desc") => {
         const dateA = new Date(a[by]).getTime();
         const dateB = new Date(b[by]).getTime();
         return (dateA - dateB) * dir;
-
+      case "daysPassed":
+        return (a.daysPassed - b.daysPassed) * dir;
       default:
         return 0;
     }

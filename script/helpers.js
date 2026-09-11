@@ -143,8 +143,9 @@ function formatCurrency(amount, currency) {
   if (amount === null) return "—";
   return formatterPkr.format(amount);
 }
-console.log(formatDate("2026-01-13"));
-console.log(formatDate("aug-87-39739400"));
+function formatColKey(key) {
+  return key.replace(/([A-Z])/g, " $1").toUpperCase();
+}
 // ----------
 function debounce(func, delay) {
   let timer;
@@ -167,4 +168,5 @@ export {
   toValidDate,
   formatDate,
   formatCurrency,
+  formatColKey,
 };
