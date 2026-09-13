@@ -29,21 +29,21 @@
           <div>
             <button
               class="sider-btn"
-              id="sider-overview-btn"
-              data-section="overview"
-              data-status="active"
-            >
-              Overview
-            </button>
-          </div>
-          <div>
-            <button
-              class="sider-btn"
               id="sider-invoices-btn"
               data-section="invoices"
               data-status="active"
             >
               Invoices
+            </button>
+          </div>
+          <div>
+            <button
+              class="sider-btn"
+              id="sider-customer-btn"
+              data-section="customers"
+              data-status="active"
+            >
+              Customers
             </button>
           </div>
           <div>
@@ -91,19 +91,17 @@
               <p id="paid-revenue">0</p>
             </div>
           </section>
+        </section>
+        <!-- invoices -->
+        <section class="section" id="invoices" data-status="inactive">
+          <div class="main-heading" id="page-title">
+            <h1>Invoices</h1>
+          </div>
           <div class="summary-card summary-card--overdue">
             <h3>Overdue Invoices</h3>
             <p id="overdue-invoice-count">0</p>
           </div>
-          <!-- <section class="activity-section">
-  <h2>Recent Activities</h2>
 
-  <div id="activity-list"></div>
-
-  <div id="activity-sentinel">
-    Loading more activities...
-  </div>
-</section> -->
           <section class="invoices-table">
             <h2>Invoices</h2>
             <div class="filters-section flex">
@@ -312,9 +310,9 @@
             </div>
           </div>
         </section>
-        <section class="section" id="invoices" data-status="inactive">
+        <section class="section" id="customers" data-status="inactive">
           <div class="main-heading" id="page-title">
-            <h1>Invoices</h1>
+            <h1>Customers</h1>
           </div>
         </section>
         <section class="section" id="orders" data-status="inactive">
@@ -326,9 +324,13 @@
     </section>
 
     <script type="module" src="../script/data-manipulation.js"></script>
-    <script
+    <!-- <script
       type="module"
       src="../script/dashboard/operational-dashoard.js"
+    ></script> -->
+    <script
+      type="module"
+      src="../script/dashboard/invoice-controller.js"
     ></script>
     <!-- <script
       type="module"

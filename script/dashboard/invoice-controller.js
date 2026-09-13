@@ -26,6 +26,8 @@ import {
   recentActivities,
 } from "../data-manipulation.js";
 
+import { InvoiceManager } from "../manager/invoice-manager.js";
+const invoiceManager = new InvoiceManager(invoices);
 // DOM references
 const custBtn = document.querySelector("#sider-customer-btn");
 const invBtn = document.querySelector("#sider-invoices-btn");
@@ -50,10 +52,8 @@ const closeModalBtn = document.querySelector("#close-modal-btn");
 const tableElement = document.getElementById("table-element");
 
 // Configuration and state
-let invoiceState = [...invoices];
 let currentPage = 1;
 const itemsPerPage = 25;
-let recentActivitiesArr = recentActivities(invoiceState);
 const currentSort = {
   customerName: "asc",
   amount: "asc",
@@ -103,26 +103,33 @@ function createDueStatusBadge(item) {
   return dueStatusBadge;
 }
 
-// Data-selection functions
+// UI functions
+const toggleModal = (show = null) => {
+  if (show === true) {
+    modal.classList.remove("inactive");
+  } else if (show === false) {
+    modal.classList.add("inactive");
+  } else {
+    modal.classList.toggle("inactive");
+  }
+};
+
 function getVisibleInvoices() {
   const selectedStatusValue = selectedStatus.value;
   const searchTerm = invSearchInput.value.trim().toLowerCase();
   const dateType = invDateFilterType.value;
   const startDate = invStartDateInput.value;
   const endDate = invEndDateInput.value;
-
-  const invoicesWithDaysPassed = getDaysPassedSinceDueDate(invoiceState);
-
+  const invoicesWithDaysPassed = invoiceManager.getDaysPassedSinceDueDate();
   let visibleInvoices =
     selectedStatusValue && selectedStatusValue !== "all"
-      ? getInvoicesByStatus(invoiceState, selectedStatusValue)
+      ? invoiceManager.getInvoicesByStatus(selectedStatusValue)
       : [...invoicesWithDaysPassed];
 
   if (searchTerm) {
     visibleInvoices = visibleInvoices.filter((invoice) => {
       const invoiceId = String(invoice.id ?? "").toLowerCase();
       const customerName = String(invoice.customerName ?? "").toLowerCase();
-
       return (
         invoiceId.includes(searchTerm) || customerName.includes(searchTerm)
       );
@@ -150,21 +157,8 @@ function getVisibleInvoices() {
   return visibleInvoices;
 }
 
-// UI functions
-const toggleModal = (show = null) => {
-  if (show === true) {
-    modal.classList.remove("inactive");
-  } else if (show === false) {
-    modal.classList.add("inactive");
-  } else {
-    modal.classList.toggle("inactive");
-  }
-};
-
 const invFormFieldSetter = (id) => {
-  console.log("update: ", id);
-  let updatingInv = getById(id, invoiceState);
-  console.log(updatingInv);
+  let updatingInv = invoiceManager.getById(id);
   invoiceForm.elements["id"].value = updatingInv.id;
   invoiceForm.elements["customerName"].value = updatingInv.customerName || "";
   invoiceForm.elements["amount"].value = updatingInv.amount || "";
@@ -308,14 +302,13 @@ function renderPagination(totalItems) {
   document.getElementById("next-page-btn").disabled = currentPage >= totalPages;
 }
 
-// Refresh functions
-function updateInvoiceDashboard(invoices) {
-  const useableInvoices = getUseableInvoices(invoices);
-  const paidInvoices = getInvoicesByStatus(useableInvoices, "paid");
-  const unPaidInvoices = getInvoicesByStatus(useableInvoices, "unpaid");
-  const failedInvoices = getInvoicesByStatus(useableInvoices, "failed");
-  const paidRevenueAmount = paidRevenue(useableInvoices);
-  const dueDatePassedInvs = getDueDatePassedInv(invoiceState);
+function updateInvoiceDashboard() {
+  const useableInvoices = invoiceManager.getUseableInvoices();
+  const paidInvoices = invoiceManager.getInvoicesByStatus("paid");
+  const unPaidInvoices = invoiceManager.getInvoicesByStatus("unpaid");
+  const failedInvoices = invoiceManager.getInvoicesByStatus("failed");
+  const paidRevenueAmount = invoiceManager.paidRevenue("PKR");
+  const dueDatePassedInvs = invoiceManager.getDueDatePassedInv();
 
   renderInUI("#usable-invoice-count", useableInvoices.length);
   renderInUI("#paid-invoice-count", paidInvoices.length);
@@ -355,7 +348,8 @@ function updateTableAndPagination() {
     invoicesDueStatus,
   );
   renderPagination(visibleInvoices.length);
-  updateInvoiceDashboard(invoiceState);
+  //   updateInvoiceDashboard(invoiceState); //declare before use
+  updateInvoiceDashboard();
 }
 
 const refreshInvoicesFromFirstPage = () => {
@@ -363,7 +357,6 @@ const refreshInvoicesFromFirstPage = () => {
   updateTableAndPagination();
 };
 
-// Event handlers
 const handleFormSubmit = (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
@@ -373,30 +366,21 @@ const handleFormSubmit = (e) => {
   if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
 
   if (existingId) {
-    invoiceState = updator(
-      parsedData,
-      existingId,
-      invoiceState,
-      "INV",
-      notificationToaster,
-    );
+    // Call update method on instance
+    invoiceManager.updator(parsedData, existingId, "INV", notificationToaster);
   } else {
-    invoiceState = creator(
-      parsedData,
-      invoiceState,
-      "INV",
-      notificationToaster,
-    );
+    // Call create method on instance
+    invoiceManager.creator(parsedData, "INV", notificationToaster);
   }
+
   updateTableAndPagination();
   e.target.reset();
-  invoiceForm.elements["id"].value = ""; // Clear hidden ID
+  invoiceForm.elements["id"].value = "";
   toggleModal(false);
 };
 
 const handleDeleteInv = (id) => {
-  console.log("delete: ", id);
-  invoiceState = deleter(id, invoiceState, "INV", notificationToaster);
+  invoiceManager.deleter(id, "INV", notificationToaster);
   updateTableAndPagination();
 };
 
@@ -443,7 +427,6 @@ closeModalBtn.addEventListener("click", () => {
   toggleModal(false);
 });
 invoiceForm.addEventListener("submit", (e) => {
-  e.preventDefault();
   handleFormSubmit(e);
 });
 
