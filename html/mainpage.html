@@ -101,7 +101,6 @@
             <h3>Overdue Invoices</h3>
             <p id="overdue-invoice-count">0</p>
           </div>
-
           <section class="invoices-table">
             <h2>Invoices</h2>
             <div class="filters-section flex">
@@ -153,38 +152,7 @@
 
               <button type="button" id="clear-date-filters">Clear Dates</button>
             </div>
-            <table id="table-element">
-              <!-- <thead id="table-head-element">
-                <tr>
-                  <th class="sortable">Invoice ID</th>
-
-                  <th class="sortable" id="customer-head" data-sort="customer">
-                    Customer <i class="fa-solid fa-sort sort-icon"></i>
-                  </th>
-
-                  <th class="sortable">Status</th>
-
-                  <th class="sortable" id="amount-head" data-sort="amount">
-                    Amount <i class="fa-solid fa-sort sort-icon"></i>
-                  </th>
-                  <th
-                    class="sortable"
-                    id="issue-date-head"
-                    data-sort="issueDate"
-                  >
-                    Issue Date <i class="fa-solid fa-sort sort-icon"></i>
-                  </th>
-                  <th class="sortable" id="due-date-head" data-sort="dueDate">
-                    Due Date <i class="fa-solid fa-sort sort-icon"></i>
-                  </th>
-                  <th class="sortable" id="due-status-head" data-sort="dueStatus">
-                    Due Status </i>
-                  </th>
-                  <th class="" id="action-head">Action</th>
-                </tr>
-              </thead> -->
-              <!-- <tbody id="invoice-table-body"></tbody> -->
-            </table>
+            <table id="table-element"></table>
           </section>
           <div class="pagination-container">
             <div class="pagination-info">
@@ -310,20 +278,492 @@
             </div>
           </div>
         </section>
+        <!-- customers -->
         <section class="section" id="customers" data-status="inactive">
-          <div class="main-heading" id="page-title">
+          <div class="main-heading" id="customers-page-title">
             <h1>Customers</h1>
+
+            <div class="summary-card summary-card--overdue">
+              <h3>Inactive Customers</h3>
+              <p id="inactive-customers-count">0</p>
+            </div>
+
+            <section class="customers-table">
+              <h2>Customers</h2>
+
+              <div class="filters-section flex">
+                <div class="search-field left">
+                  <input id="customer-search" />
+                </div>
+
+                <div class="right">
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select
+                        name="customerStatusFilter"
+                        class="cust-status-dropdown"
+                        id="customer-status-filter"
+                      >
+                        <option value="" disabled selected hidden>
+                          Select status...
+                        </option>
+                        <option value="all">All</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="prospect">Prospect</option>
+                      </select>
+
+                      <button class="sider-btn" id="add-customer-btn">
+                        Add Customer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table id="customer-table"></table>
+            </section>
+
+            <div class="pagination-container">
+              <div class="pagination-info">
+                Showing <span id="customer-page-start">0</span> to
+                <span id="customer-page-end">0</span> of
+                <span id="customer-total-count">0</span> customers
+              </div>
+
+              <div class="pagination-controls">
+                <button class="btn-page" id="customer-prev-page-btn" disabled>
+                  &laquo; Prev
+                </button>
+
+                <div class="page-numbers" id="customer-page-numbers"></div>
+
+                <button class="btn-page" id="customer-next-page-btn">
+                  Next &raquo;
+                </button>
+              </div>
+            </div>
+
+            <div class="modal-overlay inactive" id="customer-modal">
+              <div class="modal-container">
+                <div class="modal-header">
+                  <h2 id="customer-modal-title">Add Customer</h2>
+                  <button
+                    type="button"
+                    class="close-btn"
+                    id="close-customer-modal-btn"
+                  >
+                    &times;
+                  </button>
+                </div>
+
+                <form id="customer-form">
+                  <input type="hidden" id="customer-id" name="id" />
+
+                  <div class="modal-form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input
+                      type="text"
+                      id="customer-name"
+                      name="name"
+                      required
+                      placeholder="e.g. Alpha Traders"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-contact-name">Contact Name</label>
+                    <input
+                      type="text"
+                      id="customer-contact-name"
+                      name="contactName"
+                      required
+                      placeholder="e.g. Alex Martin"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-email">Email</label>
+                    <input
+                      type="email"
+                      id="customer-email"
+                      name="email"
+                      required
+                      placeholder="e.g. alex001@gmail.com"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-phone">Phone</label>
+                    <input
+                      type="tel"
+                      id="customer-phone"
+                      name="phone"
+                      required
+                      placeholder="e.g. +923001234567"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-city">City</label>
+                    <input
+                      type="text"
+                      id="customer-city"
+                      name="city"
+                      required
+                      placeholder="e.g. Islamabad"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-country">Country</label>
+                    <input
+                      type="text"
+                      id="customer-country"
+                      name="country"
+                      required
+                      placeholder="e.g. Pakistan"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-industry">Industry</label>
+                    <input
+                      type="text"
+                      id="customer-industry"
+                      name="industry"
+                      required
+                      placeholder="e.g. Retail"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-status">Status</label>
+                    <select id="customer-status" name="status" required>
+                      <option value="active">Active</option>
+                      <option value="prospect">Prospect</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-credit-limit">Credit Limit</label>
+                    <input
+                      type="number"
+                      id="customer-credit-limit"
+                      name="creditLimit"
+                      min="0"
+                      required
+                      placeholder="e.g. 500000"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="customer-created-at">Created At</label>
+                    <input
+                      type="date"
+                      id="customer-created-at"
+                      name="createdAt"
+                      required
+                    />
+                  </div>
+
+                  <div class="modal-actions">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="cancel-customer-modal-btn"
+                    >
+                      Cancel
+                    </button>
+
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="save-customer-btn"
+                    >
+                      Save Customer
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
+        <!-- orders -->
         <section class="section" id="orders" data-status="inactive">
-          <div class="main-heading" id="page-title">
+          <div class="main-heading" id="orders-page-title">
             <h1>Orders</h1>
+
+            <div class="summary-card summary-card--overdue">
+              <h3>Cancelled Orders</h3>
+              <p id="cancelled-orders-count">0</p>
+            </div>
+
+            <section class="orders-table">
+              <h2>Orders</h2>
+
+              <div class="filters-section flex">
+                <div class="search-field left">
+                  <input id="orders-search" />
+                </div>
+
+                <div class="right">
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select
+                        name="ordersStatusFilter"
+                        class="orders-status-dropdown"
+                        id="orders-status-filter"
+                      >
+                        <option value="" disabled selected hidden>
+                          Select status...
+                        </option>
+                        <option value="all">All</option>
+                        <option value="pending">Pending</option>
+                        <option value="processing">Processing</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                      </select>
+
+                      <button class="sider-btn" id="add-order-btn">
+                        Create Order
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table id="order-table"></table>
+            </section>
+
+            <div class="pagination-container">
+              <div class="pagination-info">
+                Showing <span id="order-page-start">0</span> to
+                <span id="order-page-end">0</span> of
+                <span id="order-total-count">0</span> orders
+              </div>
+
+              <div class="pagination-controls">
+                <button class="btn-page" id="order-prev-page-btn" disabled>
+                  &laquo; Prev
+                </button>
+
+                <div class="page-numbers" id="order-page-numbers"></div>
+
+                <button class="btn-page" id="order-next-page-btn">
+                  Next &raquo;
+                </button>
+              </div>
+            </div>
+
+            <div class="modal-overlay inactive" id="order-modal">
+              <div class="modal-container">
+                <div class="modal-header">
+                  <h2 id="order-modal-title">Create Order</h2>
+                  <button
+                    type="button"
+                    class="close-btn"
+                    id="close-order-modal-btn"
+                  >
+                    &times;
+                  </button>
+                </div>
+
+                <form id="order-form">
+                  <input type="hidden" id="order-id" name="id" />
+
+                  <div class="modal-form-group">
+                    <label for="order-customer-id">Customer ID</label>
+                    <input
+                      type="text"
+                      id="order-customer-id"
+                      name="customerId"
+                      required
+                      placeholder="e.g. CUS-001"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-customer-name">Customer Name</label>
+                    <input
+                      type="text"
+                      id="order-customer-name"
+                      name="customerName"
+                      required
+                      placeholder="e.g. Alpha Traders"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-status">Order Status</label>
+                    <select id="order-status" name="status" required>
+                      <option value="pending">Pending</option>
+                      <option value="confirmed">Confirmed</option>
+                      <option value="processing">Processing</option>
+                      <option value="shipped">Shipped</option>
+                      <option value="delivered">Delivered</option>
+                      <option value="cancelled">Cancelled</option>
+                    </select>
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-payment-status">Payment Status</label>
+                    <select
+                      id="order-payment-status"
+                      name="paymentStatus"
+                      required
+                    >
+                      <option value="unpaid">Unpaid</option>
+                      <option value="paid">Paid</option>
+                      <option value="partial">Partial</option>
+                      <option value="refunded">Refunded</option>
+                    </select>
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-currency">Currency</label>
+                    <input
+                      type="text"
+                      id="order-currency"
+                      name="currency"
+                      required
+                      maxlength="3"
+                      placeholder="e.g. PKR"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-product-id">Product ID</label>
+                    <input
+                      type="text"
+                      id="order-product-id"
+                      name="productId"
+                      required
+                      placeholder="e.g. PROD-001"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-product-name">Product Name</label>
+                    <input
+                      type="text"
+                      id="order-product-name"
+                      name="productName"
+                      required
+                      placeholder="e.g. Office Chair"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-quantity">Quantity</label>
+                    <input
+                      type="number"
+                      id="order-quantity"
+                      name="quantity"
+                      min="1"
+                      required
+                      placeholder="e.g. 2"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-unit-price">Unit Price</label>
+                    <input
+                      type="number"
+                      id="order-unit-price"
+                      name="unitPrice"
+                      min="0"
+                      required
+                      placeholder="e.g. 1500"
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-discount">Discount</label>
+                    <input
+                      type="number"
+                      id="order-discount"
+                      name="discount"
+                      min="0"
+                      value="0"
+                      required
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-shipping">Shipping</label>
+                    <input
+                      type="number"
+                      id="order-shipping"
+                      name="shipping"
+                      min="0"
+                      value="0"
+                      required
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-order-date">Order Date</label>
+                    <input
+                      type="date"
+                      id="order-order-date"
+                      name="orderDate"
+                      required
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-expected-delivery-date"
+                      >Expected Delivery Date</label
+                    >
+                    <input
+                      type="date"
+                      id="order-expected-delivery-date"
+                      name="expectedDeliveryDate"
+                      required
+                    />
+                  </div>
+
+                  <div class="modal-form-group">
+                    <label for="order-sales-channel">Sales Channel</label>
+                    <input
+                      type="text"
+                      id="order-sales-channel"
+                      name="salesChannel"
+                      required
+                      placeholder="e.g. website"
+                    />
+                  </div>
+
+                  <div class="modal-actions">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      id="cancel-order-modal-btn"
+                    >
+                      Cancel
+                    </button>
+
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      id="save-order-btn"
+                    >
+                      Save Order
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
       </section>
     </section>
 
-    <script type="module" src="../script/data-manipulation.js"></script>
+    <!-- <script type="module" src="../script/data-manipulation.js"></script> -->
     <!-- <script
       type="module"
       src="../script/dashboard/operational-dashoard.js"
@@ -331,6 +771,10 @@
     <script
       type="module"
       src="../script/dashboard/invoice-controller.js"
+    ></script>
+    <script
+      type="module"
+      src="../script/dashboard/customer-controller.js"
     ></script>
     <!-- <script
       type="module"

@@ -1,4 +1,5 @@
-class CustomerManager extends RecordManager {
+import { RecordManager } from "./record-manager.js";
+export class CustomerManager extends RecordManager {
   constructor(customers) {
     super("CUS", customers);
   }
