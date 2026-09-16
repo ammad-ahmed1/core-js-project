@@ -102,7 +102,6 @@ function getVisibleCustomers() {
       ["creditLimit", "createdAt"],
     );
   }
-  console.log(visibleCustomers);
   return visibleCustomers;
 }
 
@@ -185,7 +184,6 @@ function renderPagination(totalItems) {
 }
 function updateCustomerTable() {
   const visibleCustomers = getVisibleCustomers();
-  console.log(visibleCustomers, ": scscsc");
   updateCustomerPagination(visibleCustomers.length);
   const totalPages = Math.max(
     1,

@@ -29,41 +29,59 @@ export class RecordManager {
 
   creator(data) {
     const id = this.generateId();
-    this.#arr = [...this.#arr, { ...data, id }];
+    const record = structuredClone({ ...data, id });
+    this.validate(record);
+    this.#arr = [...this.#arr, record];
 
-    return this.#arr;
+    return this.getAll();
   }
 
   getById(id) {
     if (!id) {
       throw new Error("Missing ID!");
     }
-    return this.#arr.find((item) => item.id === id) ?? null;
+    const res = this.#arr.find((item) => item.id === id);
+    if (!res) throw new Error("Record not found!");
+    return structuredClone(res);
   }
 
   updator(data, id) {
-    if (!id || !data) {
-      throw new Error("Missing ID or source data!");
+    if (
+      !id ||
+      data === null ||
+      typeof data !== "object" ||
+      Array.isArray(data)
+    ) {
+      throw new Error("Missing ID or invalid update data!");
     }
-    this.#arr = this.#arr.map((item) =>
-      item.id === id ? { ...item, ...data, id: item.id } : item,
-    );
 
-    return this.#arr;
+    const existing = this.#arr.find((item) => item.id === id);
+    if (!existing) throw new Error("Record not found!");
+
+    const record = structuredClone({ ...existing, ...data, id: existing.id });
+    this.validate(record);
+
+    this.#arr = this.#arr.map((item) => (item.id === id ? record : item));
+    return this.getAll();
   }
 
   deleter(id) {
     if (!id) {
       throw new Error("Missing ID or source!");
     }
+    const idFound = this.#arr.some((item) => item?.id === id);
+    if (!idFound) {
+      throw new Error("Record not found!");
+    }
     this.#arr = this.#arr.filter((item) => item.id !== id);
-    return this.#arr;
+    return this.getAll();
   }
   findByField = (field, value) => {
-    if (!field || !value) {
+    if (!field || value === undefined) {
       throw new Error("Missing field or value!");
     }
     //ie status, pending
-    return this.#arr.filter((item) => item[field] === value) ?? null;
+    let res = this.#arr.filter((item) => item[field] === value);
+    return structuredClone(res);
   };
 }

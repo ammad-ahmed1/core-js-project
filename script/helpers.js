@@ -26,83 +26,7 @@ const showNotification = (message, type, notificationElement) => {
     notificationElement.textContent = "";
   }, 3000);
 };
-// ----crud----
-const generateId = (prefix, arr) => {
-  const highestId = arr.reduce((highest, item) => {
-    const [itemPrefix, numericPart] = String(item?.id ?? "").split("-");
-    const numericId = Number(numericPart);
 
-    if (itemPrefix !== prefix || !Number.isInteger(numericId)) return highest;
-
-    return Math.max(highest, numericId);
-  }, 0);
-  const nextNum = highestId + 1;
-
-  return `${prefix}-${String(nextNum).padStart(3, "0")}`;
-};
-function creator(data, arr, prefix, notificationEElement) {
-  try {
-    const id = generateId(prefix, arr);
-    const updatedRecords = [...arr, { ...data, id }];
-
-    showNotification(
-      toastMsg.uploadSuccess(prefix),
-      "success",
-      notificationEElement,
-    );
-
-    return updatedRecords;
-  } catch (error) {
-    showNotification(
-      toastMsg.uploadFail(prefix),
-      "error",
-      notificationEElement,
-    );
-
-    throw new Error("Failed to create record!");
-  }
-}
-function getById(id, arr) {
-  return arr.find((item) => item.id === id) ?? null;
-}
-function updator(data, id, arr, prefix, notificationEElement) {
-  try {
-    const updatedArr = arr.map((item) =>
-      item.id === id ? { ...item, ...data } : item,
-    );
-    showNotification(
-      toastMsg.updateSuccess(prefix),
-      "success",
-      notificationEElement,
-    );
-    return updatedArr;
-  } catch (error) {
-    showNotification(
-      toastMsg.updateFail(prefix),
-      "error",
-      notificationEElement,
-    );
-    throw new Error("Failed to update record!");
-  }
-}
-function deleter(id, arr, prefix, notificationEElement) {
-  try {
-    const newRec = arr.filter((item) => item.id !== id);
-    showNotification(
-      toastMsg.deleteSuccess(prefix),
-      "success",
-      notificationEElement,
-    );
-    return newRec;
-  } catch (error) {
-    showNotification(
-      toastMsg.deleteFail(prefix),
-      "error",
-      notificationEElement,
-    );
-    throw new Error("Failed to delete record!");
-  }
-}
 function paginateItems(items, pageSize, pageNumber) {
   if (!Array.isArray(items)) return [];
   if (!Number.isInteger(pageSize) || pageSize <= 0) {
@@ -318,10 +242,6 @@ export {
   removeClass,
   dynamicTable,
   debounce,
-  creator,
-  getById,
-  updator,
-  deleter,
   sortData,
   paginateItems,
   toValidDate,

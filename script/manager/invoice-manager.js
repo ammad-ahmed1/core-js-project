@@ -27,9 +27,9 @@ export class InvoiceManager extends RecordManager {
       throw new Error("Invoice amount must be a positive number.");
     }
 
-    if (!Array.isArray(invoice.lineItems)) {
-      throw new Error("Invoice lineItems must be an array.");
-    }
+    // if (!Array.isArray(invoice.lineItems)) {
+    //   throw new Error("Invoice lineItems must be an array.");
+    // }
   }
 
   getUseableInvoices() {
@@ -134,7 +134,27 @@ export class InvoiceManager extends RecordManager {
       };
     });
   }
+  getInvoicesByDateRange(invoices, dateField, startDate, endDate) {
+    if (!Array.isArray(invoices)) {
+      throw new Error("Invoices must be an array.");
+    }
+    if (!startDate && !endDate) return [...invoices];
 
+    if (!["issueDate", "dueDate"].includes(dateField)) {
+      throw new Error("dateField must be 'issueDate' or 'dueDate'.");
+    }
+
+    const start = toValidDate(startDate);
+    const end = toValidDate(endDate);
+    if (start === null || end === null) {
+      throw new Error(`Invalid date values for ${dateField}.`);
+    }
+
+    return invoices.filter((invoice) => {
+      const date = toValidDate(invoice?.[dateField]);
+      return date !== null && date >= start && date <= end;
+    });
+  }
   updateLineItemQuantity(invoiceId, lineItemId, newQuantity) {
     if (!Number.isFinite(newQuantity) || newQuantity <= 0) {
       throw new Error("Quantity must be a positive number.");

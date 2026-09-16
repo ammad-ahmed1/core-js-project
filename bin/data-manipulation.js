@@ -1,5 +1,5 @@
 import { customers, invoices, orders, tasks } from "../data/data.js";
-import { toValidDate } from "./helpers.js";
+import { toValidDate } from "../script/helpers.js";
 
 function getUseableInvoices(invoices) {
   let isArr = Array.isArray(invoices);
