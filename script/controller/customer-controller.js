@@ -8,6 +8,8 @@ import {
 } from "../helpers.js";
 
 import { CustomerManager } from "../manager/customer-manager.js";
+import { toggleModal } from "../ui/modal-view.js";
+import { renderPagination } from "../ui/pagination-view.js";
 
 const customerManager = new CustomerManager(customers);
 
@@ -51,7 +53,7 @@ const customerColumns = [
   "createdAt",
 ];
 
-const customerSortableKeys = ["name", "status", "creditLimit", "createdAt"];
+const customerSortableKeys = ["creditLimit", "createdAt"];
 
 let currentPage = 1;
 const itemsPerPage = 25;
@@ -63,6 +65,19 @@ const currentSort = {
 let activeSortBy = null;
 let inactiveCustomers = customerManager.findByField("status", "inactive");
 inactiveCustomersCount.textContent = inactiveCustomers.length;
+
+function updateCustomerSummary() {
+  const inactiveCount = customerManager
+    .getAll()
+    .filter((customer) => customer.status === "inactive").length;
+
+  inactiveCustomersCount.textContent = inactiveCount;
+}
+
+function refreshCustomerView() {
+  updateCustomerTable();
+  updateCustomerSummary();
+}
 
 function getVisibleCustomers() {
   const selectedStatusValue = customerStatusFilter.value;
@@ -105,86 +120,19 @@ function getVisibleCustomers() {
   return visibleCustomers;
 }
 
-const toggleModal = (show = null) => {
-  if (show === true) {
-    modal.classList.remove("inactive");
-  } else if (show === false) {
-    modal.classList.add("inactive");
-  } else {
-    modal.classList.toggle("inactive");
-  }
-};
-
-function updateCustomerSummary() {
-  const inactiveCount = customerManager
-    .getAll()
-    .filter((customer) => customer.status === "inactive").length;
-
-  inactiveCustomersCount.textContent = inactiveCount;
-}
-
-function updateCustomerPagination(totalItems) {
-  const totalPages = Math.max(1, Math.ceil(totalItems / itemsPerPage));
-
-  if (currentPage > totalPages) {
-    currentPage = totalPages;
-  }
-
-  customerPageStart.textContent =
-    totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
-
-  customerPageEnd.textContent = Math.min(
-    currentPage * itemsPerPage,
-    totalItems,
-  );
-
-  customerTotalCount.textContent = totalItems;
-  customerPrevPageBtn.disabled = currentPage === 1;
-  customerNextPageBtn.disabled = currentPage === totalPages;
-
-  customerPageNumbers.innerHTML = "";
-
-  for (let page = 1; page <= totalPages; page++) {
-    const pageBtn = document.createElement("button");
-    pageBtn.className =
-      page === currentPage
-        ? "btn-page page-number active"
-        : "btn-page page-number";
-    pageBtn.textContent = page;
-    pageBtn.dataset.page = page;
-    customerPageNumbers.appendChild(pageBtn);
-  }
-}
-function renderPagination(totalItems) {
-  const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
-  const pageNumbersContainer = document.getElementById("customer-page-numbers");
-  const pageStart = document.getElementById("customer-page-start");
-  const pageEnd = document.getElementById("customer-page-end");
-  const totalCount = document.getElementById("customer-total-count");
-
-  const start = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
-  const end = Math.min(currentPage * itemsPerPage, totalItems);
-
-  if (pageStart) pageStart.textContent = start;
-  if (pageEnd) pageEnd.textContent = end;
-  if (totalCount) totalCount.textContent = totalItems;
-
-  pageNumbersContainer.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.dataset.page = i;
-    btn.className = i === currentPage ? "btn-page-num active" : "btn-page-num";
-    pageNumbersContainer.appendChild(btn);
-  }
-
-  customerPrevPageBtn.disabled = currentPage === 1;
-  customerNextPageBtn.disabled = currentPage >= totalPages;
-}
 function updateCustomerTable() {
   const visibleCustomers = getVisibleCustomers();
-  updateCustomerPagination(visibleCustomers.length);
+  // renderPagination(
+  //   visibleCustomers.length,
+  //   1,
+  //   25,
+  //   customerPageStart,
+  //   customerPageEnd,
+  //   customerTotalCount,
+  //   customerPageNumbers,
+  //   customerPrevPageBtn,
+  //   customerNextPageBtn,
+  // );
   const totalPages = Math.max(
     1,
     Math.ceil(visibleCustomers.length / itemsPerPage),
@@ -200,28 +148,20 @@ function updateCustomerTable() {
     customerTableElement,
     paginatedData,
     customerColumns,
-    ["creditLimit", "createdAt"],
-    // customerSortableKeys,
+    customerSortableKeys,
   );
 
-  renderPagination(visibleCustomers.length);
-}
-
-function toggleCustomerModal(show = null) {
-  if (show === true) {
-    customerModal.classList.remove("inactive");
-    customerModal.classList.add("active");
-    return;
-  }
-
-  if (show === false) {
-    customerModal.classList.remove("active");
-    customerModal.classList.add("inactive");
-    return;
-  }
-
-  customerModal.classList.toggle("active");
-  customerModal.classList.toggle("inactive");
+  renderPagination(
+    visibleCustomers.length,
+    currentPage,
+    itemsPerPage,
+    customerPageStart,
+    customerPageEnd,
+    customerTotalCount,
+    customerPageNumbers,
+    customerPrevPageBtn,
+    customerNextPageBtn,
+  );
 }
 
 function fillCustomerForm(customerID) {
@@ -292,38 +232,12 @@ function handleCustomerSubmit(event) {
       );
     }
 
-    toggleCustomerModal(false);
+    toggleModal(customerModal, false);
     clearCustomerForm();
     updateCustomerTable();
+    refreshCustomerView();
   } catch (error) {
     showNotification(error.message, "error", notificationToaster);
-  }
-}
-
-function handleCustomerTableClick(event) {
-  const button = event.target.closest("[data-action]");
-  if (!button) return;
-
-  const customerId = button.dataset.id;
-
-  if (button.dataset.action === "delete") {
-    customerManager.deleter(customerId);
-    updateCustomerTable();
-    showNotification(
-      "Customer deleted successfully",
-      "success",
-      notificationToaster,
-    );
-    return;
-  }
-
-  if (button.dataset.action === "edit") {
-    const customer = customerManager.getById(customerId);
-    if (!customer) return;
-
-    fillCustomerForm(customer);
-    customerModal.classList.remove("inactive");
-    customerModal.classList.add("active");
   }
 }
 
@@ -332,29 +246,41 @@ function handleCustomerSort(sortKey) {
   activeSortBy = sortKey;
   currentPage = 1;
 
-  updateCustomerTable();
+  refreshCustomerView();
 }
 const handleDeleteCust = (id) => {
-  customerManager.deleter(id, "INV", notificationToaster);
-  updateCustomerTable();
+  customerManager.deleter(id);
+  showNotification(
+        "Customer deleted successfully",
+        "success",
+        notificationToaster,
+      );
+  refreshCustomerView();
 };
 
 customerSearchInput.addEventListener("input", () => {
   currentPage = 1;
-  updateCustomerTable();
+  refreshCustomerView();
 });
 
 customerStatusFilter.addEventListener("change", () => {
   currentPage = 1;
-  updateCustomerTable();
+  refreshCustomerView();
 });
 
-addCustomerBtn.addEventListener("click", toggleCustomerModal);
-closeCustomerModalBtn.addEventListener("click", toggleCustomerModal);
-cancelCustomerModalBtn.addEventListener("click", toggleCustomerModal);
+addCustomerBtn.addEventListener("click", () => {
+  clearCustomerForm();
+  toggleModal(customerModal, true);
+});
+
+closeCustomerModalBtn.addEventListener("click", () => {
+  toggleModal(customerModal, false);
+});
+
+cancelCustomerModalBtn.addEventListener("click", () => {
+  toggleModal(customerModal, false);
+});
 customerForm.addEventListener("submit", handleCustomerSubmit);
-// customerTableElement.addEventListener("click", handleCustomerTableClick);
-// customerTableElement.addEventListener("click", sortData);
 
 customerTableElement.addEventListener("click", (e) => {
   const target = e.target;
@@ -371,7 +297,7 @@ customerTableElement.addEventListener("click", (e) => {
 
     if (action === "edit") {
       fillCustomerForm(id);
-      toggleCustomerModal(true);
+      toggleModal(customerModal, true);
     } else if (action === "delete") {
       handleDeleteCust(id);
     }
