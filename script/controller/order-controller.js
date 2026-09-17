@@ -181,7 +181,6 @@ function clearOrderForm() {
 
 function getOrderFormData() {
   const formData = new FormData(orderForm);
-  console.log(formData);
   const quantity = Number(formData.get("quantity"));
   const unitPrice = Number(formData.get("unitPrice"));
   const discount = Number(formData.get("discount"));
@@ -328,7 +327,6 @@ orderStatusFilter.addEventListener("change", () => {
 });
 orderNextPageBtn.addEventListener("click", () => {
   const totalPages = Math.ceil(getVisibleOrders().length / itemsPerPage);
-  console.log(totalPages);
   if (currentPage < totalPages) {
     currentPage++;
     refreshOrderView();

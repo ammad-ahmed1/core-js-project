@@ -174,8 +174,8 @@ function updateTableAndPagination() {
   );
   renderPagination(
     visibleInvoices.length,
-    1,
-    25,
+    currentPage,
+    itemsPerPage,
     invoicePageStart,
     invoicePageEnd,
     invoiceTotalCount,

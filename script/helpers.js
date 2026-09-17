@@ -105,7 +105,6 @@ function dynamicTable(
   sortableKeys = [],
   customRenderers = {},
 ) {
-  console.log(tableElement);
   if (!tableElement) return;
 
   tableElement.innerHTML = "";

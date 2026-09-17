@@ -251,10 +251,10 @@ function handleCustomerSort(sortKey) {
 const handleDeleteCust = (id) => {
   customerManager.deleter(id);
   showNotification(
-        "Customer deleted successfully",
-        "success",
-        notificationToaster,
-      );
+    "Customer deleted successfully",
+    "success",
+    notificationToaster,
+  );
   refreshCustomerView();
 };
 
@@ -321,7 +321,6 @@ customerPrevPageBtn.addEventListener("click", () => {
 
 customerNextPageBtn.addEventListener("click", () => {
   const totalPages = Math.ceil(getVisibleCustomers().length / itemsPerPage);
-  console.log(totalPages);
   if (currentPage < totalPages) {
     currentPage++;
     updateCustomerTable();
