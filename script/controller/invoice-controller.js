@@ -8,36 +8,42 @@ import {
   dynamicTable,
   paginateItems,
   sortData,
+  showNotification,
 } from "../helpers.js";
 
 import { InvoiceManager } from "../manager/invoice-manager.js";
+import { toggleModal } from "../ui/modal-view.js";
+import { renderPagination } from "../ui/pagination-view.js";
 const invoiceManager = new InvoiceManager(invoices);
 // DOM references
-const custBtn = document.querySelector("#sider-customer-btn");
-const invBtn = document.querySelector("#sider-invoices-btn");
-const ordBtn = document.querySelector("#sider-orders-btn");
-const custSection = document.querySelector("#customer");
-const invSection = document.querySelector("#invoices");
-const ordSection = document.querySelector("#orders");
+
 const invSearchInput = document.querySelector("#search");
 const selectedStatus = document.querySelector("#status");
 const invDateFilterType = document.getElementById("date-field-filter");
 const invStartDateInput = document.querySelector("#start-date-filter");
 const invEndDateInput = document.querySelector("#end-date-filter");
 const clearDatesBtn = document.querySelector("#clear-date-filters");
-const notificationToaster = document.querySelector("#notification");
 //invoice crud modal
-const modal = document.getElementById("invoice-modal");
+const invoiceModal = document.getElementById("invoice-modal");
 const addInvoiceBtn = document.getElementById("add-invoice-btn");
-let invoiceForm = document.querySelector("#invoice-form");
 const closeModalBtn = document.querySelector("#close-modal-btn");
+const cancelModalBtn = document.querySelector("#cancel-modal-btn");
+let invoiceForm = document.querySelector("#invoice-form");
+
 //event delegation for invoice update and delete
 // const tableBody = document.getElementById("invoice-table-body");
 const invoiceTableElement = document.getElementById("table-element");
+const invoicePageStart = document.querySelector("#invoice-page-start");
+const invoicePageEnd = document.querySelector("#invoice-page-end");
+const invoiceTotalCount = document.querySelector("#invoice-total-count");
+const invoicePageNumbers = document.querySelector("#invoice-page-numbers");
+const invoicePrevPageBtn = document.querySelector("#invoice-prev-page-btn");
+const invoiceNextPageBtn = document.querySelector("#invoice-next-page-btn");
+const notificationToaster = document.querySelector("#notification");
 
-// Configuration and state
 let currentPage = 1;
 const itemsPerPage = 25;
+
 const currentSort = {
   customerName: "asc",
   amount: "asc",
@@ -66,17 +72,6 @@ const invoicesDueStatus = {
     badge.className = `due-status due-status--${dueStatus?.state ?? "invalid"}`;
     return badge;
   },
-};
-
-// UI functions
-const toggleModal = (show = null) => {
-  if (show === true) {
-    modal.classList.remove("inactive");
-  } else if (show === false) {
-    modal.classList.add("inactive");
-  } else {
-    modal.classList.toggle("inactive");
-  }
 };
 
 function getVisibleInvoices() {
@@ -131,57 +126,6 @@ const invFormFieldSetter = (id) => {
   invoiceForm.elements["dueDate"].value = updatingInv.dueDate || "";
 };
 
-function sectionNavigation(forSection) {
-  const sections = {
-    invoices: invSection,
-    customers: document.getElementById("customers"),
-    orders: ordSection,
-  };
-
-  if (forSection !== "overview" && !sections[forSection]) {
-    console.log("Page not found!");
-    return;
-  }
-
-  // ovwSection.classList.add("active");
-  // ovwSection.classList.remove("inactive");
-
-  Object.entries(sections).forEach(([name, section]) => {
-    const isSelected = name === forSection;
-
-    section.classList.toggle("active", isSelected);
-    section.classList.toggle("inactive", !isSelected);
-  });
-}
-
-function renderPagination(totalItems) {
-  const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
-  const pageNumbersContainer = document.getElementById("page-numbers");
-  const pageStart = document.getElementById("page-start");
-  const pageEnd = document.getElementById("page-end");
-  const totalCount = document.getElementById("total-count");
-
-  const start = totalItems === 0 ? 0 : (currentPage - 1) * itemsPerPage + 1;
-  const end = Math.min(currentPage * itemsPerPage, totalItems);
-
-  if (pageStart) pageStart.textContent = start;
-  if (pageEnd) pageEnd.textContent = end;
-  if (totalCount) totalCount.textContent = totalItems;
-
-  pageNumbersContainer.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.dataset.page = i;
-    btn.className = i === currentPage ? "btn-page-num active" : "btn-page-num";
-    pageNumbersContainer.appendChild(btn);
-  }
-
-  document.getElementById("prev-page-btn").disabled = currentPage === 1;
-  document.getElementById("next-page-btn").disabled = currentPage >= totalPages;
-}
-
 function updateInvoiceDashboard() {
   const useableInvoices = invoiceManager.getUseableInvoices();
   const paidInvoices = invoiceManager.findByField("status", "paid");
@@ -228,8 +172,17 @@ function updateTableAndPagination() {
     ["customerName", "amount", "issueDate", "dueDate", "daysPassed"],
     invoicesDueStatus,
   );
-  renderPagination(visibleInvoices.length);
-  //   updateInvoiceDashboard(invoiceState); //declare before use
+  renderPagination(
+    visibleInvoices.length,
+    1,
+    25,
+    invoicePageStart,
+    invoicePageEnd,
+    invoiceTotalCount,
+    invoicePageNumbers,
+    invoicePrevPageBtn,
+    invoiceNextPageBtn,
+  );
   updateInvoiceDashboard();
 }
 
@@ -248,20 +201,35 @@ const handleFormSubmit = (e) => {
 
   if (existingId) {
     // Call update method on instance
-    invoiceManager.updator(parsedData, existingId, "INV", notificationToaster);
+    invoiceManager.updator(parsedData, existingId);
+    showNotification(
+      "Invoice updated successfully",
+      "success",
+      notificationToaster,
+    );
   } else {
     // Call create method on instance
-    invoiceManager.creator(parsedData, "INV", notificationToaster);
+    invoiceManager.creator(parsedData);
+    showNotification(
+      "Invoice created successfully",
+      "success",
+      notificationToaster,
+    );
   }
 
   updateTableAndPagination();
   e.target.reset();
   invoiceForm.elements["id"].value = "";
-  toggleModal(false);
+  toggleModal(invoiceModal, false);
 };
 
 const handleDeleteInv = (id) => {
-  invoiceManager.deleter(id, "INV", notificationToaster);
+  invoiceManager.deleter(id);
+  showNotification(
+    "Invoice deleted successfully",
+    "success",
+    notificationToaster,
+  );
   updateTableAndPagination();
 };
 
@@ -282,15 +250,7 @@ const handleClearDateFilters = () => {
 };
 
 // Event listener registrations
-custBtn.addEventListener("click", () =>
-  sectionNavigation(custBtn.dataset.section),
-);
-invBtn.addEventListener("click", () =>
-  sectionNavigation(invBtn.dataset.section),
-);
-ordBtn.addEventListener("click", () =>
-  sectionNavigation(ordBtn.dataset.section),
-);
+
 invSearchInput.addEventListener("input", handleSearch);
 selectedStatus.addEventListener("change", refreshInvoicesFromFirstPage);
 invDateFilterType.addEventListener("change", refreshInvoicesFromFirstPage);
@@ -301,11 +261,15 @@ addInvoiceBtn.addEventListener("click", () => {
   ``;
   invoiceForm.reset();
   document.getElementById("modal-title").textContent = "Add Invoice";
-  toggleModal(true);
+  toggleModal(invoiceModal, true);
 });
 closeModalBtn.addEventListener("click", () => {
   invoiceForm.reset();
-  toggleModal(false);
+  toggleModal(invoiceModal, false);
+});
+cancelModalBtn.addEventListener("click", () => {
+  invoiceForm.reset();
+  toggleModal(invoiceModal, false);
 });
 invoiceForm.addEventListener("submit", (e) => {
   handleFormSubmit(e);
@@ -325,7 +289,7 @@ invoiceTableElement.addEventListener("click", (e) => {
     const action = button.dataset.action;
 
     if (action === "edit") {
-      toggleModal(true);
+      toggleModal(invoiceModal, true);
       invFormFieldSetter(id);
     } else if (action === "delete") {
       handleDeleteInv(id);
@@ -333,28 +297,30 @@ invoiceTableElement.addEventListener("click", (e) => {
     return;
   }
 });
-document.getElementById("page-numbers").addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-page-num")) {
-    currentPage = Number(e.target.dataset.page);
-    updateTableAndPagination();
-  }
+invoicePageNumbers.addEventListener("click", (event) => {
+  const pageButton = event.target.closest("[data-page]");
+
+  if (!pageButton) return;
+
+  currentPage = Number(pageButton.dataset.page);
+  updateTableAndPagination();
 });
 
-document.getElementById("prev-page-btn").addEventListener("click", () => {
+invoicePrevPageBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     updateTableAndPagination();
   }
 });
 
-document.getElementById("next-page-btn").addEventListener("click", () => {
+invoiceNextPageBtn.addEventListener("click", () => {
   const totalPages = Math.ceil(getVisibleInvoices().length / itemsPerPage);
+
   if (currentPage < totalPages) {
     currentPage++;
     updateTableAndPagination();
   }
 });
-
 // Initial execution
 // Usage:
 updateTableAndPagination();

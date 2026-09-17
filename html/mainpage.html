@@ -62,7 +62,7 @@
         <!-- toast -->
         <div id="notification" class="notification" role="status"></div>
         <section class="section" id="overview" data-status="active">
-          <div class="main-heading" id="page-title">
+          <div class="main-heading" id="overview-page-title">
             <h1>Overview</h1>
           </div>
           <section class="invoice-summary flex">
@@ -94,7 +94,7 @@
         </section>
         <!-- invoices -->
         <section class="section" id="invoices" data-status="inactive">
-          <div class="main-heading" id="page-title">
+          <div class="main-heading" id="invoice-page-title">
             <h1>Invoices</h1>
           </div>
           <div class="summary-card summary-card--overdue">
@@ -156,21 +156,21 @@
           </section>
           <div class="pagination-container">
             <div class="pagination-info">
-              Showing <span id="page-start">0</span> to
-              <span id="page-end">0</span> of
-              <span id="total-count">0</span> invoices
+              Showing <span id="invoice-page-start">0</span> to
+              <span id="invoice-page-end">0</span> of
+              <span id="invoice-total-count">0</span> invoices
             </div>
 
             <div class="pagination-controls">
-              <button class="btn-page" id="prev-page-btn" disabled>
+              <button class="btn-page" id="invoice-prev-page-btn" disabled>
                 &laquo; Prev
               </button>
 
-              <div class="page-numbers" id="page-numbers">
+              <div class="page-numbers" id="invoice-page-numbers">
                 <!-- Dynamic page buttons will render here -->
               </div>
 
-              <button class="btn-page" id="next-page-btn">Next &raquo;</button>
+              <button class="btn-page" id="invoice-next-page-btn">Next &raquo;</button>
             </div>
           </div>
           <div class="modal-overlay inactive" id="invoice-modal">
@@ -777,10 +777,6 @@
       type="module"
       src="../script/controller/order-controller.js"
     ></script>
-    <!-- <script
-      type="module"
-      src="../script/helpers.js"
-    ></script> -->
-    <script type="module" src="../script/models/"></script>
+    <script type="module" src="../script/app.js"></script>
   </body>
 </html>
