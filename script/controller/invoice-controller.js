@@ -1,5 +1,5 @@
 // Imports
-import { invoices } from "../../data/data.js";
+// import { invoices } from "../../data/data.js";
 import {
   renderInUI,
   debounce,
@@ -14,7 +14,13 @@ import {
 import { InvoiceManager } from "../manager/invoice-manager.js";
 import { toggleModal } from "../ui/modal-view.js";
 import { renderPagination } from "../ui/pagination-view.js";
-const invoiceManager = new InvoiceManager(invoices);
+
+// // let invoices;
+// export async function invoiceInitializer(data) {
+//   console.log(data, ": invoice contrroller");
+//   const invoiceManager = new InvoiceManager(data);
+// }
+// const invoiceManager = new InvoiceManager(invoices);
 // DOM references
 
 const invSearchInput = document.querySelector("#search");
@@ -40,6 +46,11 @@ const invoicePageNumbers = document.querySelector("#invoice-page-numbers");
 const invoicePrevPageBtn = document.querySelector("#invoice-prev-page-btn");
 const invoiceNextPageBtn = document.querySelector("#invoice-next-page-btn");
 const notificationToaster = document.querySelector("#notification");
+const invoicesWrapper = document.querySelector(".invoices-wrapper");
+const loaderInvoice = document.querySelector("#loader-inv");
+
+// let invoices;
+let invoiceManager;
 
 let currentPage = 1;
 const itemsPerPage = 25;
@@ -117,7 +128,7 @@ function getVisibleInvoices() {
 }
 
 const invFormFieldSetter = (id) => {
-  let updatingInv = invoiceManager.getById(id);
+  let updatingInv = invoiceManager.getById("invoices", id);
   invoiceForm.elements["id"].value = updatingInv.id;
   invoiceForm.elements["customerName"].value = updatingInv.customerName || "";
   invoiceForm.elements["amount"].value = updatingInv.amount || "";
@@ -191,7 +202,7 @@ const refreshInvoicesFromFirstPage = () => {
   updateTableAndPagination();
 };
 
-const handleFormSubmit = (e) => {
+const handleFormSubmit = async (e) => {
   e.preventDefault();
   const formData = new FormData(e.target);
   const existingId = formData.get("id");
@@ -201,26 +212,37 @@ const handleFormSubmit = (e) => {
 
   if (existingId) {
     // Call update method on instance
-    invoiceManager.updator(parsedData, existingId);
-    showNotification(
-      "Invoice updated successfully",
-      "success",
-      notificationToaster,
-    );
+    try {
+      await invoiceManager.updator("invoices", parsedData, existingId);
+      showNotification(
+        "Invoice updated successfully",
+        "success",
+        notificationToaster,
+      );
+      updateTableAndPagination();
+      e.target.reset();
+      invoiceForm.elements["id"].value = "";
+      toggleModal(invoiceModal, false);
+    } catch (error) {
+      showNotification(error, "error", notificationToaster);
+    }
   } else {
     // Call create method on instance
-    invoiceManager.creator(parsedData);
-    showNotification(
-      "Invoice created successfully",
-      "success",
-      notificationToaster,
-    );
+    try {
+      await invoiceManager.creator("invoices", parsedData);
+      showNotification(
+        "Invoice created successfully",
+        "success",
+        notificationToaster,
+      );
+      updateTableAndPagination();
+      e.target.reset();
+      invoiceForm.elements["id"].value = "";
+      toggleModal(invoiceModal, false);
+    } catch (error) {
+      showNotification(error, "error", notificationToaster);
+    }
   }
-
-  updateTableAndPagination();
-  e.target.reset();
-  invoiceForm.elements["id"].value = "";
-  toggleModal(invoiceModal, false);
 };
 
 const handleDeleteInv = (id) => {
@@ -321,6 +343,8 @@ invoiceNextPageBtn.addEventListener("click", () => {
     updateTableAndPagination();
   }
 });
-// Initial execution
-// Usage:
-updateTableAndPagination();
+
+export function invoiceInitializer(data) {
+  invoiceManager = new InvoiceManager(data);
+  updateTableAndPagination();
+}

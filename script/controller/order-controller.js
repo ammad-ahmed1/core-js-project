@@ -9,7 +9,6 @@ import { OrderManager } from "../manager/order-manager.js";
 import { toggleModal } from "../ui/modal-view.js";
 import { renderPagination } from "../ui/pagination-view.js";
 
-const orderManager = new OrderManager(orders);
 const cancelledOrdersCountElement = document.querySelector(
   "#cancelled-orders-count",
 );
@@ -28,6 +27,8 @@ const orderPrevPageBtn = document.querySelector("#order-prev-page-btn");
 const orderNextPageBtn = document.querySelector("#order-next-page-btn");
 const orderPageNumbers = document.querySelector("#order-page-numbers");
 const notificationToaster = document.querySelector("#notification");
+
+let orderManager;
 
 const tableElement = document.querySelector("#order-table");
 function updateOrderSummary() {
@@ -66,7 +67,7 @@ function getVisibleOrders() {
   const selectedStatusValue = orderStatusFilter.value;
   const searchTerm = orderSearchInput.value.trim().toLowerCase();
 
-  let visibleOrders = orderManager.getAll();
+  let visibleOrders = orderManager.getAll('orders');
 
   if (selectedStatusValue && selectedStatusValue !== "all") {
     visibleOrders = visibleOrders.filter(
@@ -144,7 +145,7 @@ function refreshOrderView() {
   updateOrderSummary();
 }
 function fillOrderForm(orderId) {
-  const order = orderManager.getById(orderId);
+  const order = orderManager.getById('orders', orderId);
   const firstItem = order.items?.[0] ?? {};
 
   orderForm.elements["id"].value = order.id;
@@ -332,5 +333,8 @@ orderNextPageBtn.addEventListener("click", () => {
     refreshOrderView();
   }
 });
-
-refreshOrderView();
+export function orderInitializer(data) {
+  console.log(data, ": order contrroller");
+  orderManager = new OrderManager(data);
+  refreshOrderView();
+}

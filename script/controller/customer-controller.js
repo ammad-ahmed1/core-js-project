@@ -1,5 +1,3 @@
-import { customers } from "../../data/data.js";
-
 import {
   dynamicTable,
   paginateItems,
@@ -11,11 +9,10 @@ import { CustomerManager } from "../manager/customer-manager.js";
 import { toggleModal } from "../ui/modal-view.js";
 import { renderPagination } from "../ui/pagination-view.js";
 
-const customerManager = new CustomerManager(customers);
-
 const customerSearchInput = document.querySelector("#customer-search");
 const customerStatusFilter = document.querySelector("#customer-status-filter");
 const customerTableElement = document.querySelector("#customer-table");
+const loaderCustomer = document.querySelector("#loader-cust");
 
 const addCustomerBtn = document.querySelector("#add-customer-btn");
 const customerModal = document.querySelector("#customer-modal");
@@ -40,6 +37,7 @@ const customerPageNumbers = document.querySelector("#customer-page-numbers");
 
 const notificationToaster = document.querySelector("#notification");
 
+let customerManager;
 const customerColumns = [
   "id",
   "name",
@@ -63,12 +61,10 @@ const currentSort = {
   amount: "asc",
 };
 let activeSortBy = null;
-let inactiveCustomers = customerManager.findByField("status", "inactive");
-inactiveCustomersCount.textContent = inactiveCustomers.length;
 
 function updateCustomerSummary() {
   const inactiveCount = customerManager
-    .getAll()
+    .getAll("customers")
     .filter((customer) => customer.status === "inactive").length;
 
   inactiveCustomersCount.textContent = inactiveCount;
@@ -165,7 +161,7 @@ function updateCustomerTable() {
 }
 
 function fillCustomerForm(customerID) {
-  let customer = customerManager.getById(customerID);
+  let customer = customerManager.getById("customers", customerID);
 
   customerForm.elements["id"].value = customer.id;
   customerForm.elements["name"].value = customer.name || "";
@@ -326,5 +322,8 @@ customerNextPageBtn.addEventListener("click", () => {
     updateCustomerTable();
   }
 });
-
-updateCustomerTable();
+export async function customerInitializer(data) {
+  customerManager = new CustomerManager(data);
+  updateCustomerSummary;
+  updateCustomerTable();
+}

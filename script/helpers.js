@@ -4,14 +4,6 @@ const timeFormatter = new Intl.DateTimeFormat("en-PK", {
   second: "2-digit",
 });
 
-const toastMsg = {
-  uploadSuccess: (recType) => `${recType} added successfully`,
-  updateSuccess: (recType) => `${recType} updated successfully`,
-  deleteSuccess: (recType) => `${recType} deleted successfully`,
-  uploadFail: (recType) => `Failed to add ${recType}`,
-  updateFail: (recType) => `Failed to update ${recType}`,
-  deleteFail: (recType) => `Failed to delete ${recType}`,
-};
 let notificationTimer;
 
 const showNotification = (message, type, notificationElement) => {
@@ -234,7 +226,15 @@ const sortData = (data = [], by, order = "asc", validProperties = []) => {
     return String(aValue ?? "").localeCompare(String(bValue ?? "")) * direction;
   });
 };
-
+const toggleLoader = (show, loaderElement, wrapperElement) => {
+  if (show) {
+    loaderElement.classList.remove("hide");
+    wrapperElement.classList.add("hide");
+  } else {
+    loaderElement.classList.add("hide");
+    wrapperElement.classList.remove("hide");
+  }
+};
 export {
   renderInUI,
   addClass,
@@ -248,4 +248,5 @@ export {
   formatCurrency,
   formatColKey,
   showNotification,
+  // toggleLoader,
 };

@@ -1,3 +1,5 @@
+import { createReq, getReq, updateReq } from "../api-and-service/service.js";
+
 export class RecordManager {
   #arr;
   constructor(prefix, arr) {
@@ -9,7 +11,10 @@ export class RecordManager {
       throw new Error("Record must be an object.");
     }
   }
-  getAll() {
+   getAll(module) {
+    console.log(module, "module in rec mngr");
+    // this.#arr = await getReq(module);
+    console.log(this.#arr, "arr data in rec mngr");
     return structuredClone(this.#arr);
   }
   generateId() {
@@ -27,25 +32,28 @@ export class RecordManager {
     return `${this.prefix}-${String(highestId + 1).padStart(3, "0")}`;
   }
 
-  creator(data) {
+  async creator(module, data) {
+    console.log(module, "module in creator in rec mngr");
     const id = this.generateId();
     const record = structuredClone({ ...data, id });
     this.validate(record);
+    await createReq(module, record);
     this.#arr = [...this.#arr, record];
 
-    return this.getAll();
+    return this.getAll(module);
   }
 
-  getById(id) {
+  async getById(module, id) {
     if (!id) {
       throw new Error("Missing ID!");
     }
-    const res = this.#arr.find((item) => item.id === id);
+    const res = await getReq(module, id);
+    // const res = this.#arr.find((item) => item.id === id);
     if (!res) throw new Error("Record not found!");
     return structuredClone(res);
   }
 
-  updator(data, id) {
+  async updator(module, data, id) {
     if (
       !id ||
       data === null ||
@@ -61,11 +69,12 @@ export class RecordManager {
     const record = structuredClone({ ...existing, ...data, id: existing.id });
     this.validate(record);
 
+    await updateReq(module, id, data);
     this.#arr = this.#arr.map((item) => (item.id === id ? record : item));
-    return this.getAll();
+    return this.getAll(module);
   }
 
-  deleter(id) {
+  deleter(module, id) {
     if (!id) {
       throw new Error("Missing ID or source!");
     }
@@ -74,7 +83,7 @@ export class RecordManager {
       throw new Error("Record not found!");
     }
     this.#arr = this.#arr.filter((item) => item.id !== id);
-    return this.getAll();
+    return this.getAll(module);
   }
   findByField = (field, value) => {
     if (!field || value === undefined) {

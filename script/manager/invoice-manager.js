@@ -51,7 +51,7 @@ export class InvoiceManager extends RecordManager {
 
     const currencyCode = currency.trim().toUpperCase();
 
-    return this.getAll().reduce((total, invoice) => {
+    return this.getAll("invoices").reduce((total, invoice) => {
       if (
         invoice?.status === "paid" &&
         invoice.currency === currencyCode &&
@@ -113,7 +113,7 @@ export class InvoiceManager extends RecordManager {
   }
 
   getDueDatePassedInv() {
-    return this.getAll().filter(
+    return this.getAll("invoices").filter(
       (invoice) => this.getInvoiceDueStatus(invoice).state === "overdue",
     );
   }
@@ -121,8 +121,7 @@ export class InvoiceManager extends RecordManager {
   getDaysPassedSinceDueDate() {
     const millisecondsPerDay = 24 * 60 * 60 * 1000;
     const today = Math.floor(Date.now() / millisecondsPerDay);
-
-    return this.getAll().map((invoice) => {
+    const res = this.getAll("invoices")?.map((invoice) => {
       const dueTime = toValidDate(invoice?.dueDate);
 
       return {
@@ -133,6 +132,7 @@ export class InvoiceManager extends RecordManager {
             : Math.max(0, today - Math.floor(dueTime / millisecondsPerDay)),
       };
     });
+    return res;
   }
   getInvoicesByDateRange(invoices, dateField, startDate, endDate) {
     if (!Array.isArray(invoices)) {
@@ -160,7 +160,7 @@ export class InvoiceManager extends RecordManager {
       throw new Error("Quantity must be a positive number.");
     }
 
-    const invoice = this.getById(invoiceId);
+    const invoice = this.getById("invoices", invoiceId);
 
     if (!invoice) {
       throw new Error("Invoice not found.");

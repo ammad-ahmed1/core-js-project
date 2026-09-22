@@ -1,0 +1,7085 @@
+{
+  "customers": [
+    {
+      "id": "CUS-001",
+      "name": "Emerald Hospitality",
+      "contactName": "Ammad Khan",
+      "email": "ammad.khan.1@example.com",
+      "phone": "+92-311-1007919",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-01-04"
+    },
+    {
+      "id": "CUS-002",
+      "name": "Crescent Hospitality",
+      "contactName": "Ahmed Khan",
+      "email": "ahmed.khan.2@example.com",
+      "phone": "+92-312-1015838",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-02-07"
+    },
+    {
+      "id": "CUS-003",
+      "name": "Summit Hospitality",
+      "contactName": "Sara Khan",
+      "email": "sara.khan.3@example.com",
+      "phone": "+92-313-1023757",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-03-10"
+    },
+    {
+      "id": "CUS-004",
+      "name": "Vertex Hospitality",
+      "contactName": "Hassan Khan",
+      "email": "hassan.khan.4@example.com",
+      "phone": "+92-314-1031676",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-04-13"
+    },
+    {
+      "id": "CUS-005",
+      "name": "Nexa Hospitality",
+      "contactName": "Ayesha Khan",
+      "email": "ayesha.khan.5@example.com",
+      "phone": "+92-315-1039595",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-05-16"
+    },
+    {
+      "id": "CUS-006",
+      "name": "BluePeak Hospitality",
+      "contactName": "Ali Khan",
+      "email": "ali.khan.6@example.com",
+      "phone": "+92-316-1047514",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-06-19"
+    },
+    {
+      "id": "CUS-007",
+      "name": "Urban Hospitality",
+      "contactName": "Fatima Khan",
+      "email": "fatima.khan.7@example.com",
+      "phone": "+92-317-1055433",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "prospect",
+      "creditLimit": 450000,
+      "createdAt": "2026-07-22"
+    },
+    {
+      "id": "CUS-008",
+      "name": "Prime Hospitality",
+      "contactName": "Usman Khan",
+      "email": "usman.khan.8@example.com",
+      "phone": "+92-318-1063352",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-08-25"
+    },
+    {
+      "id": "CUS-009",
+      "name": "Pak Hospitality",
+      "contactName": "Hira Khan",
+      "email": "hira.khan.9@example.com",
+      "phone": "+92-319-1071271",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-01-28"
+    },
+    {
+      "id": "CUS-010",
+      "name": "Indus Hospitality",
+      "contactName": "Bilal Khan",
+      "email": "bilal.khan.10@example.com",
+      "phone": "+92-320-1079190",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-02-03"
+    },
+    {
+      "id": "CUS-011",
+      "name": "Atlas Hospitality",
+      "contactName": "Zainab Malik",
+      "email": "zainab.malik.11@example.com",
+      "phone": "+92-321-1087109",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-03-06"
+    },
+    {
+      "id": "CUS-012",
+      "name": "Horizon Hospitality",
+      "contactName": "Hamza Malik",
+      "email": "hamza.malik.12@example.com",
+      "phone": "+92-322-1095028",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-04-09"
+    },
+    {
+      "id": "CUS-013",
+      "name": "Unity Hospitality",
+      "contactName": "Mariam Malik",
+      "email": "mariam.malik.13@example.com",
+      "phone": "+92-323-1102947",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "inactive",
+      "creditLimit": 250000,
+      "createdAt": "2026-05-12"
+    },
+    {
+      "id": "CUS-014",
+      "name": "Nova Hospitality",
+      "contactName": "Omar Malik",
+      "email": "omar.malik.14@example.com",
+      "phone": "+92-324-1110866",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "prospect",
+      "creditLimit": 300000,
+      "createdAt": "2026-06-15"
+    },
+    {
+      "id": "CUS-015",
+      "name": "Silver Hospitality",
+      "contactName": "Noor Malik",
+      "email": "noor.malik.15@example.com",
+      "phone": "+92-325-1118785",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-07-18"
+    },
+    {
+      "id": "CUS-016",
+      "name": "Royal Hospitality",
+      "contactName": "Daniyal Malik",
+      "email": "daniyal.malik.16@example.com",
+      "phone": "+92-326-1126704",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-08-21"
+    },
+    {
+      "id": "CUS-017",
+      "name": "Capital Hospitality",
+      "contactName": "Iqra Malik",
+      "email": "iqra.malik.17@example.com",
+      "phone": "+92-327-1134623",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-01-24"
+    },
+    {
+      "id": "CUS-018",
+      "name": "Green Hospitality",
+      "contactName": "Talha Malik",
+      "email": "talha.malik.18@example.com",
+      "phone": "+92-328-1142542",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-02-27"
+    },
+    {
+      "id": "CUS-019",
+      "name": "Eastern Hospitality",
+      "contactName": "Mehwish Malik",
+      "email": "mehwish.malik.19@example.com",
+      "phone": "+92-329-1150461",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-03-02"
+    },
+    {
+      "id": "CUS-020",
+      "name": "Dynamic Hospitality",
+      "contactName": "Saad Malik",
+      "email": "saad.malik.20@example.com",
+      "phone": "+92-330-1158380",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-04-05"
+    },
+    {
+      "id": "CUS-021",
+      "name": "Emerald Traders",
+      "contactName": "Ammad Ahmed",
+      "email": "ammad.ahmed.21@example.com",
+      "phone": "+92-331-1166299",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "prospect",
+      "creditLimit": 150000,
+      "createdAt": "2026-05-08"
+    },
+    {
+      "id": "CUS-022",
+      "name": "Crescent Traders",
+      "contactName": "Ahmed Ahmed",
+      "email": "ahmed.ahmed.22@example.com",
+      "phone": "+92-332-1174218",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-06-11"
+    },
+    {
+      "id": "CUS-023",
+      "name": "Summit Traders",
+      "contactName": "Sara Ahmed",
+      "email": "sara.ahmed.23@example.com",
+      "phone": "+92-333-1182137",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-07-14"
+    },
+    {
+      "id": "CUS-024",
+      "name": "Vertex Traders",
+      "contactName": "Hassan Ahmed",
+      "email": "hassan.ahmed.24@example.com",
+      "phone": "+92-334-1190056",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-08-17"
+    },
+    {
+      "id": "CUS-025",
+      "name": "Nexa Traders",
+      "contactName": "Ayesha Ahmed",
+      "email": "ayesha.ahmed.25@example.com",
+      "phone": "+92-335-1197975",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-01-20"
+    },
+    {
+      "id": "CUS-026",
+      "name": "BluePeak Traders",
+      "contactName": "Ali Ahmed",
+      "email": "ali.ahmed.26@example.com",
+      "phone": "+92-336-1205894",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "inactive",
+      "creditLimit": 400000,
+      "createdAt": "2026-02-23"
+    },
+    {
+      "id": "CUS-027",
+      "name": "Urban Traders",
+      "contactName": "Fatima Ahmed",
+      "email": "fatima.ahmed.27@example.com",
+      "phone": "+92-337-1213813",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-03-26"
+    },
+    {
+      "id": "CUS-028",
+      "name": "Prime Traders",
+      "contactName": "Usman Ahmed",
+      "email": "usman.ahmed.28@example.com",
+      "phone": "+92-338-1221732",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "prospect",
+      "creditLimit": 500000,
+      "createdAt": "2026-04-01"
+    },
+    {
+      "id": "CUS-029",
+      "name": "Pak Traders",
+      "contactName": "Hira Ahmed",
+      "email": "hira.ahmed.29@example.com",
+      "phone": "+92-339-1229651",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-05-04"
+    },
+    {
+      "id": "CUS-030",
+      "name": "Indus Traders",
+      "contactName": "Bilal Ahmed",
+      "email": "bilal.ahmed.30@example.com",
+      "phone": "+92-340-1237570",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-06-07"
+    },
+    {
+      "id": "CUS-031",
+      "name": "Atlas Traders",
+      "contactName": "Zainab Raza",
+      "email": "zainab.raza.31@example.com",
+      "phone": "+92-341-1245489",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-07-10"
+    },
+    {
+      "id": "CUS-032",
+      "name": "Horizon Traders",
+      "contactName": "Hamza Raza",
+      "email": "hamza.raza.32@example.com",
+      "phone": "+92-342-1253408",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-08-13"
+    },
+    {
+      "id": "CUS-033",
+      "name": "Unity Traders",
+      "contactName": "Mariam Raza",
+      "email": "mariam.raza.33@example.com",
+      "phone": "+92-343-1261327",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-01-16"
+    },
+    {
+      "id": "CUS-034",
+      "name": "Nova Traders",
+      "contactName": "Omar Raza",
+      "email": "omar.raza.34@example.com",
+      "phone": "+92-344-1269246",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-02-19"
+    },
+    {
+      "id": "CUS-035",
+      "name": "Silver Traders",
+      "contactName": "Noor Raza",
+      "email": "noor.raza.35@example.com",
+      "phone": "+92-345-1277165",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "prospect",
+      "creditLimit": 350000,
+      "createdAt": "2026-03-22"
+    },
+    {
+      "id": "CUS-036",
+      "name": "Royal Traders",
+      "contactName": "Daniyal Raza",
+      "email": "daniyal.raza.36@example.com",
+      "phone": "+92-346-1285084",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-04-25"
+    },
+    {
+      "id": "CUS-037",
+      "name": "Capital Traders",
+      "contactName": "Iqra Raza",
+      "email": "iqra.raza.37@example.com",
+      "phone": "+92-347-1293003",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-05-28"
+    },
+    {
+      "id": "CUS-038",
+      "name": "Green Traders",
+      "contactName": "Talha Raza",
+      "email": "talha.raza.38@example.com",
+      "phone": "+92-348-1300922",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-06-03"
+    },
+    {
+      "id": "CUS-039",
+      "name": "Eastern Traders",
+      "contactName": "Mehwish Raza",
+      "email": "mehwish.raza.39@example.com",
+      "phone": "+92-349-1308841",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "inactive",
+      "creditLimit": 550000,
+      "createdAt": "2026-07-06"
+    },
+    {
+      "id": "CUS-040",
+      "name": "Dynamic Traders",
+      "contactName": "Saad Raza",
+      "email": "saad.raza.40@example.com",
+      "phone": "+92-350-1316760",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-08-09"
+    },
+    {
+      "id": "CUS-041",
+      "name": "Emerald Solutions",
+      "contactName": "Ammad Sheikh",
+      "email": "ammad.sheikh.41@example.com",
+      "phone": "+92-351-1324679",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-01-12"
+    },
+    {
+      "id": "CUS-042",
+      "name": "Crescent Solutions",
+      "contactName": "Ahmed Sheikh",
+      "email": "ahmed.sheikh.42@example.com",
+      "phone": "+92-352-1332598",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "prospect",
+      "creditLimit": 200000,
+      "createdAt": "2026-02-15"
+    },
+    {
+      "id": "CUS-043",
+      "name": "Summit Solutions",
+      "contactName": "Sara Sheikh",
+      "email": "sara.sheikh.43@example.com",
+      "phone": "+92-353-1340517",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-03-18"
+    },
+    {
+      "id": "CUS-044",
+      "name": "Vertex Solutions",
+      "contactName": "Hassan Sheikh",
+      "email": "hassan.sheikh.44@example.com",
+      "phone": "+92-354-1348436",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-04-21"
+    },
+    {
+      "id": "CUS-045",
+      "name": "Nexa Solutions",
+      "contactName": "Ayesha Sheikh",
+      "email": "ayesha.sheikh.45@example.com",
+      "phone": "+92-355-1356355",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-05-24"
+    },
+    {
+      "id": "CUS-046",
+      "name": "BluePeak Solutions",
+      "contactName": "Ali Sheikh",
+      "email": "ali.sheikh.46@example.com",
+      "phone": "+92-356-1364274",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-06-27"
+    },
+    {
+      "id": "CUS-047",
+      "name": "Urban Solutions",
+      "contactName": "Fatima Sheikh",
+      "email": "fatima.sheikh.47@example.com",
+      "phone": "+92-357-1372193",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-07-02"
+    },
+    {
+      "id": "CUS-048",
+      "name": "Prime Solutions",
+      "contactName": "Usman Sheikh",
+      "email": "usman.sheikh.48@example.com",
+      "phone": "+92-358-1380112",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-08-05"
+    },
+    {
+      "id": "CUS-049",
+      "name": "Pak Solutions",
+      "contactName": "Hira Sheikh",
+      "email": "hira.sheikh.49@example.com",
+      "phone": "+92-359-1388031",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "prospect",
+      "creditLimit": 550000,
+      "createdAt": "2026-01-08"
+    },
+    {
+      "id": "CUS-050",
+      "name": "Indus Solutions",
+      "contactName": "Bilal Sheikh",
+      "email": "bilal.sheikh.50@example.com",
+      "phone": "+92-360-1395950",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-02-11"
+    },
+    {
+      "id": "CUS-051",
+      "name": "Atlas Solutions",
+      "contactName": "Zainab Butt",
+      "email": "zainab.butt.51@example.com",
+      "phone": "+92-361-1403869",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-03-14"
+    },
+    {
+      "id": "CUS-052",
+      "name": "Horizon Solutions",
+      "contactName": "Hamza Butt",
+      "email": "hamza.butt.52@example.com",
+      "phone": "+92-362-1411788",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "inactive",
+      "creditLimit": 200000,
+      "createdAt": "2026-04-17"
+    },
+    {
+      "id": "CUS-053",
+      "name": "Unity Solutions",
+      "contactName": "Mariam Butt",
+      "email": "mariam.butt.53@example.com",
+      "phone": "+92-363-1419707",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-05-20"
+    },
+    {
+      "id": "CUS-054",
+      "name": "Nova Solutions",
+      "contactName": "Omar Butt",
+      "email": "omar.butt.54@example.com",
+      "phone": "+92-364-1427626",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-06-23"
+    },
+    {
+      "id": "CUS-055",
+      "name": "Silver Solutions",
+      "contactName": "Noor Butt",
+      "email": "noor.butt.55@example.com",
+      "phone": "+92-365-1435545",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-07-26"
+    },
+    {
+      "id": "CUS-056",
+      "name": "Royal Solutions",
+      "contactName": "Daniyal Butt",
+      "email": "daniyal.butt.56@example.com",
+      "phone": "+92-366-1443464",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "prospect",
+      "creditLimit": 400000,
+      "createdAt": "2026-08-01"
+    },
+    {
+      "id": "CUS-057",
+      "name": "Capital Solutions",
+      "contactName": "Iqra Butt",
+      "email": "iqra.butt.57@example.com",
+      "phone": "+92-367-1451383",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-01-04"
+    },
+    {
+      "id": "CUS-058",
+      "name": "Green Solutions",
+      "contactName": "Talha Butt",
+      "email": "talha.butt.58@example.com",
+      "phone": "+92-368-1459302",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-02-07"
+    },
+    {
+      "id": "CUS-059",
+      "name": "Eastern Solutions",
+      "contactName": "Mehwish Butt",
+      "email": "mehwish.butt.59@example.com",
+      "phone": "+92-369-1467221",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-03-10"
+    },
+    {
+      "id": "CUS-060",
+      "name": "Dynamic Solutions",
+      "contactName": "Saad Butt",
+      "email": "saad.butt.60@example.com",
+      "phone": "+92-370-1475140",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-04-13"
+    },
+    {
+      "id": "CUS-061",
+      "name": "Emerald Enterprises",
+      "contactName": "Ammad Qureshi",
+      "email": "ammad.qureshi.61@example.com",
+      "phone": "+92-371-1483059",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-05-16"
+    },
+    {
+      "id": "CUS-062",
+      "name": "Crescent Enterprises",
+      "contactName": "Ahmed Qureshi",
+      "email": "ahmed.qureshi.62@example.com",
+      "phone": "+92-372-1490978",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-06-19"
+    },
+    {
+      "id": "CUS-063",
+      "name": "Summit Enterprises",
+      "contactName": "Sara Qureshi",
+      "email": "sara.qureshi.63@example.com",
+      "phone": "+92-373-1498897",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "prospect",
+      "creditLimit": 250000,
+      "createdAt": "2026-07-22"
+    },
+    {
+      "id": "CUS-064",
+      "name": "Vertex Enterprises",
+      "contactName": "Hassan Qureshi",
+      "email": "hassan.qureshi.64@example.com",
+      "phone": "+92-374-1506816",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-08-25"
+    },
+    {
+      "id": "CUS-065",
+      "name": "Nexa Enterprises",
+      "contactName": "Ayesha Qureshi",
+      "email": "ayesha.qureshi.65@example.com",
+      "phone": "+92-375-1514735",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "inactive",
+      "creditLimit": 350000,
+      "createdAt": "2026-01-28"
+    },
+    {
+      "id": "CUS-066",
+      "name": "BluePeak Enterprises",
+      "contactName": "Ali Qureshi",
+      "email": "ali.qureshi.66@example.com",
+      "phone": "+92-376-1522654",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-02-03"
+    },
+    {
+      "id": "CUS-067",
+      "name": "Urban Enterprises",
+      "contactName": "Fatima Qureshi",
+      "email": "fatima.qureshi.67@example.com",
+      "phone": "+92-377-1530573",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-03-06"
+    },
+    {
+      "id": "CUS-068",
+      "name": "Prime Enterprises",
+      "contactName": "Usman Qureshi",
+      "email": "usman.qureshi.68@example.com",
+      "phone": "+92-378-1538492",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-04-09"
+    },
+    {
+      "id": "CUS-069",
+      "name": "Pak Enterprises",
+      "contactName": "Hira Qureshi",
+      "email": "hira.qureshi.69@example.com",
+      "phone": "+92-379-1546411",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-05-12"
+    },
+    {
+      "id": "CUS-070",
+      "name": "Indus Enterprises",
+      "contactName": "Bilal Qureshi",
+      "email": "bilal.qureshi.70@example.com",
+      "phone": "+92-380-1554330",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "prospect",
+      "creditLimit": 100000,
+      "createdAt": "2026-06-15"
+    },
+    {
+      "id": "CUS-071",
+      "name": "Atlas Enterprises",
+      "contactName": "Zainab Siddiqui",
+      "email": "zainab.siddiqui.71@example.com",
+      "phone": "+92-381-1562249",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-07-18"
+    },
+    {
+      "id": "CUS-072",
+      "name": "Horizon Enterprises",
+      "contactName": "Hamza Siddiqui",
+      "email": "hamza.siddiqui.72@example.com",
+      "phone": "+92-382-1570168",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-08-21"
+    },
+    {
+      "id": "CUS-073",
+      "name": "Unity Enterprises",
+      "contactName": "Mariam Siddiqui",
+      "email": "mariam.siddiqui.73@example.com",
+      "phone": "+92-383-1578087",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-01-24"
+    },
+    {
+      "id": "CUS-074",
+      "name": "Nova Enterprises",
+      "contactName": "Omar Siddiqui",
+      "email": "omar.siddiqui.74@example.com",
+      "phone": "+92-384-1586006",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-02-27"
+    },
+    {
+      "id": "CUS-075",
+      "name": "Silver Enterprises",
+      "contactName": "Noor Siddiqui",
+      "email": "noor.siddiqui.75@example.com",
+      "phone": "+92-385-1593925",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-03-02"
+    },
+    {
+      "id": "CUS-076",
+      "name": "Royal Enterprises",
+      "contactName": "Daniyal Siddiqui",
+      "email": "daniyal.siddiqui.76@example.com",
+      "phone": "+92-386-1601844",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-04-05"
+    },
+    {
+      "id": "CUS-077",
+      "name": "Capital Enterprises",
+      "contactName": "Iqra Siddiqui",
+      "email": "iqra.siddiqui.77@example.com",
+      "phone": "+92-387-1609763",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "prospect",
+      "creditLimit": 450000,
+      "createdAt": "2026-05-08"
+    },
+    {
+      "id": "CUS-078",
+      "name": "Green Enterprises",
+      "contactName": "Talha Siddiqui",
+      "email": "talha.siddiqui.78@example.com",
+      "phone": "+92-388-1617682",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "inactive",
+      "creditLimit": 500000,
+      "createdAt": "2026-06-11"
+    },
+    {
+      "id": "CUS-079",
+      "name": "Eastern Enterprises",
+      "contactName": "Mehwish Siddiqui",
+      "email": "mehwish.siddiqui.79@example.com",
+      "phone": "+92-389-1625601",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-07-14"
+    },
+    {
+      "id": "CUS-080",
+      "name": "Dynamic Enterprises",
+      "contactName": "Saad Siddiqui",
+      "email": "saad.siddiqui.80@example.com",
+      "phone": "+92-390-1633520",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-08-17"
+    },
+    {
+      "id": "CUS-081",
+      "name": "Emerald Foods",
+      "contactName": "Ammad Chaudhry",
+      "email": "ammad.chaudhry.81@example.com",
+      "phone": "+92-391-1641439",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "active",
+      "creditLimit": 150000,
+      "createdAt": "2026-01-20"
+    },
+    {
+      "id": "CUS-082",
+      "name": "Crescent Foods",
+      "contactName": "Ahmed Chaudhry",
+      "email": "ahmed.chaudhry.82@example.com",
+      "phone": "+92-392-1649358",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-02-23"
+    },
+    {
+      "id": "CUS-083",
+      "name": "Summit Foods",
+      "contactName": "Sara Chaudhry",
+      "email": "sara.chaudhry.83@example.com",
+      "phone": "+92-393-1657277",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-03-26"
+    },
+    {
+      "id": "CUS-084",
+      "name": "Vertex Foods",
+      "contactName": "Hassan Chaudhry",
+      "email": "hassan.chaudhry.84@example.com",
+      "phone": "+92-394-1665196",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "prospect",
+      "creditLimit": 300000,
+      "createdAt": "2026-04-01"
+    },
+    {
+      "id": "CUS-085",
+      "name": "Nexa Foods",
+      "contactName": "Ayesha Chaudhry",
+      "email": "ayesha.chaudhry.85@example.com",
+      "phone": "+92-395-1673115",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-05-04"
+    },
+    {
+      "id": "CUS-086",
+      "name": "BluePeak Foods",
+      "contactName": "Ali Chaudhry",
+      "email": "ali.chaudhry.86@example.com",
+      "phone": "+92-396-1681034",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-06-07"
+    },
+    {
+      "id": "CUS-087",
+      "name": "Urban Foods",
+      "contactName": "Fatima Chaudhry",
+      "email": "fatima.chaudhry.87@example.com",
+      "phone": "+92-397-1688953",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-07-10"
+    },
+    {
+      "id": "CUS-088",
+      "name": "Prime Foods",
+      "contactName": "Usman Chaudhry",
+      "email": "usman.chaudhry.88@example.com",
+      "phone": "+92-398-1696872",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "active",
+      "creditLimit": 500000,
+      "createdAt": "2026-08-13"
+    },
+    {
+      "id": "CUS-089",
+      "name": "Pak Foods",
+      "contactName": "Hira Chaudhry",
+      "email": "hira.chaudhry.89@example.com",
+      "phone": "+92-399-1704791",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-01-16"
+    },
+    {
+      "id": "CUS-090",
+      "name": "Indus Foods",
+      "contactName": "Bilal Chaudhry",
+      "email": "bilal.chaudhry.90@example.com",
+      "phone": "+92-310-1712710",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-02-19"
+    },
+    {
+      "id": "CUS-091",
+      "name": "Atlas Foods",
+      "contactName": "Zainab Mirza",
+      "email": "zainab.mirza.91@example.com",
+      "phone": "+92-311-1720629",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "industry": "Hospitality",
+      "status": "inactive",
+      "creditLimit": 150000,
+      "createdAt": "2026-03-22"
+    },
+    {
+      "id": "CUS-092",
+      "name": "Horizon Foods",
+      "contactName": "Hamza Mirza",
+      "email": "hamza.mirza.92@example.com",
+      "phone": "+92-312-1728548",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 200000,
+      "createdAt": "2026-04-25"
+    },
+    {
+      "id": "CUS-093",
+      "name": "Unity Foods",
+      "contactName": "Mariam Mirza",
+      "email": "mariam.mirza.93@example.com",
+      "phone": "+92-313-1736467",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Healthcare",
+      "status": "active",
+      "creditLimit": 250000,
+      "createdAt": "2026-05-28"
+    },
+    {
+      "id": "CUS-094",
+      "name": "Nova Foods",
+      "contactName": "Omar Mirza",
+      "email": "omar.mirza.94@example.com",
+      "phone": "+92-314-1744386",
+      "city": "Rawalpindi",
+      "country": "Pakistan",
+      "industry": "Logistics",
+      "status": "active",
+      "creditLimit": 300000,
+      "createdAt": "2026-06-03"
+    },
+    {
+      "id": "CUS-095",
+      "name": "Silver Foods",
+      "contactName": "Noor Mirza",
+      "email": "noor.mirza.95@example.com",
+      "phone": "+92-315-1752305",
+      "city": "Faisalabad",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "active",
+      "creditLimit": 350000,
+      "createdAt": "2026-07-06"
+    },
+    {
+      "id": "CUS-096",
+      "name": "Royal Foods",
+      "contactName": "Daniyal Mirza",
+      "email": "daniyal.mirza.96@example.com",
+      "phone": "+92-316-1760224",
+      "city": "Multan",
+      "country": "Pakistan",
+      "industry": "Manufacturing",
+      "status": "active",
+      "creditLimit": 400000,
+      "createdAt": "2026-08-09"
+    },
+    {
+      "id": "CUS-097",
+      "name": "Capital Foods",
+      "contactName": "Iqra Mirza",
+      "email": "iqra.mirza.97@example.com",
+      "phone": "+92-317-1768143",
+      "city": "Peshawar",
+      "country": "Pakistan",
+      "industry": "Education",
+      "status": "active",
+      "creditLimit": 450000,
+      "createdAt": "2026-01-12"
+    },
+    {
+      "id": "CUS-098",
+      "name": "Green Foods",
+      "contactName": "Talha Mirza",
+      "email": "talha.mirza.98@example.com",
+      "phone": "+92-318-1776062",
+      "city": "Quetta",
+      "country": "Pakistan",
+      "industry": "Construction",
+      "status": "prospect",
+      "creditLimit": 500000,
+      "createdAt": "2026-02-15"
+    },
+    {
+      "id": "CUS-099",
+      "name": "Eastern Foods",
+      "contactName": "Mehwish Mirza",
+      "email": "mehwish.mirza.99@example.com",
+      "phone": "+92-319-1783981",
+      "city": "Sialkot",
+      "country": "Pakistan",
+      "industry": "Food Services",
+      "status": "active",
+      "creditLimit": 550000,
+      "createdAt": "2026-03-18"
+    },
+    {
+      "id": "CUS-100",
+      "name": "Dynamic Foods",
+      "contactName": "Saad Mirza",
+      "email": "saad.mirza.100@example.com",
+      "phone": "+92-320-1791900",
+      "city": "Gujranwala",
+      "country": "Pakistan",
+      "industry": "Professional Services",
+      "status": "active",
+      "creditLimit": 100000,
+      "createdAt": "2026-04-21"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "INV-001",
+      "customerId": "CUS-007",
+      "customerName": "Urban Hospitality",
+      "status": "paid",
+      "amount": 190000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-001-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 26000
+        },
+        {
+          "id": "LI-001-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 46000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:01:00Z"
+    },
+    {
+      "id": "INV-002",
+      "customerId": "CUS-014",
+      "customerName": "Nova Hospitality",
+      "status": "unpaid",
+      "amount": 229000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-002-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 47000
+        },
+        {
+          "id": "LI-002-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 14000
+        },
+        {
+          "id": "LI-002-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 32000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:02:00Z"
+    },
+    {
+      "id": "INV-003",
+      "customerId": "CUS-021",
+      "customerName": "Emerald Traders",
+      "status": "paid",
+      "amount": 60000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-003-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:03:00Z"
+    },
+    {
+      "id": "INV-004",
+      "customerId": "CUS-028",
+      "customerName": "Prime Traders",
+      "status": "unpaid",
+      "amount": 118000,
+      "currency": "USD",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-004-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 34000
+        },
+        {
+          "id": "LI-004-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 42000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:04:00Z"
+    },
+    {
+      "id": "INV-005",
+      "customerId": "CUS-035",
+      "customerName": "Silver Traders",
+      "status": "failed",
+      "amount": 190000,
+      "currency": "AED",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-005-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        },
+        {
+          "id": "LI-005-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        },
+        {
+          "id": "LI-005-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:05:00Z"
+    },
+    {
+      "id": "INV-006",
+      "customerId": "CUS-042",
+      "customerName": "Crescent Solutions",
+      "status": "paid",
+      "amount": 57000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-006-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 19000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:06:00Z"
+    },
+    {
+      "id": "INV-007",
+      "customerId": "CUS-049",
+      "customerName": "Pak Solutions",
+      "status": "cancelled",
+      "amount": 112000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-007-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 17000
+        },
+        {
+          "id": "LI-007-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 44000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:07:00Z"
+    },
+    {
+      "id": "INV-008",
+      "customerId": "CUS-056",
+      "customerName": "Royal Solutions",
+      "status": "unpaid",
+      "amount": 184000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-008-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 45000
+        },
+        {
+          "id": "LI-008-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 23000
+        },
+        {
+          "id": "LI-008-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 31000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:08:00Z"
+    },
+    {
+      "id": "INV-009",
+      "customerId": "CUS-063",
+      "customerName": "Summit Enterprises",
+      "status": "paid",
+      "amount": 48000,
+      "currency": "USD",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-009-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 24000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:09:00Z"
+    },
+    {
+      "id": "INV-010",
+      "customerId": "CUS-070",
+      "customerName": "Indus Enterprises",
+      "status": "unpaid",
+      "amount": 224000,
+      "currency": "AED",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-010-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        },
+        {
+          "id": "LI-010-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-02-11T09:10:00Z"
+    },
+    {
+      "id": "INV-011",
+      "customerId": "CUS-077",
+      "customerName": "Capital Enterprises",
+      "status": "paid",
+      "amount": 205000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-011-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 36000
+        },
+        {
+          "id": "LI-011-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 9000
+        },
+        {
+          "id": "LI-011-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 26000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:11:00Z"
+    },
+    {
+      "id": "INV-012",
+      "customerId": "CUS-084",
+      "customerName": "Vertex Foods",
+      "status": "unpaid",
+      "amount": 10000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-012-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 10000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:12:00Z"
+    },
+    {
+      "id": "INV-013",
+      "customerId": "CUS-091",
+      "customerName": "Atlas Foods",
+      "status": "failed",
+      "amount": 200000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-013-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 28000
+        },
+        {
+          "id": "LI-013-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 48000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:13:00Z"
+    },
+    {
+      "id": "INV-014",
+      "customerId": "CUS-098",
+      "customerName": "Green Foods",
+      "status": "paid",
+      "amount": 245000,
+      "currency": "USD",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-014-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 49000
+        },
+        {
+          "id": "LI-014-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 16000
+        },
+        {
+          "id": "LI-014-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 34000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:14:00Z"
+    },
+    {
+      "id": "INV-015",
+      "customerId": "CUS-005",
+      "customerName": "Nexa Hospitality",
+      "status": "cancelled",
+      "amount": 48000,
+      "currency": "AED",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-015-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:15:00Z"
+    },
+    {
+      "id": "INV-016",
+      "customerId": "CUS-012",
+      "customerName": "Horizon Hospitality",
+      "status": "unpaid",
+      "amount": 109000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-016-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 31000
+        },
+        {
+          "id": "LI-016-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 39000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:16:00Z"
+    },
+    {
+      "id": "INV-017",
+      "customerId": "CUS-019",
+      "customerName": "Eastern Hospitality",
+      "status": "paid",
+      "amount": "92000",
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-017-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 40000
+        },
+        {
+          "id": "LI-017-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 20000
+        },
+        {
+          "id": "LI-017-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 17000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:17:00Z"
+    },
+    {
+      "id": "INV-018",
+      "customerId": "CUS-026",
+      "customerName": "BluePeak Traders",
+      "status": "unpaid",
+      "amount": 63000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-018-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 21000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:18:00Z"
+    },
+    {
+      "id": "INV-019",
+      "customerId": "CUS-033",
+      "customerName": "Unity Traders",
+      "status": "paid",
+      "amount": 122000,
+      "currency": "USD",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-019-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 19000
+        },
+        {
+          "id": "LI-019-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 46000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:19:00Z"
+    },
+    {
+      "id": "INV-020",
+      "customerId": "CUS-040",
+      "customerName": "Dynamic Traders",
+      "status": "unpaid",
+      "amount": 166000,
+      "currency": "AED",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-020-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        },
+        {
+          "id": "LI-020-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        },
+        {
+          "id": "LI-020-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-04-01T09:20:00Z"
+    },
+    {
+      "id": "INV-021",
+      "customerId": "CUS-047",
+      "customerName": "Urban Solutions",
+      "status": "failed",
+      "amount": 42000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-021-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 21000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:21:00Z"
+    },
+    {
+      "id": "INV-022",
+      "customerId": "CUS-054",
+      "customerName": "Nova Solutions",
+      "status": "paid",
+      "amount": 238000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-022-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 30000
+        },
+        {
+          "id": "LI-022-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 37000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:22:00Z"
+    },
+    {
+      "id": "INV-023",
+      "customerId": "CUS-061",
+      "customerName": "Emerald Enterprises",
+      "status": "cancelled",
+      "amount": 219000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-023-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "id": "LI-023-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 11000
+        },
+        {
+          "id": "LI-023-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 28000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:23:00Z"
+    },
+    {
+      "id": "INV-024",
+      "customerId": "CUS-068",
+      "customerName": "Prime Enterprises",
+      "status": "unpaid",
+      "amount": 12000,
+      "currency": "USD",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-024-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 12000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:24:00Z"
+    },
+    {
+      "id": "INV-025",
+      "customerId": "CUS-075",
+      "customerName": "Silver Enterprises",
+      "status": "paid",
+      "amount": 185000,
+      "currency": "AED",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-025-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "id": "LI-025-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:25:00Z"
+    },
+    {
+      "id": "INV-026",
+      "customerId": "CUS-082",
+      "customerName": "Crescent Foods",
+      "status": "unpaid",
+      "amount": 221000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-026-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 46000
+        },
+        {
+          "id": "LI-026-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 13000
+        },
+        {
+          "id": "LI-026-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 31000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:26:00Z"
+    },
+    {
+      "id": "INV-027",
+      "customerId": "CUS-089",
+      "customerName": "Pak Foods",
+      "status": "paid",
+      "amount": 56000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-027-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 14000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:27:00Z"
+    },
+    {
+      "id": "INV-028",
+      "customerId": "CUS-096",
+      "customerName": "Royal Foods",
+      "status": "unpaid",
+      "amount": 115000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-028-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 33000
+        },
+        {
+          "id": "LI-028-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 41000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:28:00Z"
+    },
+    {
+      "id": "INV-029",
+      "customerId": "CUS-003",
+      "customerName": "Summit Hospitality",
+      "status": "processing",
+      "amount": 226000,
+      "currency": "USD",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-029-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 42000
+        },
+        {
+          "id": "LI-029-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 22000
+        },
+        {
+          "id": "LI-029-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 19000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:29:00Z"
+    },
+    {
+      "id": "INV-030",
+      "customerId": "CUS-010",
+      "customerName": "Indus Hospitality",
+      "status": "paid",
+      "amount": 54000,
+      "currency": "AED",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-030-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-06-11T09:30:00Z"
+    },
+    {
+      "id": "INV-031",
+      "customerId": "CUS-017",
+      "customerName": "Capital Hospitality",
+      "status": "cancelled",
+      "amount": 107000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-031-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 16000
+        },
+        {
+          "id": "LI-031-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 43000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:31:00Z"
+    },
+    {
+      "id": "INV-032",
+      "customerId": "CUS-024",
+      "customerName": "Vertex Traders",
+      "status": "unpaid",
+      "amount": 178000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-032-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 44000
+        },
+        {
+          "id": "LI-032-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 22000
+        },
+        {
+          "id": "LI-032-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 30000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:32:00Z"
+    },
+    {
+      "id": "INV-033",
+      "customerId": "CUS-031",
+      "customerName": "Atlas Traders",
+      "status": "paid",
+      "amount": 46000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-033-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 23000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:33:00Z"
+    },
+    {
+      "id": "INV-034",
+      "customerId": "CUS-038",
+      "customerName": "Green Traders",
+      "status": "unpaid",
+      "amount": 252000,
+      "currency": "USD",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-034-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 32000
+        },
+        {
+          "id": "LI-034-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 39000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:34:00Z"
+    },
+    {
+      "id": "INV-035",
+      "customerId": "CUS-045",
+      "customerName": "Nexa Solutions",
+      "status": "paid",
+      "amount": 198000,
+      "currency": "AED",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-035-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "id": "LI-035-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 8000
+        },
+        {
+          "id": "LI-035-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:35:00Z"
+    },
+    {
+      "id": "INV-036",
+      "customerId": "CUS-052",
+      "customerName": "Horizon Solutions",
+      "status": "unpaid",
+      "amount": 9000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-036-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 9000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:36:00Z"
+    },
+    {
+      "id": "INV-037",
+      "customerId": "CUS-059",
+      "customerName": "Eastern Solutions",
+      "status": "failed",
+      "amount": 200000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-037-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 27000
+        },
+        {
+          "id": "LI-037-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 47000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:37:00Z"
+    },
+    {
+      "id": "INV-038",
+      "customerId": "CUS-066",
+      "customerName": "BluePeak Enterprises",
+      "status": "paid",
+      "amount": 237000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-038-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 48000
+        },
+        {
+          "id": "LI-038-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 15000
+        },
+        {
+          "id": "LI-038-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 33000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:38:00Z"
+    },
+    {
+      "id": "INV-039",
+      "customerId": "CUS-073",
+      "customerName": "Unity Enterprises",
+      "status": "cancelled",
+      "amount": 64000,
+      "currency": "USD",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-039-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 16000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:39:00Z"
+    },
+    {
+      "id": "INV-040",
+      "customerId": "CUS-080",
+      "customerName": "Dynamic Enterprises",
+      "status": "unpaid",
+      "amount": 106000,
+      "currency": "AED",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-040-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        },
+        {
+          "id": "LI-040-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-08-01T09:40:00Z"
+    },
+    {
+      "id": "INV-041",
+      "customerId": "CUS-087",
+      "customerName": "Urban Foods",
+      "status": "paid",
+      "amount": 199000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-041-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 39000
+        },
+        {
+          "id": "LI-041-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 19000
+        },
+        {
+          "id": "LI-041-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 16000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:41:00Z"
+    },
+    {
+      "id": "INV-042",
+      "customerId": "CUS-094",
+      "customerName": "Nova Foods",
+      "status": "unpaid",
+      "amount": 60000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-042-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 20000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:42:00Z"
+    },
+    {
+      "id": "INV-043",
+      "customerId": "CUS-001",
+      "customerName": "",
+      "status": "paid",
+      "amount": 117000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-043-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 18000
+        },
+        {
+          "id": "LI-043-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 45000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:43:00Z"
+    },
+    {
+      "id": "INV-044",
+      "customerId": "CUS-008",
+      "customerName": "Prime Hospitality",
+      "status": "unpaid",
+      "amount": 190000,
+      "currency": "USD",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-044-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 46000
+        },
+        {
+          "id": "LI-044-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 24000
+        },
+        {
+          "id": "LI-044-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 32000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:44:00Z"
+    },
+    {
+      "id": "INV-045",
+      "customerId": "CUS-015",
+      "customerName": "Silver Hospitality",
+      "status": "failed",
+      "amount": 40000,
+      "currency": "AED",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-045-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:45:00Z"
+    },
+    {
+      "id": "INV-046",
+      "customerId": "CUS-022",
+      "customerName": "Crescent Traders",
+      "status": "paid",
+      "amount": 231000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-046-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 29000
+        },
+        {
+          "id": "LI-046-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 36000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:46:00Z"
+    },
+    {
+      "id": "INV-047",
+      "customerId": "CUS-029",
+      "customerName": "Pak Traders",
+      "status": "cancelled",
+      "amount": 212000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-047-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 37000
+        },
+        {
+          "id": "LI-047-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 10000
+        },
+        {
+          "id": "LI-047-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 27000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:47:00Z"
+    },
+    {
+      "id": "INV-048",
+      "customerId": "CUS-036",
+      "customerName": "Royal Traders",
+      "status": "unpaid",
+      "amount": 11000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-048-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 11000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:48:00Z"
+    },
+    {
+      "id": "INV-049",
+      "customerId": "CUS-043",
+      "customerName": "Summit Solutions",
+      "status": "paid",
+      "amount": 205000,
+      "currency": "USD",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-049-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 29000
+        },
+        {
+          "id": "LI-049-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 49000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:49:00Z"
+    },
+    {
+      "id": "INV-050",
+      "customerId": "CUS-050",
+      "customerName": "Indus Solutions",
+      "status": "unpaid",
+      "amount": 213000,
+      "currency": "AED",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-050-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        },
+        {
+          "id": "LI-050-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        },
+        {
+          "id": "LI-050-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-02-11T09:50:00Z"
+    },
+    {
+      "id": "INV-051",
+      "customerId": "CUS-057",
+      "customerName": "Capital Solutions",
+      "status": "paid",
+      "amount": 52000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-051-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 13000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:51:00Z"
+    },
+    {
+      "id": "INV-052",
+      "customerId": "CUS-064",
+      "customerName": "Vertex Enterprises",
+      "status": "unpaid",
+      "amount": 112000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-052-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 32000
+        },
+        {
+          "id": "LI-052-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 40000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:52:00Z"
+    },
+    {
+      "id": "INV-053",
+      "customerId": "CUS-071",
+      "customerName": "Atlas Enterprises",
+      "status": "failed",
+      "amount": 217000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-053-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 41000
+        },
+        {
+          "id": "LI-053-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 21000
+        },
+        {
+          "id": "LI-053-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 18000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:53:00Z"
+    },
+    {
+      "id": "INV-054",
+      "customerId": "CUS-078",
+      "customerName": "Green Enterprises",
+      "status": "paid",
+      "amount": 66000,
+      "currency": "USD",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-054-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 22000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:54:00Z"
+    },
+    {
+      "id": "INV-055",
+      "customerId": "CUS-085",
+      "customerName": "Nexa Foods",
+      "status": "cancelled",
+      "amount": 102000,
+      "currency": "AED",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": null,
+      "notes": "",
+      "createdAt": "2026-07-16T09:55:00Z"
+    },
+    {
+      "id": "INV-056",
+      "customerId": "CUS-092",
+      "customerName": "Horizon Foods",
+      "status": "unpaid",
+      "amount": 172000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-056-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 43000
+        },
+        {
+          "id": "LI-056-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 21000
+        },
+        {
+          "id": "LI-056-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 29000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:56:00Z"
+    },
+    {
+      "id": "INV-057",
+      "customerId": "CUS-099",
+      "customerName": "Eastern Foods",
+      "status": "paid",
+      "amount": 44000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-057-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 22000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:57:00Z"
+    },
+    {
+      "id": "INV-058",
+      "customerId": "CUS-006",
+      "customerName": "BluePeak Hospitality",
+      "status": "unpaid",
+      "amount": 245000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-058-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 31000
+        },
+        {
+          "id": "LI-058-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 38000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:58:00Z"
+    },
+    {
+      "id": "INV-059",
+      "customerId": "CUS-013",
+      "customerName": "Unity Hospitality",
+      "status": "paid",
+      "amount": 226000,
+      "currency": "USD",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-059-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 39000
+        },
+        {
+          "id": "LI-059-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 12000
+        },
+        {
+          "id": "LI-059-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 29000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:59:00Z"
+    },
+    {
+      "id": "INV-060",
+      "customerId": "CUS-020",
+      "customerName": "Dynamic Hospitality",
+      "status": "unpaid",
+      "amount": 8000,
+      "currency": "AED",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-060-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 8000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-04-01T09:00:00Z"
+    },
+    {
+      "id": "INV-061",
+      "customerId": "CUS-027",
+      "customerName": "Urban Traders",
+      "status": "failed",
+      "amount": 190000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-061-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 26000
+        },
+        {
+          "id": "LI-061-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 46000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:01:00Z"
+    },
+    {
+      "id": "INV-062",
+      "customerId": "CUS-034",
+      "customerName": "Nova Traders",
+      "status": "paid",
+      "amount": 229000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-062-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 47000
+        },
+        {
+          "id": "LI-062-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 14000
+        },
+        {
+          "id": "LI-062-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 32000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:02:00Z"
+    },
+    {
+      "id": "INV-063",
+      "customerId": "CUS-041",
+      "customerName": "Emerald Solutions",
+      "status": "cancelled",
+      "amount": 60000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-063-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:03:00Z"
+    },
+    {
+      "id": "INV-064",
+      "customerId": "CUS-048",
+      "customerName": "Prime Solutions",
+      "status": "unpaid",
+      "amount": 118000,
+      "currency": "USD",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-064-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 34000
+        },
+        {
+          "id": "LI-064-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 42000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:04:00Z"
+    },
+    {
+      "id": "INV-065",
+      "customerId": "CUS-055",
+      "customerName": "Silver Solutions",
+      "status": "paid",
+      "amount": 190000,
+      "currency": "AED",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-065-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        },
+        {
+          "id": "LI-065-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        },
+        {
+          "id": "LI-065-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:05:00Z"
+    },
+    {
+      "id": "INV-066",
+      "customerId": "CUS-062",
+      "customerName": "Crescent Enterprises",
+      "status": "unpaid",
+      "amount": 57000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-066-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 19000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:06:00Z"
+    },
+    {
+      "id": "INV-067",
+      "customerId": "CUS-069",
+      "customerName": "Pak Enterprises",
+      "status": "paid",
+      "amount": null,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-067-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 17000
+        },
+        {
+          "id": "LI-067-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 44000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:07:00Z"
+    },
+    {
+      "id": "INV-068",
+      "customerId": "CUS-076",
+      "customerName": "Royal Enterprises",
+      "status": "unpaid",
+      "amount": 184000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-068-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 45000
+        },
+        {
+          "id": "LI-068-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 23000
+        },
+        {
+          "id": "LI-068-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 31000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:08:00Z"
+    },
+    {
+      "id": "INV-069",
+      "customerId": "CUS-083",
+      "customerName": "Summit Foods",
+      "status": "failed",
+      "amount": 48000,
+      "currency": "USD",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-069-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 24000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:09:00Z"
+    },
+    {
+      "id": "INV-070",
+      "customerId": "CUS-090",
+      "customerName": "Indus Foods",
+      "status": "paid",
+      "amount": 224000,
+      "currency": "AED",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-070-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        },
+        {
+          "id": "LI-070-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-06-11T09:10:00Z"
+    },
+    {
+      "id": "INV-071",
+      "customerId": "CUS-097",
+      "customerName": "Capital Foods",
+      "status": "cancelled",
+      "amount": 205000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-071-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 36000
+        },
+        {
+          "id": "LI-071-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 9000
+        },
+        {
+          "id": "LI-071-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 26000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:11:00Z"
+    },
+    {
+      "id": "INV-072",
+      "customerId": "CUS-004",
+      "customerName": "Vertex Hospitality",
+      "status": "unpaid",
+      "amount": 10000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-072-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 10000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:12:00Z"
+    },
+    {
+      "id": "INV-073",
+      "customerId": "CUS-011",
+      "customerName": "Atlas Hospitality",
+      "status": "paid",
+      "amount": 200000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-073-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 28000
+        },
+        {
+          "id": "LI-073-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 48000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:13:00Z"
+    },
+    {
+      "id": "INV-074",
+      "customerId": "CUS-018",
+      "customerName": "Green Hospitality",
+      "status": "unpaid",
+      "amount": 245000,
+      "currency": "USD",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-074-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 49000
+        },
+        {
+          "id": "LI-074-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 16000
+        },
+        {
+          "id": "LI-074-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 34000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:14:00Z"
+    },
+    {
+      "id": "INV-075",
+      "customerId": "CUS-025",
+      "customerName": "Nexa Traders",
+      "status": "paid",
+      "amount": 48000,
+      "currency": "AED",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-075-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:15:00Z"
+    },
+    {
+      "id": "INV-076",
+      "customerId": "CUS-032",
+      "customerName": "Horizon Traders",
+      "status": "unpaid",
+      "amount": 109000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-076-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 31000
+        },
+        {
+          "id": "LI-076-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 39000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:16:00Z"
+    },
+    {
+      "id": "INV-077",
+      "customerId": "CUS-039",
+      "customerName": "Eastern Traders",
+      "status": "failed",
+      "amount": 208000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-077-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 40000
+        },
+        {
+          "id": "LI-077-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 20000
+        },
+        {
+          "id": "LI-077-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 17000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:17:00Z"
+    },
+    {
+      "id": "INV-078",
+      "customerId": "CUS-046",
+      "customerName": "BluePeak Solutions",
+      "status": "paid",
+      "amount": 63000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-078-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 21000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:18:00Z"
+    },
+    {
+      "id": "INV-078",
+      "customerId": "CUS-053",
+      "customerName": "Unity Solutions",
+      "status": "cancelled",
+      "amount": 122000,
+      "currency": "USD",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-079-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 19000
+        },
+        {
+          "id": "LI-079-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 46000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:19:00Z"
+    },
+    {
+      "id": "INV-080",
+      "customerId": "CUS-060",
+      "customerName": "Dynamic Solutions",
+      "status": "unpaid",
+      "amount": 166000,
+      "currency": "AED",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-080-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        },
+        {
+          "id": "LI-080-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        },
+        {
+          "id": "LI-080-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-08-01T09:20:00Z"
+    },
+    {
+      "id": "INV-081",
+      "customerId": "CUS-067",
+      "customerName": "Urban Enterprises",
+      "status": "paid",
+      "amount": 42000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-081-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 21000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:21:00Z"
+    },
+    {
+      "id": "INV-082",
+      "customerId": "CUS-074",
+      "customerName": "Nova Enterprises",
+      "status": "unpaid",
+      "amount": 238000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-082-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 30000
+        },
+        {
+          "id": "LI-082-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 37000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:22:00Z"
+    },
+    {
+      "id": "INV-083",
+      "customerId": "CUS-081",
+      "customerName": "Emerald Foods",
+      "status": "paid",
+      "amount": 219000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-083-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "id": "LI-083-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 11000
+        },
+        {
+          "id": "LI-083-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 28000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:23:00Z"
+    },
+    {
+      "id": "INV-084",
+      "customerId": "CUS-088",
+      "customerName": "Prime Foods",
+      "status": "unpaid",
+      "amount": 12000,
+      "currency": "USD",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-084-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 12000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:24:00Z"
+    },
+    {
+      "id": "INV-085",
+      "customerId": "CUS-095",
+      "customerName": "Silver Foods",
+      "status": "failed",
+      "amount": 185000,
+      "currency": "AED",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-085-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "id": "LI-085-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:25:00Z"
+    },
+    {
+      "id": "INV-086",
+      "customerId": "CUS-002",
+      "customerName": "Crescent Hospitality",
+      "status": "paid",
+      "amount": 221000,
+      "currency": "PKR",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-086-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 46000
+        },
+        {
+          "id": "LI-086-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 13000
+        },
+        {
+          "id": "LI-086-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 31000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:26:00Z"
+    },
+    {
+      "id": "INV-087",
+      "customerId": "CUS-009",
+      "customerName": "Pak Hospitality",
+      "status": "cancelled",
+      "amount": 56000,
+      "currency": "PKR",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-087-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 14000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:27:00Z"
+    },
+    {
+      "id": "INV-088",
+      "customerId": "CUS-016",
+      "customerName": "Royal Hospitality",
+      "status": "unpaid",
+      "amount": 115000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-088-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 33000
+        },
+        {
+          "id": "LI-088-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 41000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:28:00Z"
+    },
+    {
+      "id": "INV-089",
+      "customerId": "CUS-023",
+      "customerName": "Summit Traders",
+      "status": "paid",
+      "amount": 226000,
+      "currency": "USD",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-089-1",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 42000
+        },
+        {
+          "id": "LI-089-2",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 22000
+        },
+        {
+          "id": "LI-089-3",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 19000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:29:00Z"
+    },
+    {
+      "id": "INV-090",
+      "customerId": "CUS-030",
+      "customerName": "Indus Traders",
+      "status": "unpaid",
+      "amount": 54000,
+      "currency": "AED",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-090-1",
+          "description": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-02-11T09:30:00Z"
+    },
+    {
+      "id": "INV-091",
+      "customerId": "CUS-037",
+      "customerName": "Capital Traders",
+      "status": "paid",
+      "amount": 107000,
+      "currency": "PKR",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-091-1",
+          "description": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 16000
+        },
+        {
+          "id": "LI-091-2",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 43000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:31:00Z"
+    },
+    {
+      "id": "INV-092",
+      "customerId": "CUS-044",
+      "customerName": "Vertex Solutions",
+      "status": "unpaid",
+      "amount": 178000,
+      "currency": "PKR",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-092-1",
+          "description": "Security review",
+          "quantity": 1,
+          "unitPrice": 44000
+        },
+        {
+          "id": "LI-092-2",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 22000
+        },
+        {
+          "id": "LI-092-3",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 30000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-04-01T09:32:00Z"
+    },
+    {
+      "id": "INV-093",
+      "customerId": "CUS-051",
+      "customerName": "Atlas Solutions",
+      "status": "failed",
+      "amount": 46000,
+      "currency": "PKR",
+      "issueDate": "2026-05-06",
+      "dueDate": "2026-05-13",
+      "lineItems": [
+        {
+          "id": "LI-093-1",
+          "description": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 23000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-05-06T09:33:00Z"
+    },
+    {
+      "id": "INV-094",
+      "customerId": "CUS-058",
+      "customerName": "Green Solutions",
+      "status": "paid",
+      "amount": 252000,
+      "currency": "USD",
+      "issueDate": "2026-06-11",
+      "dueDate": "2026-06-18",
+      "lineItems": [
+        {
+          "id": "LI-094-1",
+          "description": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 32000
+        },
+        {
+          "id": "LI-094-2",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 39000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-06-11T09:34:00Z"
+    },
+    {
+      "id": "INV-095",
+      "customerId": "CUS-065",
+      "customerName": "Nexa Enterprises",
+      "status": "cancelled",
+      "amount": 198000,
+      "currency": "AED",
+      "issueDate": "2026-07-16",
+      "dueDate": "2026-07-23",
+      "lineItems": [
+        {
+          "id": "LI-095-1",
+          "description": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "id": "LI-095-2",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 8000
+        },
+        {
+          "id": "LI-095-3",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-07-16T09:35:00Z"
+    },
+    {
+      "id": "INV-096",
+      "customerId": "CUS-072",
+      "customerName": "Horizon Enterprises",
+      "status": "unpaid",
+      "amount": 9000,
+      "currency": "PKR",
+      "issueDate": "2026-08-01",
+      "dueDate": "2026-08-08",
+      "lineItems": [
+        {
+          "id": "LI-096-1",
+          "description": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 9000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-08-01T09:36:00Z"
+    },
+    {
+      "id": "INV-097",
+      "customerId": "CUS-079",
+      "customerName": "Eastern Enterprises",
+      "status": "paid",
+      "amount": 195000,
+      "currency": "PKR",
+      "issueDate": "2026-01-06",
+      "dueDate": "2026-01-13",
+      "lineItems": [
+        {
+          "id": "LI-097-1",
+          "description": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 27000
+        },
+        {
+          "id": "LI-097-2",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 47000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-01-06T09:37:00Z"
+    },
+    {
+      "id": "INV-098",
+      "customerId": "CUS-086",
+      "customerName": "BluePeak Foods",
+      "status": "unpaid",
+      "amount": 237000,
+      "currency": "PKR",
+      "issueDate": "2026-02-11",
+      "dueDate": "2026-02-18",
+      "lineItems": [
+        {
+          "id": "LI-098-1",
+          "description": "API integration",
+          "quantity": 3,
+          "unitPrice": 48000
+        },
+        {
+          "id": "LI-098-2",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 15000
+        },
+        {
+          "id": "LI-098-3",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 33000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-02-11T09:38:00Z"
+    },
+    {
+      "id": "INV-099",
+      "customerId": "CUS-093",
+      "customerName": "Unity Foods",
+      "status": "paid",
+      "amount": 64000,
+      "currency": "USD",
+      "issueDate": "2026-03-16",
+      "dueDate": "2026-03-23",
+      "lineItems": [
+        {
+          "id": "LI-099-1",
+          "description": "Technical support",
+          "quantity": 4,
+          "unitPrice": 16000
+        }
+      ],
+      "notes": "",
+      "createdAt": "2026-03-16T09:39:00Z"
+    },
+    {
+      "id": "INV-100",
+      "customerId": "CUS-100",
+      "customerName": "Dynamic Foods",
+      "status": "unpaid",
+      "amount": 106000,
+      "currency": "AED",
+      "issueDate": "2026-04-01",
+      "dueDate": "2026-04-08",
+      "lineItems": [
+        {
+          "id": "LI-100-1",
+          "description": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        },
+        {
+          "id": "LI-100-2",
+          "description": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        }
+      ],
+      "notes": "Priority account",
+      "createdAt": "2026-04-01T09:40:00Z"
+    },
+    {
+      "id": "INV-101",
+      "customerName": "Nova Hospitality",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 569909,
+      "issueDate": "2026-09-22",
+      "dueDate": "2026-09-29"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-001",
+      "customerId": "CUS-011",
+      "customerName": "Atlas Hospitality",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-001",
+          "productName": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-002",
+          "productName": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 185000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 186500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-002",
+      "customerId": "CUS-022",
+      "customerName": "Crescent Traders",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-002",
+          "productName": "Technical support",
+          "quantity": 3,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-003",
+          "productName": "Dashboard customization",
+          "quantity": 4,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "Data migration",
+          "quantity": 5,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 346000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 347500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-003",
+      "customerId": "CUS-033",
+      "customerName": "Unity Traders",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-003",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "Staff training",
+          "quantity": 5,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-005",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "Security review",
+          "quantity": 2,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 341000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 342500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-004",
+      "customerId": "CUS-044",
+      "customerName": "Vertex Solutions",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-004",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 75000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 76500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-005",
+      "customerId": "CUS-055",
+      "customerName": "Silver Solutions",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-005",
+          "productName": "Maintenance service",
+          "quantity": 1,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "Reporting module",
+          "quantity": 2,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 76000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 76000,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-006",
+      "customerId": "CUS-066",
+      "customerName": "BluePeak Enterprises",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-006",
+          "productName": "Payment gateway setup",
+          "quantity": 2,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-007",
+          "productName": "Consulting hours",
+          "quantity": 3,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "Software subscription",
+          "quantity": 4,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 194000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 195500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-007",
+      "customerId": "CUS-077",
+      "customerName": "Capital Enterprises",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-007",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "API integration",
+          "quantity": 4,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-009",
+          "productName": "Technical support",
+          "quantity": 5,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 345000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 346500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-008",
+      "customerId": "CUS-088",
+      "customerName": "Prime Foods",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-008",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 48000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 49500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-009",
+      "customerId": "CUS-099",
+      "customerName": "Eastern Foods",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-009",
+          "productName": "Data migration",
+          "quantity": 5,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "Staff training",
+          "quantity": 1,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 208000,
+      "discount": 20800,
+      "shipping": 1500,
+      "total": 188700,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-010",
+      "customerId": "CUS-010",
+      "customerName": "Indus Hospitality",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-010",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-011",
+          "productName": "Security review",
+          "quantity": 2,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "Maintenance service",
+          "quantity": 3,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 159000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 159000,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-011",
+      "customerId": "CUS-021",
+      "customerName": "Emerald Traders",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-011",
+          "productName": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-013",
+          "productName": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "Consulting hours",
+          "quantity": 5,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 304000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 305500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-012",
+      "customerId": "CUS-032",
+      "customerName": "Horizon Traders",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-012",
+          "productName": "Payment gateway setup",
+          "quantity": 3,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 105000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 106500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-013",
+      "customerId": "CUS-043",
+      "customerName": "Summit Solutions",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-013",
+          "productName": "Software subscription",
+          "quantity": 4,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "API integration",
+          "quantity": 5,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 325000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 326500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-014",
+      "customerId": "CUS-054",
+      "customerName": "Nova Solutions",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-014",
+          "productName": "Technical support",
+          "quantity": 5,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-015",
+          "productName": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 166000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 167500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-015",
+      "customerId": "CUS-065",
+      "customerName": "Nexa Enterprises",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-015",
+          "productName": "Data migration",
+          "quantity": 1,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "Staff training",
+          "quantity": 2,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-017",
+          "productName": "Cloud hosting",
+          "quantity": 3,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "Security review",
+          "quantity": 4,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 287000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 287000,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-016",
+      "customerId": "CUS-076",
+      "customerName": "Royal Enterprises",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-016",
+          "productName": "Cloud hosting",
+          "quantity": 2,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 30000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 31500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-017",
+      "customerId": "CUS-087",
+      "customerName": "Urban Foods",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-017",
+          "productName": "Maintenance service",
+          "quantity": 3,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "Reporting module",
+          "quantity": 4,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 172000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 173500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-018",
+      "customerId": "CUS-098",
+      "customerName": "Green Foods",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-018",
+          "productName": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-019",
+          "productName": "Consulting hours",
+          "quantity": 5,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "Software subscription",
+          "quantity": 1,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 205000,
+      "discount": 20500,
+      "shipping": 1500,
+      "total": 186000,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-019",
+      "customerId": "CUS-009",
+      "customerName": "Pak Hospitality",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-019",
+          "productName": "Software subscription",
+          "quantity": 5,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "API integration",
+          "quantity": 1,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-021",
+          "productName": "Technical support",
+          "quantity": 2,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-022",
+          "productName": "Dashboard customization",
+          "quantity": 3,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 284000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": "invalid-total",
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-020",
+      "customerId": "CUS-020",
+      "customerName": "Dynamic Hospitality",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-020",
+          "productName": "Technical support",
+          "quantity": 1,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 12000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 12000,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-021",
+      "customerId": "CUS-031",
+      "customerName": "Atlas Traders",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-021",
+          "productName": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-022",
+          "productName": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 130000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 131500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-022",
+      "customerId": "CUS-042",
+      "customerName": "Crescent Solutions",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-022",
+          "productName": "Cloud hosting",
+          "quantity": 3,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-023",
+          "productName": "Security review",
+          "quantity": 4,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-024",
+          "productName": "Maintenance service",
+          "quantity": 5,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 313000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 314500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-023",
+      "customerId": "CUS-053",
+      "customerName": "Unity Solutions",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-023",
+          "productName": "Maintenance service",
+          "quantity": 4,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-024",
+          "productName": "Reporting module",
+          "quantity": 5,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-025",
+          "productName": "Payment gateway setup",
+          "quantity": 1,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-026",
+          "productName": "Consulting hours",
+          "quantity": 2,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 271000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 272500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-024",
+      "customerId": "CUS-064",
+      "customerName": "Vertex Enterprises",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-024",
+          "productName": "Payment gateway setup",
+          "quantity": 5,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 175000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 176500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-025",
+      "customerId": "CUS-075",
+      "customerName": "Silver Enterprises",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-025",
+          "productName": "Software subscription",
+          "quantity": 1,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-026",
+          "productName": "API integration",
+          "quantity": 2,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 115000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 115000,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-026",
+      "customerId": "CUS-086",
+      "customerName": "BluePeak Foods",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-026",
+          "productName": "Technical support",
+          "quantity": 2,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-027",
+          "productName": "Dashboard customization",
+          "quantity": 3,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-028",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 266000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 267500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-027",
+      "customerId": "CUS-097",
+      "customerName": "Capital Foods",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-027",
+          "productName": "Data migration",
+          "quantity": 3,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-028",
+          "productName": "Staff training",
+          "quantity": 4,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-029",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-030",
+          "productName": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 303000,
+      "discount": 30300,
+      "shipping": 1500,
+      "total": 274200,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-028",
+      "customerId": "CUS-008",
+      "customerName": "Prime Hospitality",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-028",
+          "productName": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 60000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 61500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-029",
+      "customerId": "CUS-019",
+      "customerName": "Eastern Hospitality",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-029",
+          "productName": "Maintenance service",
+          "quantity": 5,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-030",
+          "productName": "Reporting module",
+          "quantity": 1,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 128000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 129500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-030",
+      "customerId": "CUS-030",
+      "customerName": "Indus Traders",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-030",
+          "productName": "Payment gateway setup",
+          "quantity": 1,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-031",
+          "productName": "Consulting hours",
+          "quantity": 2,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-032",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 126000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 126000,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-031",
+      "customerId": "CUS-041",
+      "customerName": "Emerald Solutions",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-031",
+          "productName": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-032",
+          "productName": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-033",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-034",
+          "productName": "Dashboard customization",
+          "quantity": 5,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 383000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 384500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-032",
+      "customerId": "CUS-052",
+      "customerName": "Horizon Solutions",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-032",
+          "productName": "Technical support",
+          "quantity": 3,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 36000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 37500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-033",
+      "customerId": "CUS-063",
+      "customerName": "Summit Enterprises",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-033",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-034",
+          "productName": "Staff training",
+          "quantity": 5,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 242000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 243500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-034",
+      "customerId": "CUS-074",
+      "customerName": "Nova Enterprises",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-034",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-035",
+          "productName": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-036",
+          "productName": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 157000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 158500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-035",
+      "customerId": "CUS-085",
+      "customerName": "Nexa Foods",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-035",
+          "productName": "Maintenance service",
+          "quantity": 1,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-036",
+          "productName": "Reporting module",
+          "quantity": 2,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-037",
+          "productName": "Payment gateway setup",
+          "quantity": 3,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-038",
+          "productName": "Consulting hours",
+          "quantity": 4,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 213000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 213000,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-036",
+      "customerId": "CUS-096",
+      "customerName": "Royal Foods",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-036",
+          "productName": "Payment gateway setup",
+          "quantity": 2,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 70000,
+      "discount": 7000,
+      "shipping": 1500,
+      "total": 64500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-037",
+      "customerId": "CUS-007",
+      "customerName": "Urban Hospitality",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-037",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-038",
+          "productName": "API integration",
+          "quantity": 4,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 255000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 256500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-038",
+      "customerId": "CUS-018",
+      "customerName": "Green Hospitality",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-038",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-039",
+          "productName": "Dashboard customization",
+          "quantity": 5,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-040",
+          "productName": "Data migration",
+          "quantity": 1,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 236000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 237500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-039",
+      "customerId": "CUS-029",
+      "customerName": "Pak Traders",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-039",
+          "productName": "Data migration",
+          "quantity": 5,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-040",
+          "productName": "Staff training",
+          "quantity": 1,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-001",
+          "productName": "Cloud hosting",
+          "quantity": 2,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-002",
+          "productName": "Security review",
+          "quantity": 3,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 364000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 365500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-040",
+      "customerId": "CUS-040",
+      "customerName": "Dynamic Traders",
+      "status": "unknown",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-040",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 15000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 15000,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-041",
+      "customerId": "CUS-051",
+      "customerName": "Atlas Solutions",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-001",
+          "productName": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-002",
+          "productName": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 124000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 125500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-042",
+      "customerId": "CUS-062",
+      "customerName": "Crescent Enterprises",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-002",
+          "productName": "Payment gateway setup",
+          "quantity": 3,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-003",
+          "productName": "Consulting hours",
+          "quantity": 4,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "Software subscription",
+          "quantity": 5,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 262000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 263500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-043",
+      "customerId": "CUS-073",
+      "customerName": "Unity Enterprises",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-003",
+          "productName": "Software subscription",
+          "quantity": 4,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "API integration",
+          "quantity": 5,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-005",
+          "productName": "Technical support",
+          "quantity": 1,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "Dashboard customization",
+          "quantity": 2,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 397000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 398500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-044",
+      "customerId": "CUS-084",
+      "customerName": "Vertex Foods",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-004",
+          "productName": "Technical support",
+          "quantity": 5,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 60000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 61500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-045",
+      "customerId": "CUS-095",
+      "customerName": "Silver Foods",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-005",
+          "productName": "Data migration",
+          "quantity": 1,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "Staff training",
+          "quantity": 2,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 74000,
+      "discount": 7400,
+      "shipping": 0,
+      "total": 66600,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-046",
+      "customerId": "CUS-006",
+      "customerName": "BluePeak Hospitality",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-006",
+          "productName": "Cloud hosting",
+          "quantity": 2,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-007",
+          "productName": "Security review",
+          "quantity": 3,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "Maintenance service",
+          "quantity": 4,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 236000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 237500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-047",
+      "customerId": "CUS-017",
+      "customerName": "Capital Hospitality",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-007",
+          "productName": "Maintenance service",
+          "quantity": 3,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "Reporting module",
+          "quantity": 4,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-009",
+          "productName": "Payment gateway setup",
+          "quantity": 5,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 355000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 356500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-048",
+      "customerId": "CUS-028",
+      "customerName": "Prime Traders",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-008",
+          "productName": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 140000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 141500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-049",
+      "customerId": "CUS-039",
+      "customerName": "Eastern Traders",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-009",
+          "productName": "Software subscription",
+          "quantity": 5,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "API integration",
+          "quantity": 1,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 170000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 171500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-050",
+      "customerId": "CUS-050",
+      "customerName": "Indus Solutions",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-010",
+          "productName": "Technical support",
+          "quantity": 1,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-011",
+          "productName": "Dashboard customization",
+          "quantity": 2,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "Data migration",
+          "quantity": 3,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 186000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 186000,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-051",
+      "customerId": "CUS-061",
+      "customerName": "Emerald Enterprises",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-011",
+          "productName": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-013",
+          "productName": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "Security review",
+          "quantity": 5,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 400000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 401500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-052",
+      "customerId": "CUS-072",
+      "customerName": "Horizon Enterprises",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-012",
+          "productName": "Cloud hosting",
+          "quantity": 3,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 45000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 46500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-053",
+      "customerId": "CUS-083",
+      "customerName": "Summit Foods",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-013",
+          "productName": "Maintenance service",
+          "quantity": 4,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "Reporting module",
+          "quantity": 5,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 220000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 221500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-054",
+      "customerId": "CUS-094",
+      "customerName": "Nova Foods",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-014",
+          "productName": "Payment gateway setup",
+          "quantity": 5,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-015",
+          "productName": "Consulting hours",
+          "quantity": 1,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 233000,
+      "discount": 23300,
+      "shipping": 1500,
+      "total": 211200,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-055",
+      "customerId": "CUS-005",
+      "customerName": "Nexa Hospitality",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-015",
+          "productName": "Software subscription",
+          "quantity": 1,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "API integration",
+          "quantity": 2,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-017",
+          "productName": "Technical support",
+          "quantity": 3,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "Dashboard customization",
+          "quantity": 4,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 271000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 271000,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-056",
+      "customerId": "CUS-016",
+      "customerName": "Royal Hospitality",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-016",
+          "productName": "Technical support",
+          "quantity": 2,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 24000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 25500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-057",
+      "customerId": "CUS-027",
+      "customerName": "Urban Traders",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-017",
+          "productName": "Data migration",
+          "quantity": 3,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "Staff training",
+          "quantity": 4,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 186000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 187500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-058",
+      "customerId": "CUS-038",
+      "customerName": "Green Traders",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-018",
+          "productName": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-019",
+          "productName": "Security review",
+          "quantity": 5,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "Maintenance service",
+          "quantity": 1,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 290000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 291500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-059",
+      "customerId": "CUS-049",
+      "customerName": "Pak Solutions",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-019",
+          "productName": "Maintenance service",
+          "quantity": 5,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "Reporting module",
+          "quantity": 1,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-021",
+          "productName": "Payment gateway setup",
+          "quantity": 2,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-022",
+          "productName": "Consulting hours",
+          "quantity": 3,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 222000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 223500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-060",
+      "customerId": "CUS-060",
+      "customerName": "Dynamic Solutions",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-020",
+          "productName": "Payment gateway setup",
+          "quantity": 1,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 35000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 35000,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-061",
+      "customerId": "CUS-071",
+      "customerName": "Atlas Enterprises",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-021",
+          "productName": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-022",
+          "productName": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 185000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 186500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-062",
+      "customerId": "CUS-082",
+      "customerName": "Crescent Foods",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [],
+      "subtotal": 346000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 347500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-063",
+      "customerId": "CUS-093",
+      "customerName": "Unity Foods",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-023",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-024",
+          "productName": "Staff training",
+          "quantity": 5,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-025",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-026",
+          "productName": "Security review",
+          "quantity": 2,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 341000,
+      "discount": 34100,
+      "shipping": 1500,
+      "total": 308400,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-064",
+      "customerId": "CUS-004",
+      "customerName": "Vertex Hospitality",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-024",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 75000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 76500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-065",
+      "customerId": "CUS-015",
+      "customerName": "Silver Hospitality",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-025",
+          "productName": "Maintenance service",
+          "quantity": 1,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-026",
+          "productName": "Reporting module",
+          "quantity": 2,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 76000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 76000,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-066",
+      "customerId": "CUS-026",
+      "customerName": "BluePeak Traders",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-026",
+          "productName": "Payment gateway setup",
+          "quantity": 2,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-027",
+          "productName": "Consulting hours",
+          "quantity": 3,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-028",
+          "productName": "Software subscription",
+          "quantity": 4,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 194000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 195500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-067",
+      "customerId": "CUS-037",
+      "customerName": "Capital Traders",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-027",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-028",
+          "productName": "API integration",
+          "quantity": 4,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-029",
+          "productName": "Technical support",
+          "quantity": 5,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-030",
+          "productName": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 345000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 346500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-068",
+      "customerId": "CUS-048",
+      "customerName": "Prime Solutions",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-028",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 48000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 49500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-069",
+      "customerId": "CUS-059",
+      "customerName": "Eastern Solutions",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-029",
+          "productName": "Data migration",
+          "quantity": 5,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-030",
+          "productName": "Staff training",
+          "quantity": 1,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 208000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 209500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-070",
+      "customerId": "CUS-070",
+      "customerName": "Indus Enterprises",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-030",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-031",
+          "productName": "Security review",
+          "quantity": 2,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-032",
+          "productName": "Maintenance service",
+          "quantity": 3,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 159000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 159000,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-071",
+      "customerId": "CUS-081",
+      "customerName": "Emerald Foods",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-031",
+          "productName": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-032",
+          "productName": "Reporting module",
+          "quantity": 3,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-033",
+          "productName": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-034",
+          "productName": "Consulting hours",
+          "quantity": 5,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 304000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 305500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-072",
+      "customerId": "CUS-092",
+      "customerName": "Horizon Foods",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-032",
+          "productName": "Payment gateway setup",
+          "quantity": 3,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 105000,
+      "discount": 10500,
+      "shipping": 1500,
+      "total": 96000,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-073",
+      "customerId": "CUS-003",
+      "customerName": "Summit Hospitality",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-033",
+          "productName": "Software subscription",
+          "quantity": 4,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-034",
+          "productName": "API integration",
+          "quantity": 5,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 325000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 326500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-074",
+      "customerId": "CUS-014",
+      "customerName": "Nova Hospitality",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-034",
+          "productName": "Technical support",
+          "quantity": 5,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-035",
+          "productName": "Dashboard customization",
+          "quantity": 1,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-036",
+          "productName": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 166000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 167500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-075",
+      "customerId": "CUS-025",
+      "customerName": "Nexa Traders",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-035",
+          "productName": "Data migration",
+          "quantity": 1,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-036",
+          "productName": "Staff training",
+          "quantity": 2,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-037",
+          "productName": "Cloud hosting",
+          "quantity": 3,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-038",
+          "productName": "Security review",
+          "quantity": 4,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 287000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 287000,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-076",
+      "customerId": "CUS-036",
+      "customerName": "Royal Traders",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-036",
+          "productName": "Cloud hosting",
+          "quantity": 2,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 30000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 31500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-077",
+      "customerId": "CUS-047",
+      "customerName": "Urban Solutions",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-037",
+          "productName": "Maintenance service",
+          "quantity": 3,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-038",
+          "productName": "Reporting module",
+          "quantity": 4,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 172000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 173500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-078",
+      "customerId": "CUS-058",
+      "customerName": "Green Solutions",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-038",
+          "productName": "Payment gateway setup",
+          "quantity": 4,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-039",
+          "productName": "Consulting hours",
+          "quantity": 5,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-040",
+          "productName": "Software subscription",
+          "quantity": 1,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 205000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 206500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-079",
+      "customerId": "CUS-069",
+      "customerName": "Pak Enterprises",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-039",
+          "productName": "Software subscription",
+          "quantity": 5,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-040",
+          "productName": "API integration",
+          "quantity": 1,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-001",
+          "productName": "Technical support",
+          "quantity": 2,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-002",
+          "productName": "Dashboard customization",
+          "quantity": 3,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 284000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 285500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-080",
+      "customerId": "CUS-080",
+      "customerName": "Dynamic Enterprises",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-040",
+          "productName": "Technical support",
+          "quantity": 1,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 12000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 12000,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-081",
+      "customerId": "CUS-091",
+      "customerName": "Atlas Foods",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-001",
+          "productName": "Data migration",
+          "quantity": 2,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-002",
+          "productName": "Staff training",
+          "quantity": 3,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 130000,
+      "discount": 13000,
+      "shipping": 1500,
+      "total": 118500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-082",
+      "customerId": "CUS-002",
+      "customerName": "Crescent Hospitality",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-002",
+          "productName": "Cloud hosting",
+          "quantity": 3,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-003",
+          "productName": "Security review",
+          "quantity": 4,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "Maintenance service",
+          "quantity": 5,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 313000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 314500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-083",
+      "customerId": "CUS-013",
+      "customerName": "Unity Hospitality",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-003",
+          "productName": "Maintenance service",
+          "quantity": 4,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-004",
+          "productName": "Reporting module",
+          "quantity": 5,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-005",
+          "productName": "Payment gateway setup",
+          "quantity": 1,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "Consulting hours",
+          "quantity": 2,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 271000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 272500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-084",
+      "customerId": "CUS-024",
+      "customerName": "Vertex Traders",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-004",
+          "productName": "Payment gateway setup",
+          "quantity": 5,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 175000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 176500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-085",
+      "customerId": "CUS-035",
+      "customerName": "Silver Traders",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-005",
+          "productName": "Software subscription",
+          "quantity": 1,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-006",
+          "productName": "API integration",
+          "quantity": 2,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 115000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 115000,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-086",
+      "customerId": "CUS-046",
+      "customerName": "BluePeak Solutions",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-006",
+          "productName": "Technical support",
+          "quantity": 2,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-007",
+          "productName": "Dashboard customization",
+          "quantity": 3,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 266000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 267500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-087",
+      "customerId": "CUS-057",
+      "customerName": "Capital Solutions",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-007",
+          "productName": "Data migration",
+          "quantity": 3,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-008",
+          "productName": "Staff training",
+          "quantity": 4,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-009",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 303000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 304500,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-088",
+      "customerId": "CUS-999",
+      "customerName": "Prime Enterprises",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-008",
+          "productName": "Cloud hosting",
+          "quantity": 4,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 60000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 61500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-089",
+      "customerId": "CUS-079",
+      "customerName": "Eastern Enterprises",
+      "status": "delivered",
+      "paymentStatus": "pending",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-009",
+          "productName": "Maintenance service",
+          "quantity": 5,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-010",
+          "productName": "Reporting module",
+          "quantity": 1,
+          "unitPrice": 28000
+        }
+      ],
+      "subtotal": 128000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 129500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-090",
+      "customerId": "CUS-090",
+      "customerName": "Indus Foods",
+      "status": "cancelled",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-010",
+          "productName": "Payment gateway setup",
+          "quantity": 1,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-011",
+          "productName": "Consulting hours",
+          "quantity": 2,
+          "unitPrice": 8000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        }
+      ],
+      "subtotal": 126000,
+      "discount": 12600,
+      "shipping": 0,
+      "total": 113400,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-091",
+      "customerId": "CUS-001",
+      "customerName": "Emerald Hospitality",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-011",
+          "productName": "Software subscription",
+          "quantity": 2,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-012",
+          "productName": "API integration",
+          "quantity": 3,
+          "unitPrice": 45000
+        },
+        {
+          "productId": "PRD-013",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "Dashboard customization",
+          "quantity": 5,
+          "unitPrice": 30000
+        }
+      ],
+      "subtotal": 383000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 384500,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-092",
+      "customerId": "CUS-012",
+      "customerName": "Horizon Hospitality",
+      "status": "confirmed",
+      "paymentStatus": "refunded",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-012",
+          "productName": "Technical support",
+          "quantity": 3,
+          "unitPrice": 12000
+        }
+      ],
+      "subtotal": 36000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 37500,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-093",
+      "customerId": "CUS-023",
+      "customerName": "Summit Traders",
+      "status": "processing",
+      "paymentStatus": "pending",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-013",
+          "productName": "Data migration",
+          "quantity": 4,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-014",
+          "productName": "Staff training",
+          "quantity": 5,
+          "unitPrice": 18000
+        }
+      ],
+      "subtotal": 242000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 243500,
+      "orderDate": "2026-05-08",
+      "expectedDeliveryDate": "2026-05-13",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-094",
+      "customerId": "CUS-034",
+      "customerName": "Nova Traders",
+      "status": "shipped",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-014",
+          "productName": "Cloud hosting",
+          "quantity": 5,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-015",
+          "productName": "Security review",
+          "quantity": 1,
+          "unitPrice": 42000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "Maintenance service",
+          "quantity": 2,
+          "unitPrice": 20000
+        }
+      ],
+      "subtotal": 157000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 158500,
+      "orderDate": "2026-06-15",
+      "expectedDeliveryDate": "2026-06-20",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-095",
+      "customerId": "CUS-045",
+      "customerName": "Nexa Solutions",
+      "status": "delivered",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-015",
+          "productName": "Maintenance service",
+          "quantity": 1,
+          "unitPrice": 20000
+        },
+        {
+          "productId": "PRD-016",
+          "productName": "Reporting module",
+          "quantity": 2,
+          "unitPrice": 28000
+        },
+        {
+          "productId": "PRD-017",
+          "productName": "Payment gateway setup",
+          "quantity": 3,
+          "unitPrice": 35000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "Consulting hours",
+          "quantity": 4,
+          "unitPrice": 8000
+        }
+      ],
+      "subtotal": 213000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 213000,
+      "orderDate": "2026-07-22",
+      "expectedDeliveryDate": "2026-07-27",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-096",
+      "customerId": "CUS-056",
+      "customerName": "Royal Solutions",
+      "status": "cancelled",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-016",
+          "productName": "Payment gateway setup",
+          "quantity": 2,
+          "unitPrice": 35000
+        }
+      ],
+      "subtotal": 70000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 71500,
+      "orderDate": "2026-08-01",
+      "expectedDeliveryDate": "2026-08-06",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-097",
+      "customerId": "CUS-067",
+      "customerName": "Urban Enterprises",
+      "status": "pending",
+      "paymentStatus": "pending",
+      "currency": "USD",
+      "items": [
+        {
+          "productId": "PRD-017",
+          "productName": "Software subscription",
+          "quantity": 3,
+          "unitPrice": 25000
+        },
+        {
+          "productId": "PRD-018",
+          "productName": "API integration",
+          "quantity": 4,
+          "unitPrice": 45000
+        }
+      ],
+      "subtotal": 255000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 256500,
+      "orderDate": "2026-01-08",
+      "expectedDeliveryDate": "2026-01-13",
+      "salesChannel": "website"
+    },
+    {
+      "id": "ORD-098",
+      "customerId": "CUS-078",
+      "customerName": "Green Enterprises",
+      "status": "confirmed",
+      "paymentStatus": "paid",
+      "currency": "AED",
+      "items": [
+        {
+          "productId": "PRD-018",
+          "productName": "Technical support",
+          "quantity": 4,
+          "unitPrice": 12000
+        },
+        {
+          "productId": "PRD-019",
+          "productName": "Dashboard customization",
+          "quantity": 5,
+          "unitPrice": 30000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "Data migration",
+          "quantity": 1,
+          "unitPrice": 38000
+        }
+      ],
+      "subtotal": 236000,
+      "discount": 0,
+      "shipping": 1500,
+      "total": 237500,
+      "orderDate": "2026-02-15",
+      "expectedDeliveryDate": "2026-02-20",
+      "salesChannel": "phone"
+    },
+    {
+      "id": "ORD-099",
+      "customerId": "CUS-089",
+      "customerName": "Pak Foods",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-019",
+          "productName": "Data migration",
+          "quantity": 5,
+          "unitPrice": 38000
+        },
+        {
+          "productId": "PRD-020",
+          "productName": "Staff training",
+          "quantity": 1,
+          "unitPrice": 18000
+        },
+        {
+          "productId": "PRD-021",
+          "productName": "Cloud hosting",
+          "quantity": 2,
+          "unitPrice": 15000
+        },
+        {
+          "productId": "PRD-022",
+          "productName": "Security review",
+          "quantity": 3,
+          "unitPrice": 42000
+        }
+      ],
+      "subtotal": 364000,
+      "discount": 36400,
+      "shipping": 1500,
+      "total": 329100,
+      "orderDate": "2026-03-22",
+      "expectedDeliveryDate": "2026-03-27",
+      "salesChannel": "sales-team"
+    },
+    {
+      "id": "ORD-100",
+      "customerId": "CUS-100",
+      "customerName": "Dynamic Foods",
+      "status": "shipped",
+      "paymentStatus": "refunded",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-020",
+          "productName": "Cloud hosting",
+          "quantity": 1,
+          "unitPrice": 15000
+        }
+      ],
+      "subtotal": 15000,
+      "discount": 0,
+      "shipping": 0,
+      "total": 15000,
+      "orderDate": "2026-04-01",
+      "expectedDeliveryDate": "2026-04-06",
+      "salesChannel": "website"
+    }
+  ]
+}

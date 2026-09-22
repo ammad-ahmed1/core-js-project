@@ -586,3 +586,13 @@ th.sortable[data-sort]:hover {
     padding: 20px;
   }
 }
+.loader,
+.loader-inv,
+.loader-cust,
+.loader-ord {
+  display: flex;
+  justify-content: center;
+}
+.hide {
+  display: none;
+}
