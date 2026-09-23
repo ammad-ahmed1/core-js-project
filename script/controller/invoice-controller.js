@@ -15,14 +15,6 @@ import { InvoiceManager } from "../manager/invoice-manager.js";
 import { toggleModal } from "../ui/modal-view.js";
 import { renderPagination } from "../ui/pagination-view.js";
 
-// // let invoices;
-// export async function invoiceInitializer(data) {
-//   console.log(data, ": invoice contrroller");
-//   const invoiceManager = new InvoiceManager(data);
-// }
-// const invoiceManager = new InvoiceManager(invoices);
-// DOM references
-
 const invSearchInput = document.querySelector("#search");
 const selectedStatus = document.querySelector("#status");
 const invDateFilterType = document.getElementById("date-field-filter");
@@ -35,6 +27,7 @@ const addInvoiceBtn = document.getElementById("add-invoice-btn");
 const closeModalBtn = document.querySelector("#close-modal-btn");
 const cancelModalBtn = document.querySelector("#cancel-modal-btn");
 let invoiceForm = document.querySelector("#invoice-form");
+let submitInvBtn = document.querySelector("#save-invoice-btn");
 
 //event delegation for invoice update and delete
 // const tableBody = document.getElementById("invoice-table-body");
@@ -46,8 +39,6 @@ const invoicePageNumbers = document.querySelector("#invoice-page-numbers");
 const invoicePrevPageBtn = document.querySelector("#invoice-prev-page-btn");
 const invoiceNextPageBtn = document.querySelector("#invoice-next-page-btn");
 const notificationToaster = document.querySelector("#notification");
-const invoicesWrapper = document.querySelector(".invoices-wrapper");
-const loaderInvoice = document.querySelector("#loader-inv");
 
 // let invoices;
 let invoiceManager;
@@ -127,14 +118,15 @@ function getVisibleInvoices() {
   return visibleInvoices;
 }
 
-const invFormFieldSetter = (id) => {
-  let updatingInv = invoiceManager.getById("invoices", id);
-  invoiceForm.elements["id"].value = updatingInv.id;
-  invoiceForm.elements["customerName"].value = updatingInv.customerName || "";
-  invoiceForm.elements["amount"].value = updatingInv.amount || "";
-  invoiceForm.elements["status"].value = updatingInv.status || "unpaid";
-  invoiceForm.elements["issueDate"].value = updatingInv.issueDate || "";
-  invoiceForm.elements["dueDate"].value = updatingInv.dueDate || "";
+const invFormFieldSetter = async (id) => {
+  let updatingInv = await invoiceManager.getById("invoices", id);
+  invoiceForm.elements["id"].value = updatingInv[0].id;
+  invoiceForm.elements["customerName"].value =
+    updatingInv[0].customerName || "";
+  invoiceForm.elements["amount"].value = updatingInv[0].amount || "";
+  invoiceForm.elements["status"].value = updatingInv[0].status || "unpaid";
+  invoiceForm.elements["issueDate"].value = updatingInv[0].issueDate || "";
+  invoiceForm.elements["dueDate"].value = updatingInv[0].dueDate || "";
 };
 
 function updateInvoiceDashboard() {
@@ -204,55 +196,50 @@ const refreshInvoicesFromFirstPage = () => {
 
 const handleFormSubmit = async (e) => {
   e.preventDefault();
-  const formData = new FormData(e.target);
-  const existingId = formData.get("id");
-  const parsedData = Object.fromEntries(formData.entries());
+  let currentSubmitFormBtnTxt = submitInvBtn.textContent;
+  submitInvBtn.textContent = "Saving...";
+  submitInvBtn.disabled = true;
+  try {
+    const formData = new FormData(e.target);
+    const existingId = formData.get("id");
+    const parsedData = Object.fromEntries(formData.entries());
 
-  if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
-
-  if (existingId) {
-    // Call update method on instance
-    try {
+    if (parsedData.amount) parsedData.amount = Number(parsedData.amount);
+    let successMessage;
+    if (existingId) {
       await invoiceManager.updator("invoices", parsedData, existingId);
-      showNotification(
-        "Invoice updated successfully",
-        "success",
-        notificationToaster,
-      );
-      updateTableAndPagination();
-      e.target.reset();
-      invoiceForm.elements["id"].value = "";
-      toggleModal(invoiceModal, false);
-    } catch (error) {
-      showNotification(error, "error", notificationToaster);
-    }
-  } else {
-    // Call create method on instance
-    try {
+      successMessage = "Invoice updated successfuly";
+    } else {
       await invoiceManager.creator("invoices", parsedData);
-      showNotification(
-        "Invoice created successfully",
-        "success",
-        notificationToaster,
-      );
-      updateTableAndPagination();
-      e.target.reset();
-      invoiceForm.elements["id"].value = "";
-      toggleModal(invoiceModal, false);
-    } catch (error) {
-      showNotification(error, "error", notificationToaster);
+      successMessage = "Invoice added successfuly";
     }
+    showNotification(successMessage, "success", notificationToaster);
+    updateTableAndPagination();
+    e.target.reset();
+    invoiceForm.elements["id"].value = "";
+    toggleModal(invoiceModal, false);
+  } catch (error) {
+    showNotification(error, "error", notificationToaster);
+  } finally {
+    submitInvBtn.textContent = currentSubmitFormBtnTxt;
+    submitInvBtn.disabled = false;
   }
 };
 
-const handleDeleteInv = (id) => {
-  invoiceManager.deleter(id);
-  showNotification(
-    "Invoice deleted successfully",
-    "success",
-    notificationToaster,
-  );
-  updateTableAndPagination();
+const handleDeleteInv = async (id) => {
+  try {
+    await invoiceManager.deleter("invoices", id);
+
+    showNotification(
+      "Invoice deleted successfully",
+      "success",
+      notificationToaster,
+    );
+
+    updateTableAndPagination();
+  } catch (error) {
+    showNotification(error.message, "error", notificationToaster);
+  }
 };
 
 const handleSearch = debounce(refreshInvoicesFromFirstPage, 300);

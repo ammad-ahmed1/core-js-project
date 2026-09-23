@@ -7,6 +7,7 @@ export class OrderManager extends RecordManager {
   }
 
   validate(data) {
+    console.log(data);
     super.validate(data);
 
     if (typeof data.id !== "string" || !data.id.trim()) {
@@ -67,5 +68,4 @@ export class OrderManager extends RecordManager {
       throw new Error("Shipping must be a non-negative number.");
     }
   }
-  
 }

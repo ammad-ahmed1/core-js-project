@@ -12,11 +12,11 @@ import { renderPagination } from "../ui/pagination-view.js";
 const customerSearchInput = document.querySelector("#customer-search");
 const customerStatusFilter = document.querySelector("#customer-status-filter");
 const customerTableElement = document.querySelector("#customer-table");
-const loaderCustomer = document.querySelector("#loader-cust");
 
 const addCustomerBtn = document.querySelector("#add-customer-btn");
 const customerModal = document.querySelector("#customer-modal");
 const customerForm = document.querySelector("#customer-form");
+const submitCustBtn = document.querySelector("#save-customer-btn");
 const closeCustomerModalBtn = document.querySelector(
   "#close-customer-modal-btn",
 );
@@ -34,7 +34,6 @@ const customerTotalCount = document.querySelector("#customer-total-count");
 const customerPrevPageBtn = document.querySelector("#customer-prev-page-btn");
 const customerNextPageBtn = document.querySelector("#customer-next-page-btn");
 const customerPageNumbers = document.querySelector("#customer-page-numbers");
-
 const notificationToaster = document.querySelector("#notification");
 
 let customerManager;
@@ -160,20 +159,20 @@ function updateCustomerTable() {
   );
 }
 
-function fillCustomerForm(customerID) {
-  let customer = customerManager.getById("customers", customerID);
+async function fillCustomerForm(customerID) {
+  let customer = await customerManager.getById("customers", customerID);
 
-  customerForm.elements["id"].value = customer.id;
-  customerForm.elements["name"].value = customer.name || "";
-  customerForm.elements["contactName"].value = customer.contactName || "";
-  customerForm.elements["email"].value = customer.email || "";
-  customerForm.elements["phone"].value = customer.phone || "";
-  customerForm.elements["city"].value = customer.city || "";
-  customerForm.elements["country"].value = customer.country || "";
-  customerForm.elements["industry"].value = customer.industry || "";
-  customerForm.elements["status"].value = customer.status || "prospect";
-  customerForm.elements["creditLimit"].value = customer.creditLimit ?? "";
-  customerForm.elements["createdAt"].value = customer.createdAt || "";
+  customerForm.elements["id"].value = customer[0].id;
+  customerForm.elements["name"].value = customer[0].name || "";
+  customerForm.elements["contactName"].value = customer[0].contactName || "";
+  customerForm.elements["email"].value = customer[0].email || "";
+  customerForm.elements["phone"].value = customer[0].phone || "";
+  customerForm.elements["city"].value = customer[0].city || "";
+  customerForm.elements["country"].value = customer[0].country || "";
+  customerForm.elements["industry"].value = customer[0].industry || "";
+  customerForm.elements["status"].value = customer[0].status || "prospect";
+  customerForm.elements["creditLimit"].value = customer[0].creditLimit ?? "";
+  customerForm.elements["createdAt"].value = customer[0].createdAt || "";
 }
 function clearCustomerForm() {
   customerForm.elements["id"].value = "";
@@ -205,35 +204,32 @@ function getCustomerFormData() {
   };
 }
 
-function handleCustomerSubmit(event) {
+async function handleCustomerSubmit(event) {
   event.preventDefault();
-
+  let currentSubmitFormBtnTxt = submitCustBtn.textContent;
+  submitCustBtn.textContent = "Saving...";
+  submitCustBtn.disabled = true;
   try {
     const customerId = customerForm.elements["id"].value;
     const customerData = getCustomerFormData();
+    let successMessage;
 
     if (customerId) {
-      customerManager.updator(customerData, customerId);
-      showNotification(
-        "Customer updated successfully",
-        "success",
-        notificationToaster,
-      );
+      await customerManager.updator("customers", customerData, customerId);
+      successMessage = "Customer updated successfully";
     } else {
-      customerManager.creator(customerData);
-      showNotification(
-        "Customer added successfully",
-        "success",
-        notificationToaster,
-      );
+      await customerManager.creator("customers", customerData);
+      successMessage = "Customer added successfully";
     }
-
-    toggleModal(customerModal, false);
     clearCustomerForm();
     updateCustomerTable();
     refreshCustomerView();
+    toggleModal(customerModal, false);
   } catch (error) {
     showNotification(error.message, "error", notificationToaster);
+  } finally {
+    submitCustBtn.textContent = currentSubmitFormBtnTxt;
+    submitCustBtn.disabled = false;
   }
 }
 
@@ -244,14 +240,20 @@ function handleCustomerSort(sortKey) {
 
   refreshCustomerView();
 }
-const handleDeleteCust = (id) => {
-  customerManager.deleter(id);
-  showNotification(
-    "Customer deleted successfully",
-    "success",
-    notificationToaster,
-  );
-  refreshCustomerView();
+const handleDeleteCust = async (id) => {
+  try {
+    await customerManager.deleter("customers", id);
+
+    showNotification(
+      "Customer deleted successfully",
+      "success",
+      notificationToaster,
+    );
+
+    refreshCustomerView();
+  } catch (error) {
+    showNotification(error.message, "error", notificationToaster);
+  }
 };
 
 customerSearchInput.addEventListener("input", () => {
@@ -324,6 +326,5 @@ customerNextPageBtn.addEventListener("click", () => {
 });
 export async function customerInitializer(data) {
   customerManager = new CustomerManager(data);
-  updateCustomerSummary;
-  updateCustomerTable();
+  refreshCustomerView();
 }

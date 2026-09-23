@@ -12,7 +12,8 @@ export async function createReq(module, data) {
   return res;
 }
 
-export async function updateReq(module, param, data) {
+export async function updateReq(module, data, id) {
+  // console.log(id, ": in service");
   const updateOptions = {
     method: "PATCH",
     headers: {
@@ -20,7 +21,7 @@ export async function updateReq(module, param, data) {
     },
     body: JSON.stringify(data),
   };
-  const { id } = param;
+  // const { id } = param;
   if (!id) {
     throw new Error("Id is missing in req!");
   }
@@ -29,7 +30,8 @@ export async function updateReq(module, param, data) {
 }
 
 export async function getReq(module, param) {
-  console.log(module, "module from service");
+  // console.log(module, "module from service");
+  // console.log(param, "param in service");
   const getOptions = {
     method: "GET",
   };
@@ -37,44 +39,24 @@ export async function getReq(module, param) {
     const res = await targetAPI(`${module}`, getOptions);
     return res;
   }
-  const {
-    id,
-    status,
-    customerName,
-    dueDate,
-    issueDate,
-    startDate,
-    endDate,
-    name,
-    contactName,
-    email,
-    phone,
-    city,
-    country,
-    industry,
-    customerId,
-    salesChannel,
-    sort = "asc",
-    page,
-    perPage = 25,
-  } = param;
-  const res = await targetAPI(getOptions);
+  const searchParams = {
+    sort: "asc",
+    perPage: 25,
+    ...param,
+  };
+  const cleanEntries = Object.entries(searchParams).filter(([_, value]) => {
+    return value !== undefined && value !== null && value !== "";
+  });
+  const queryString = new URLSearchParams(cleanEntries).toString();
+  const res = await targetAPI(`${module}?${queryString}`, getOptions);
   return res;
-  //  `${module}/${id}?status=paid
-  // &{customerId}=${customerId}
-  // &customerName:contains=${customerName}
-  // &dueDate:gte=${dueDate}
-  // &dueDate:lte=${dueDate}
-  // &_sort=-${sort}
-  // &_page=${page}
-  // &_per_page=${perPage}`,
 }
 
-export async function delReq(module, param) {
+export async function delReq(module, id) {
   const delOptions = {
     method: "DELETE",
   };
-  const { id } = param;
+  // const { id } = param;
   if (!id) {
     throw new Error("Id is missing in req!");
   }

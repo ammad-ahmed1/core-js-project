@@ -27,13 +27,13 @@ const orderPrevPageBtn = document.querySelector("#order-prev-page-btn");
 const orderNextPageBtn = document.querySelector("#order-next-page-btn");
 const orderPageNumbers = document.querySelector("#order-page-numbers");
 const notificationToaster = document.querySelector("#notification");
+const submitOrderBtn = document.querySelector("#save-order-btn");
 
 let orderManager;
 
 const tableElement = document.querySelector("#order-table");
 function updateOrderSummary() {
   const cancelledCount = orderManager.findByField("status", "cancelled").length;
-
   cancelledOrdersCountElement.textContent = cancelledCount;
 }
 
@@ -67,7 +67,7 @@ function getVisibleOrders() {
   const selectedStatusValue = orderStatusFilter.value;
   const searchTerm = orderSearchInput.value.trim().toLowerCase();
 
-  let visibleOrders = orderManager.getAll('orders');
+  let visibleOrders = orderManager.getAll("orders");
 
   if (selectedStatusValue && selectedStatusValue !== "all") {
     visibleOrders = visibleOrders.filter(
@@ -144,28 +144,28 @@ function refreshOrderView() {
   updateOrderTable();
   updateOrderSummary();
 }
-function fillOrderForm(orderId) {
-  const order = orderManager.getById('orders', orderId);
-  const firstItem = order.items?.[0] ?? {};
+async function fillOrderForm(orderId) {
+  const order = await orderManager.getById("orders", orderId);
+  const firstItem = order[0].items?.[0] ?? {};
 
-  orderForm.elements["id"].value = order.id;
-  orderForm.elements["customerId"].value = order.customerId || "";
-  orderForm.elements["customerName"].value = order.customerName || "";
-  orderForm.elements["status"].value = order.status || "pending";
+  orderForm.elements["id"].value = order[0].id;
+  orderForm.elements["customerId"].value = order[0].customerId || "";
+  orderForm.elements["customerName"].value = order[0].customerName || "";
+  orderForm.elements["status"].value = order[0].status || "pending";
   orderForm.elements["paymentStatus"].value = order.paymentStatus || "pending";
-  orderForm.elements["currency"].value = order.currency || "PKR";
+  orderForm.elements["currency"].value = order[0].currency || "PKR";
 
   orderForm.elements["productId"].value = firstItem.productId || "";
   orderForm.elements["productName"].value = firstItem.productName || "";
   orderForm.elements["quantity"].value = firstItem.quantity ?? "";
   orderForm.elements["unitPrice"].value = firstItem.unitPrice ?? "";
 
-  orderForm.elements["discount"].value = order.discount ?? 0;
-  orderForm.elements["shipping"].value = order.shipping ?? 0;
-  orderForm.elements["orderDate"].value = order.orderDate || "";
+  orderForm.elements["discount"].value = order[0].discount ?? 0;
+  orderForm.elements["shipping"].value = order[0].shipping ?? 0;
+  orderForm.elements["orderDate"].value = order[0].orderDate || "";
   orderForm.elements["expectedDeliveryDate"].value =
-    order.expectedDeliveryDate || "";
-  orderForm.elements["salesChannel"].value = order.salesChannel || "website";
+    order[0].expectedDeliveryDate || "";
+  orderForm.elements["salesChannel"].value = order[0].salesChannel || "website";
 }
 
 function clearOrderForm() {
@@ -198,13 +198,12 @@ function getOrderFormData() {
 
   const subtotal = quantity * unitPrice;
   const total = Math.max(0, subtotal - discount + shipping);
-
-  return {
-    customerId: formData.get("customerId").trim(),
-    customerName: formData.get("customerName").trim(),
+  const orderData = {
+    customerId: formData.get("customerId")?.trim(),
+    customerName: formData.get("customerName")?.trim(),
     status: formData.get("status"),
     paymentStatus: formData.get("paymentStatus"),
-    currency: formData.get("currency").trim().toUpperCase(),
+    currency: formData.get("currency")?.trim().toUpperCase(),
     items,
     subtotal,
     discount,
@@ -214,38 +213,40 @@ function getOrderFormData() {
     expectedDeliveryDate: formData.get("expectedDeliveryDate"),
     salesChannel: formData.get("salesChannel"),
   };
+  console.log("Form Order Data in get dta form form fn:", orderData);
+
+  return orderData;
 }
 
-function handleOrderSubmit(event) {
+async function handleOrderSubmit(event) {
   event.preventDefault();
-
+  let currentSubmitFormBtnTxt = submitOrderBtn.textContent;
+  submitOrderBtn.textContent = "Saving...";
+  submitOrderBtn.disabled = true;
   try {
     const orderId = orderForm.elements["id"].value;
     const orderData = getOrderFormData();
+    console.log(orderData, "////order form data");
+    let successMessage;
 
     if (orderId) {
-      orderManager.updator(orderData, orderId);
-
-      showNotification(
-        "Order updated successfully",
-        "success",
-        notificationToaster,
-      );
+      await orderManager.updator("orders", orderData, orderId);
+      successMessage = "Order updated successfully";
     } else {
-      orderManager.creator(orderData);
+      await orderManager.creator("orders", orderData);
 
-      showNotification(
-        "Order added successfully",
-        "success",
-        notificationToaster,
-      );
+      successMessage = "Order added successfully";
     }
+    showNotification(successMessage, "success", notificationToaster);
 
-    toggleModal(orderModal, false);
-    clearOrderForm();
     refreshOrderView();
+    clearOrderForm();
+    toggleModal(orderModal, false);
   } catch (error) {
     showNotification(error.message, "error", notificationToaster);
+  } finally {
+    submitOrderBtn.textContent = currentSubmitFormBtnTxt;
+    submitOrderBtn.disabled = false;
   }
 }
 
@@ -258,13 +259,17 @@ function handleOrderSort(sortKey) {
 }
 
 const handleDeleteOrder = (id) => {
-  orderManager.deleter(id);
-  showNotification(
-    "Order deleted successfully",
-    "success",
-    notificationToaster,
-  );
-  refreshOrderView();
+  try {
+    orderManager.deleter("orders", id);
+    showNotification(
+      "Order deleted successfully",
+      "success",
+      notificationToaster,
+    );
+    refreshOrderView();
+  } catch (error) {
+    showNotification(error.message, "error", notificationToaster);
+  }
 };
 
 addOrderBtn.addEventListener("click", () => {
@@ -334,7 +339,6 @@ orderNextPageBtn.addEventListener("click", () => {
   }
 });
 export function orderInitializer(data) {
-  console.log(data, ": order contrroller");
   orderManager = new OrderManager(data);
   refreshOrderView();
 }

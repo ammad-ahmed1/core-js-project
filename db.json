@@ -2,29 +2,16 @@
   "customers": [
     {
       "id": "CUS-001",
-      "name": "Emerald Hospitality",
-      "contactName": "Ammad Khan",
-      "email": "ammad.khan.1@example.com",
+      "name": "Emerald Hospitality 1",
+      "contactName": "Ammad Ahmed",
+      "email": "ammad.ahmed.1@example.com",
       "phone": "+92-311-1007919",
       "city": "Lahore",
       "country": "Pakistan",
-      "industry": "Hospitality",
+      "industry": "SE",
       "status": "active",
       "creditLimit": 150000,
       "createdAt": "2026-01-04"
-    },
-    {
-      "id": "CUS-002",
-      "name": "Crescent Hospitality",
-      "contactName": "Ahmed Khan",
-      "email": "ahmed.khan.2@example.com",
-      "phone": "+92-312-1015838",
-      "city": "Karachi",
-      "country": "Pakistan",
-      "industry": "Retail",
-      "status": "active",
-      "creditLimit": 200000,
-      "createdAt": "2026-02-07"
     },
     {
       "id": "CUS-003",
@@ -1299,41 +1286,41 @@
       "status": "active",
       "creditLimit": 100000,
       "createdAt": "2026-04-21"
+    },
+    {
+      "name": "Ahmed Irshad",
+      "contactName": "Ahmed Irshad",
+      "email": "irshadahmed@gmail.com",
+      "phone": "+971529592541",
+      "city": "lahore",
+      "country": "Pakistan",
+      "industry": "Technology",
+      "status": "prospect",
+      "creditLimit": 65000,
+      "createdAt": "2026-09-23",
+      "id": "CUS-101"
+    },
+    {
+      "name": "Qasim Arshad",
+      "contactName": "Qasim Arshad",
+      "email": "qasimarshad123@gmail.com",
+      "phone": "+923231476893",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "industry": "Retail",
+      "status": "active",
+      "creditLimit": 670000,
+      "createdAt": "2026-09-23",
+      "id": "CUS-102"
     }
   ],
   "invoices": [
     {
-      "id": "INV-001",
-      "customerId": "CUS-007",
-      "customerName": "Urban Hospitality",
-      "status": "paid",
-      "amount": 190000,
-      "currency": "PKR",
-      "issueDate": "2026-01-06",
-      "dueDate": "2026-01-13",
-      "lineItems": [
-        {
-          "id": "LI-001-1",
-          "description": "Software subscription",
-          "quantity": 2,
-          "unitPrice": 26000
-        },
-        {
-          "id": "LI-001-2",
-          "description": "API integration",
-          "quantity": 3,
-          "unitPrice": 46000
-        }
-      ],
-      "notes": "",
-      "createdAt": "2026-01-06T09:01:00Z"
-    },
-    {
       "id": "INV-002",
       "customerId": "CUS-014",
-      "customerName": "Nova Hospitality",
+      "customerName": "Nova Hospitality 2",
       "status": "unpaid",
-      "amount": 229000,
+      "amount": 2290005,
       "currency": "PKR",
       "issueDate": "2026-02-11",
       "dueDate": "2026-02-18",
@@ -1359,26 +1346,6 @@
       ],
       "notes": "",
       "createdAt": "2026-02-11T09:02:00Z"
-    },
-    {
-      "id": "INV-003",
-      "customerId": "CUS-021",
-      "customerName": "Emerald Traders",
-      "status": "paid",
-      "amount": 60000,
-      "currency": "PKR",
-      "issueDate": "2026-03-16",
-      "dueDate": "2026-03-23",
-      "lineItems": [
-        {
-          "id": "LI-003-1",
-          "description": "Technical support",
-          "quantity": 4,
-          "unitPrice": 15000
-        }
-      ],
-      "notes": "",
-      "createdAt": "2026-03-16T09:03:00Z"
     },
     {
       "id": "INV-004",
@@ -1409,10 +1376,10 @@
     {
       "id": "INV-005",
       "customerId": "CUS-035",
-      "customerName": "Silver Traders",
-      "status": "failed",
+      "customerName": "Silver Traders 2",
+      "status": "paid",
       "amount": 190000,
-      "currency": "AED",
+      "currency": "PKR",
       "issueDate": "2026-05-06",
       "dueDate": "2026-05-13",
       "lineItems": [
@@ -3500,38 +3467,6 @@
       "createdAt": "2026-05-06T09:25:00Z"
     },
     {
-      "id": "INV-086",
-      "customerId": "CUS-002",
-      "customerName": "Crescent Hospitality",
-      "status": "paid",
-      "amount": 221000,
-      "currency": "PKR",
-      "issueDate": "2026-06-11",
-      "dueDate": "2026-06-18",
-      "lineItems": [
-        {
-          "id": "LI-086-1",
-          "description": "API integration",
-          "quantity": 3,
-          "unitPrice": 46000
-        },
-        {
-          "id": "LI-086-2",
-          "description": "Technical support",
-          "quantity": 4,
-          "unitPrice": 13000
-        },
-        {
-          "id": "LI-086-3",
-          "description": "Dashboard customization",
-          "quantity": 1,
-          "unitPrice": 31000
-        }
-      ],
-      "notes": "",
-      "createdAt": "2026-06-11T09:26:00Z"
-    },
-    {
       "id": "INV-087",
       "customerId": "CUS-009",
       "customerName": "Pak Hospitality",
@@ -3897,6 +3832,60 @@
       "amount": 569909,
       "issueDate": "2026-09-22",
       "dueDate": "2026-09-29"
+    },
+    {
+      "id": "INV-102",
+      "customerName": "Ammad",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 98000,
+      "issueDate": "2026-09-22",
+      "dueDate": "2026-09-23"
+    },
+    {
+      "id": "INV-103",
+      "customerName": "Emerald Traderss",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 78,
+      "issueDate": "2026-09-30",
+      "dueDate": "2026-10-01"
+    },
+    {
+      "id": "INV-104",
+      "customerName": "Ammad",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 65000,
+      "issueDate": "2026-09-23",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "INV-105",
+      "customerName": "Atlas Hospitality",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 125,
+      "issueDate": "2026-09-22",
+      "dueDate": "2026-09-22"
+    },
+    {
+      "id": "INV-106",
+      "customerName": "Emerald Traderss",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 25000,
+      "issueDate": "2026-09-23",
+      "dueDate": "2026-09-24"
+    },
+    {
+      "id": "INV-107",
+      "customerName": "Nova Hospitality",
+      "status": "unpaid",
+      "currency": "PKR",
+      "amount": 76,
+      "issueDate": "2026-09-23",
+      "dueDate": "2026-09-24"
     }
   ],
   "orders": [
@@ -3928,41 +3917,6 @@
       "orderDate": "2026-01-08",
       "expectedDeliveryDate": "2026-01-13",
       "salesChannel": "website"
-    },
-    {
-      "id": "ORD-002",
-      "customerId": "CUS-022",
-      "customerName": "Crescent Traders",
-      "status": "confirmed",
-      "paymentStatus": "paid",
-      "currency": "USD",
-      "items": [
-        {
-          "productId": "PRD-002",
-          "productName": "Technical support",
-          "quantity": 3,
-          "unitPrice": 12000
-        },
-        {
-          "productId": "PRD-003",
-          "productName": "Dashboard customization",
-          "quantity": 4,
-          "unitPrice": 30000
-        },
-        {
-          "productId": "PRD-004",
-          "productName": "Data migration",
-          "quantity": 5,
-          "unitPrice": 38000
-        }
-      ],
-      "subtotal": 346000,
-      "discount": 0,
-      "shipping": 1500,
-      "total": 347500,
-      "orderDate": "2026-02-15",
-      "expectedDeliveryDate": "2026-02-20",
-      "salesChannel": "phone"
     },
     {
       "id": "ORD-003",
@@ -4316,34 +4270,22 @@
     {
       "id": "ORD-014",
       "customerId": "CUS-054",
-      "customerName": "Nova Solutions",
-      "status": "confirmed",
-      "paymentStatus": "paid",
+      "customerName": "Nova Solutions1",
+      "status": "processing",
+      "paymentStatus": "unpaid",
       "currency": "PKR",
       "items": [
         {
-          "productId": "PRD-014",
+          "productId": "PRD-011",
           "productName": "Technical support",
           "quantity": 5,
-          "unitPrice": 12000
-        },
-        {
-          "productId": "PRD-015",
-          "productName": "Dashboard customization",
-          "quantity": 1,
-          "unitPrice": 30000
-        },
-        {
-          "productId": "PRD-016",
-          "productName": "Data migration",
-          "quantity": 2,
-          "unitPrice": 38000
+          "unitPrice": 2111
         }
       ],
-      "subtotal": 166000,
+      "subtotal": 10555,
       "discount": 0,
       "shipping": 1500,
-      "total": 167500,
+      "total": 12055,
       "orderDate": "2026-06-15",
       "expectedDeliveryDate": "2026-06-20",
       "salesChannel": "phone"
@@ -6471,41 +6413,6 @@
       "salesChannel": "sales-team"
     },
     {
-      "id": "ORD-082",
-      "customerId": "CUS-002",
-      "customerName": "Crescent Hospitality",
-      "status": "shipped",
-      "paymentStatus": "paid",
-      "currency": "USD",
-      "items": [
-        {
-          "productId": "PRD-002",
-          "productName": "Cloud hosting",
-          "quantity": 3,
-          "unitPrice": 15000
-        },
-        {
-          "productId": "PRD-003",
-          "productName": "Security review",
-          "quantity": 4,
-          "unitPrice": 42000
-        },
-        {
-          "productId": "PRD-004",
-          "productName": "Maintenance service",
-          "quantity": 5,
-          "unitPrice": 20000
-        }
-      ],
-      "subtotal": 313000,
-      "discount": 0,
-      "shipping": 1500,
-      "total": 314500,
-      "orderDate": "2026-02-15",
-      "expectedDeliveryDate": "2026-02-20",
-      "salesChannel": "website"
-    },
-    {
       "id": "ORD-083",
       "customerId": "CUS-013",
       "customerName": "Unity Hospitality",
@@ -6673,29 +6580,6 @@
       "orderDate": "2026-07-22",
       "expectedDeliveryDate": "2026-07-27",
       "salesChannel": "sales-team"
-    },
-    {
-      "id": "ORD-088",
-      "customerId": "CUS-999",
-      "customerName": "Prime Enterprises",
-      "status": "shipped",
-      "paymentStatus": "refunded",
-      "currency": "AED",
-      "items": [
-        {
-          "productId": "PRD-008",
-          "productName": "Cloud hosting",
-          "quantity": 4,
-          "unitPrice": 15000
-        }
-      ],
-      "subtotal": 60000,
-      "discount": 0,
-      "shipping": 1500,
-      "total": 61500,
-      "orderDate": "2026-08-01",
-      "expectedDeliveryDate": "2026-08-06",
-      "salesChannel": "website"
     },
     {
       "id": "ORD-089",
@@ -7080,6 +6964,52 @@
       "orderDate": "2026-04-01",
       "expectedDeliveryDate": "2026-04-06",
       "salesChannel": "website"
+    },
+    {
+      "customerId": "CUS-011",
+      "customerName": "Ammad",
+      "status": "processing",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-001",
+          "productName": "Software subscription",
+          "quantity": 5,
+          "unitPrice": 54
+        }
+      ],
+      "subtotal": 270,
+      "discount": 4,
+      "shipping": 0,
+      "total": 266,
+      "orderDate": "2026-09-23",
+      "expectedDeliveryDate": "2026-09-24",
+      "salesChannel": "website",
+      "id": "ORD-101"
+    },
+    {
+      "customerId": "CUS-011",
+      "customerName": "Nova Hospitality",
+      "status": "pending",
+      "paymentStatus": "paid",
+      "currency": "PKR",
+      "items": [
+        {
+          "productId": "PRD-001",
+          "productName": "Software subscription",
+          "quantity": 6,
+          "unitPrice": 54
+        }
+      ],
+      "subtotal": 324,
+      "discount": 1,
+      "shipping": 0,
+      "total": 323,
+      "orderDate": "2026-09-23",
+      "expectedDeliveryDate": "2026-09-24",
+      "salesChannel": "website",
+      "id": "ORD-102"
     }
   ]
 }

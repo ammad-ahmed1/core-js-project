@@ -9,7 +9,7 @@ const fetchCustomers = () => getReq("customers");
 const fetchOrders = () => getReq("orders");
 export async function bootstrap() {
   try {
-    console.log("started bootstrap");
+    // console.log("started bootstrap");
     toggleLoader(true);
     const [invoices, customers, orders] = await Promise.all([
       fetchInvoices(),
@@ -21,12 +21,11 @@ export async function bootstrap() {
       !Array.isArray(customers) ||
       !Array.isArray(orders)
     ) {
-        
       throw new TypeError(
         "One or more resources failed to load as a valid array.",
       );
     }
-    console.log("calling initializers from bootstrap");
+    // console.log("calling initializers from bootstrap");
     invoiceInitializer(invoices);
     customerInitializer(customers);
     orderInitializer(orders);
