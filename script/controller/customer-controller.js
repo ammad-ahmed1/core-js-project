@@ -221,8 +221,8 @@ async function handleCustomerSubmit(event) {
       await customerManager.creator("customers", customerData);
       successMessage = "Customer added successfully";
     }
+    showNotification(successMessage, "success", notificationToaster);
     clearCustomerForm();
-    updateCustomerTable();
     refreshCustomerView();
     toggleModal(customerModal, false);
   } catch (error) {

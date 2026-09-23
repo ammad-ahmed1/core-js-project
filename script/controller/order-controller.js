@@ -258,9 +258,9 @@ function handleOrderSort(sortKey) {
   refreshOrderView();
 }
 
-const handleDeleteOrder = (id) => {
+const handleDeleteOrder = async(id) => {
   try {
-    orderManager.deleter("orders", id);
+    await orderManager.deleter("orders", id);
     showNotification(
       "Order deleted successfully",
       "success",

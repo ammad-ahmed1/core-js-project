@@ -219,7 +219,7 @@ const handleFormSubmit = async (e) => {
     invoiceForm.elements["id"].value = "";
     toggleModal(invoiceModal, false);
   } catch (error) {
-    showNotification(error, "error", notificationToaster);
+    showNotification(error.message, "error", notificationToaster);
   } finally {
     submitInvBtn.textContent = currentSubmitFormBtnTxt;
     submitInvBtn.disabled = false;
