@@ -152,7 +152,8 @@ async function fillOrderForm(orderId) {
   orderForm.elements["customerId"].value = order[0].customerId || "";
   orderForm.elements["customerName"].value = order[0].customerName || "";
   orderForm.elements["status"].value = order[0].status || "pending";
-  orderForm.elements["paymentStatus"].value = order.paymentStatus || "pending";
+  orderForm.elements["paymentStatus"].value =
+    order[0].paymentStatus || "pending";
   orderForm.elements["currency"].value = order[0].currency || "PKR";
 
   orderForm.elements["productId"].value = firstItem.productId || "";
@@ -258,7 +259,7 @@ function handleOrderSort(sortKey) {
   refreshOrderView();
 }
 
-const handleDeleteOrder = async(id) => {
+const handleDeleteOrder = async (id) => {
   try {
     await orderManager.deleter("orders", id);
     showNotification(
