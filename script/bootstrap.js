@@ -4,17 +4,20 @@ import { customerInitializer } from "./controller/customer-controller.js";
 import { orderInitializer } from "./controller/order-controller.js";
 import { toggleLoader } from "./ui/loader-view.js";
 
-const fetchInvoices = () => getReq("invoices");
-const fetchCustomers = () => getReq("customers");
-const fetchOrders = () => getReq("orders");
+const fetchInvoices = (signal) => getReq("invoices", undefined, { signal });
+const fetchCustomers = (signal) => getReq("customers", undefined, { signal });
+const fetchOrders = (signal) => getReq("orders", undefined, { signal });
+
 export async function bootstrap() {
+  const controller = new AbortController();
+
   try {
     // console.log("started bootstrap");
     toggleLoader(true);
     const [invoices, customers, orders] = await Promise.all([
-      fetchInvoices(),
-      fetchCustomers(),
-      fetchOrders(),
+      fetchInvoices(controller.signal),
+      fetchCustomers(controller.signal),
+      fetchOrders(controller.signal),
     ]);
     if (
       !Array.isArray(invoices) ||
@@ -29,10 +32,13 @@ export async function bootstrap() {
     invoiceInitializer(invoices);
     customerInitializer(customers);
     orderInitializer(orders);
-    toggleLoader(false);
     return { invoices, customers, orders };
   } catch (error) {
+    // Promise.all does not cancel the remaining requests when one fails.
+    controller.abort();
     console.error("Failed to load dashboard:", error);
+  } finally {
+    toggleLoader(false);
   }
 }
 bootstrap();

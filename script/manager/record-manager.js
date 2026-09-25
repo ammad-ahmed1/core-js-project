@@ -46,12 +46,12 @@ export class RecordManager {
     return this.getAll(module);
   }
 
-  async getById(module, id) {
+  async getById(module, id, { signal } = {}) {
     if (!id) {
       throw new Error("Missing ID!");
     }
     const param = { id };
-    const res = await getReq(module, param);
+    const res = await getReq(module, param, { signal });
     // const res = this.#arr.find((item) => item.id === id);
     if (res.length === 0) throw new Error("Record not found!");
     return structuredClone(res);

@@ -42,6 +42,7 @@ const notificationToaster = document.querySelector("#notification");
 
 // let invoices;
 let invoiceManager;
+let invoiceFormRequestController;
 
 let currentPage = 1;
 const itemsPerPage = 25;
@@ -119,14 +120,35 @@ function getVisibleInvoices() {
 }
 
 const invFormFieldSetter = async (id) => {
-  let updatingInv = await invoiceManager.getById("invoices", id);
-  invoiceForm.elements["id"].value = updatingInv[0].id;
-  invoiceForm.elements["customerName"].value =
-    updatingInv[0].customerName || "";
-  invoiceForm.elements["amount"].value = updatingInv[0].amount || "";
-  invoiceForm.elements["status"].value = updatingInv[0].status || "unpaid";
-  invoiceForm.elements["issueDate"].value = updatingInv[0].issueDate || "";
-  invoiceForm.elements["dueDate"].value = updatingInv[0].dueDate || "";
+  invoiceFormRequestController?.abort();
+  const controller = new AbortController();
+  invoiceFormRequestController = controller;
+
+  try {
+    const [invoice] = await invoiceManager.getById("invoices", id, {
+      signal: controller.signal,
+    });
+    invoiceForm.elements["id"].value = invoice.id;
+    invoiceForm.elements["customerName"].value = invoice.customerName || "";
+    invoiceForm.elements["amount"].value = invoice.amount || "";
+    invoiceForm.elements["status"].value = invoice.status || "unpaid";
+    invoiceForm.elements["issueDate"].value = invoice.issueDate || "";
+    invoiceForm.elements["dueDate"].value = invoice.dueDate || "";
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      showNotification(error.message, "error", notificationToaster);
+      toggleModal(invoiceModal, false);
+    }
+  } finally {
+    if (invoiceFormRequestController === controller) {
+      invoiceFormRequestController = undefined;
+    }
+  }
+};
+
+const abortInvoiceFormRequest = () => {
+  invoiceFormRequestController?.abort();
+  invoiceFormRequestController = undefined;
 };
 
 function updateInvoiceDashboard() {
@@ -196,6 +218,7 @@ const refreshInvoicesFromFirstPage = () => {
 
 const handleFormSubmit = async (e) => {
   e.preventDefault();
+  abortInvoiceFormRequest();
   let currentSubmitFormBtnTxt = submitInvBtn.textContent;
   submitInvBtn.textContent = "Saving...";
   submitInvBtn.disabled = true;
@@ -267,16 +290,19 @@ invStartDateInput.addEventListener("change", refreshInvoicesFromFirstPage);
 invEndDateInput.addEventListener("change", refreshInvoicesFromFirstPage);
 clearDatesBtn.addEventListener("click", handleClearDateFilters);
 addInvoiceBtn.addEventListener("click", () => {
+  abortInvoiceFormRequest();
   ``;
   invoiceForm.reset();
   document.getElementById("modal-title").textContent = "Add Invoice";
   toggleModal(invoiceModal, true);
 });
 closeModalBtn.addEventListener("click", () => {
+  abortInvoiceFormRequest();
   invoiceForm.reset();
   toggleModal(invoiceModal, false);
 });
 cancelModalBtn.addEventListener("click", () => {
+  abortInvoiceFormRequest();
   invoiceForm.reset();
   toggleModal(invoiceModal, false);
 });
@@ -299,7 +325,7 @@ invoiceTableElement.addEventListener("click", (e) => {
 
     if (action === "edit") {
       toggleModal(invoiceModal, true);
-      invFormFieldSetter(id);
+      void invFormFieldSetter(id);
     } else if (action === "delete") {
       handleDeleteInv(id);
     }

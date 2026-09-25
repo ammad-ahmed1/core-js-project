@@ -30,6 +30,7 @@ const notificationToaster = document.querySelector("#notification");
 const submitOrderBtn = document.querySelector("#save-order-btn");
 
 let orderManager;
+let orderFormRequestController;
 
 const tableElement = document.querySelector("#order-table");
 function updateOrderSummary() {
@@ -145,28 +146,51 @@ function refreshOrderView() {
   updateOrderSummary();
 }
 async function fillOrderForm(orderId) {
-  const order = await orderManager.getById("orders", orderId);
-  const firstItem = order[0].items?.[0] ?? {};
+  orderFormRequestController?.abort();
+  const controller = new AbortController();
+  orderFormRequestController = controller;
 
-  orderForm.elements["id"].value = order[0].id;
-  orderForm.elements["customerId"].value = order[0].customerId || "";
-  orderForm.elements["customerName"].value = order[0].customerName || "";
-  orderForm.elements["status"].value = order[0].status || "pending";
-  orderForm.elements["paymentStatus"].value =
-    order[0].paymentStatus || "pending";
-  orderForm.elements["currency"].value = order[0].currency || "PKR";
+  try {
+    const [order] = await orderManager.getById("orders", orderId, {
+      signal: controller.signal,
+    });
+    const firstItem = order.items?.[0] ?? {};
 
-  orderForm.elements["productId"].value = firstItem.productId || "";
-  orderForm.elements["productName"].value = firstItem.productName || "";
-  orderForm.elements["quantity"].value = firstItem.quantity ?? "";
-  orderForm.elements["unitPrice"].value = firstItem.unitPrice ?? "";
+    orderForm.elements["id"].value = order.id;
+    orderForm.elements["customerId"].value = order.customerId || "";
+    orderForm.elements["customerName"].value = order.customerName || "";
+    orderForm.elements["status"].value = order.status || "pending";
+    orderForm.elements["paymentStatus"].value =
+      order.paymentStatus || "pending";
+    orderForm.elements["currency"].value = order.currency || "PKR";
 
-  orderForm.elements["discount"].value = order[0].discount ?? 0;
-  orderForm.elements["shipping"].value = order[0].shipping ?? 0;
-  orderForm.elements["orderDate"].value = order[0].orderDate || "";
-  orderForm.elements["expectedDeliveryDate"].value =
-    order[0].expectedDeliveryDate || "";
-  orderForm.elements["salesChannel"].value = order[0].salesChannel || "website";
+    orderForm.elements["productId"].value = firstItem.productId || "";
+    orderForm.elements["productName"].value = firstItem.productName || "";
+    orderForm.elements["quantity"].value = firstItem.quantity ?? "";
+    orderForm.elements["unitPrice"].value = firstItem.unitPrice ?? "";
+
+    orderForm.elements["discount"].value = order.discount ?? 0;
+    orderForm.elements["shipping"].value = order.shipping ?? 0;
+    orderForm.elements["orderDate"].value = order.orderDate || "";
+    orderForm.elements["expectedDeliveryDate"].value =
+      order.expectedDeliveryDate || "";
+    orderForm.elements["salesChannel"].value =
+      order.salesChannel || "website";
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      showNotification(error.message, "error", notificationToaster);
+      toggleModal(orderModal, false);
+    }
+  } finally {
+    if (orderFormRequestController === controller) {
+      orderFormRequestController = undefined;
+    }
+  }
+}
+
+function abortOrderFormRequest() {
+  orderFormRequestController?.abort();
+  orderFormRequestController = undefined;
 }
 
 function clearOrderForm() {
@@ -221,6 +245,7 @@ function getOrderFormData() {
 
 async function handleOrderSubmit(event) {
   event.preventDefault();
+  abortOrderFormRequest();
   let currentSubmitFormBtnTxt = submitOrderBtn.textContent;
   submitOrderBtn.textContent = "Saving...";
   submitOrderBtn.disabled = true;
@@ -274,15 +299,18 @@ const handleDeleteOrder = async (id) => {
 };
 
 addOrderBtn.addEventListener("click", () => {
+  abortOrderFormRequest();
   clearOrderForm();
   toggleModal(orderModal, true);
 });
 
 closeOrderModalBtn.addEventListener("click", () => {
+  abortOrderFormRequest();
   toggleModal(orderModal, false);
 });
 
 cancelOrderModalBtn.addEventListener("click", () => {
+  abortOrderFormRequest();
   toggleModal(orderModal, false);
 });
 orderForm.addEventListener("submit", handleOrderSubmit);
@@ -301,7 +329,7 @@ tableElement.addEventListener("click", (e) => {
     const action = button.dataset.action;
 
     if (action === "edit") {
-      fillOrderForm(id);
+      void fillOrderForm(id);
       toggleModal(orderModal, true);
     } else if (action === "delete") {
       handleDeleteOrder(id);

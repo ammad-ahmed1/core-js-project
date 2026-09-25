@@ -37,6 +37,7 @@ const customerPageNumbers = document.querySelector("#customer-page-numbers");
 const notificationToaster = document.querySelector("#notification");
 
 let customerManager;
+let customerFormRequestController;
 const customerColumns = [
   "id",
   "name",
@@ -160,19 +161,43 @@ function updateCustomerTable() {
 }
 
 async function fillCustomerForm(customerID) {
-  let customer = await customerManager.getById("customers", customerID);
+  customerFormRequestController?.abort();
+  const controller = new AbortController();
+  customerFormRequestController = controller;
 
-  customerForm.elements["id"].value = customer[0].id;
-  customerForm.elements["name"].value = customer[0].name || "";
-  customerForm.elements["contactName"].value = customer[0].contactName || "";
-  customerForm.elements["email"].value = customer[0].email || "";
-  customerForm.elements["phone"].value = customer[0].phone || "";
-  customerForm.elements["city"].value = customer[0].city || "";
-  customerForm.elements["country"].value = customer[0].country || "";
-  customerForm.elements["industry"].value = customer[0].industry || "";
-  customerForm.elements["status"].value = customer[0].status || "prospect";
-  customerForm.elements["creditLimit"].value = customer[0].creditLimit ?? "";
-  customerForm.elements["createdAt"].value = customer[0].createdAt || "";
+  try {
+    const [customer] = await customerManager.getById(
+      "customers",
+      customerID,
+      { signal: controller.signal },
+    );
+
+    customerForm.elements["id"].value = customer.id;
+    customerForm.elements["name"].value = customer.name || "";
+    customerForm.elements["contactName"].value = customer.contactName || "";
+    customerForm.elements["email"].value = customer.email || "";
+    customerForm.elements["phone"].value = customer.phone || "";
+    customerForm.elements["city"].value = customer.city || "";
+    customerForm.elements["country"].value = customer.country || "";
+    customerForm.elements["industry"].value = customer.industry || "";
+    customerForm.elements["status"].value = customer.status || "prospect";
+    customerForm.elements["creditLimit"].value = customer.creditLimit ?? "";
+    customerForm.elements["createdAt"].value = customer.createdAt || "";
+  } catch (error) {
+    if (error.name !== "AbortError") {
+      showNotification(error.message, "error", notificationToaster);
+      toggleModal(customerModal, false);
+    }
+  } finally {
+    if (customerFormRequestController === controller) {
+      customerFormRequestController = undefined;
+    }
+  }
+}
+
+function abortCustomerFormRequest() {
+  customerFormRequestController?.abort();
+  customerFormRequestController = undefined;
 }
 function clearCustomerForm() {
   customerForm.elements["id"].value = "";
@@ -206,6 +231,7 @@ function getCustomerFormData() {
 
 async function handleCustomerSubmit(event) {
   event.preventDefault();
+  abortCustomerFormRequest();
   let currentSubmitFormBtnTxt = submitCustBtn.textContent;
   submitCustBtn.textContent = "Saving...";
   submitCustBtn.disabled = true;
@@ -267,15 +293,18 @@ customerStatusFilter.addEventListener("change", () => {
 });
 
 addCustomerBtn.addEventListener("click", () => {
+  abortCustomerFormRequest();
   clearCustomerForm();
   toggleModal(customerModal, true);
 });
 
 closeCustomerModalBtn.addEventListener("click", () => {
+  abortCustomerFormRequest();
   toggleModal(customerModal, false);
 });
 
 cancelCustomerModalBtn.addEventListener("click", () => {
+  abortCustomerFormRequest();
   toggleModal(customerModal, false);
 });
 customerForm.addEventListener("submit", handleCustomerSubmit);
@@ -294,7 +323,7 @@ customerTableElement.addEventListener("click", (e) => {
     const action = button.dataset.action;
 
     if (action === "edit") {
-      fillCustomerForm(id);
+      void fillCustomerForm(id);
       toggleModal(customerModal, true);
     } else if (action === "delete") {
       handleDeleteCust(id);

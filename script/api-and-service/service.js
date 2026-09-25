@@ -1,18 +1,19 @@
 import { targetAPI } from "./api-client.js";
 
-export async function createReq(module, data) {
+export async function createReq(module, data, { signal } = {}) {
   const createOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
+    signal,
   };
   const res = await targetAPI(`${module}`, createOptions);
   return res;
 }
 
-export async function updateReq(module, data, id) {
+export async function updateReq(module, data, id, { signal } = {}) {
   // console.log(id, ": in service");
   const updateOptions = {
     method: "PATCH",
@@ -20,6 +21,7 @@ export async function updateReq(module, data, id) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
+    signal,
   };
   // const { id } = param;
   if (!id) {
@@ -29,11 +31,12 @@ export async function updateReq(module, data, id) {
   return res;
 }
 
-export async function getReq(module, param) {
+export async function getReq(module, param, { signal } = {}) {
   // console.log(module, "module from service");
   // console.log(param, "param in service");
   const getOptions = {
     method: "GET",
+    signal,
   };
   if (!param) {
     const res = await targetAPI(`${module}`, getOptions);
@@ -52,9 +55,10 @@ export async function getReq(module, param) {
   return res;
 }
 
-export async function delReq(module, id) {
+export async function delReq(module, id, { signal } = {}) {
   const delOptions = {
     method: "DELETE",
+    signal,
   };
   // const { id } = param;
   if (!id) {
