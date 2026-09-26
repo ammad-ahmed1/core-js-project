@@ -155,28 +155,29 @@ export class InvoiceManager extends RecordManager {
       return date !== null && date >= start && date <= end;
     });
   }
-  updateLineItemQuantity(invoiceId, lineItemId, newQuantity) {
-    if (!Number.isFinite(newQuantity) || newQuantity <= 0) {
-      throw new Error("Quantity must be a positive number.");
-    }
+  // ---unused---
+  // updateLineItemQuantity(invoiceId, lineItemId, newQuantity) {
+  //   if (!Number.isFinite(newQuantity) || newQuantity <= 0) {
+  //     throw new Error("Quantity must be a positive number.");
+  //   }
 
-    const invoice = this.getById("invoices", invoiceId);
+  //   const invoice = this.getById("invoices", invoiceId);
 
-    if (!invoice) {
-      throw new Error("Invoice not found.");
-    }
+  //   if (!invoice) {
+  //     throw new Error("Invoice not found.");
+  //   }
 
-    if (
-      !Array.isArray(invoice.lineItems) ||
-      !invoice.lineItems.some((item) => item?.id === lineItemId)
-    ) {
-      throw new Error("Line item not found.");
-    }
+  //   if (
+  //     !Array.isArray(invoice.lineItems) ||
+  //     !invoice.lineItems.some((item) => item?.id === lineItemId)
+  //   ) {
+  //     throw new Error("Line item not found.");
+  //   }
 
-    const lineItems = invoice.lineItems.map((item) =>
-      item?.id === lineItemId ? { ...item, quantity: newQuantity } : item,
-    );
+  //   const lineItems = invoice.lineItems.map((item) =>
+  //     item?.id === lineItemId ? { ...item, quantity: newQuantity } : item,
+  //   );
 
-    return this.updator({ lineItems }, invoiceId);
-  }
+  //   return this.updator({ lineItems }, invoiceId);
+  // }
 }
