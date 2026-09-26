@@ -27,7 +27,6 @@ function initializeModule(result, initializer, moduleName) {
 }
 
 export async function bootstrap() {
-  const controller = new AbortController();
 
   try {
     // console.log("started bootstrap");
